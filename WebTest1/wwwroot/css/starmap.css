@@ -1,0 +1,341 @@
+.station-panel>.panel {
+    min-height: 400px;
+    background-color: #000
+  }
+  
+  .station-panel>.panel .panel-heading .panel-title {
+    margin-top: 10px;
+    font-size: 30px;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-panel>.panel>.panel-inner {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+  
+  .station-panel .panel-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 16px;
+    opacity: .7
+  }
+  
+  .station-panel .panel-bg:after {
+    position: absolute;
+    top: 0;
+    right: 60%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .5) 50%, transparent);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    content: ""
+  }
+  
+  .station-panel .panel-stats dd,
+  .station-panel .panel-stats dt {
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-panel .items {
+    margin-top: 140px
+  }
+  
+  .station-panel .items h3 {
+    margin: 10px;
+    font-family: Orbitron, sans-serif;
+    text-align: right;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-panel .items .row {
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end
+  }
+  
+  .station-panel .items .station-item>.panel .panel-image {
+    height: 160px
+  }
+  
+  @media (max-width:992px) {
+    .station-panel>.panel .panel-heading {
+      padding: 10px 0
+    }
+  
+    .station-panel>.panel .panel-heading .panel-title {
+      overflow: auto;
+      white-space: normal
+    }
+  
+    .station-panel .items {
+      position: relative
+    }
+  
+    .station-panel .panel-bg:after {
+      right: 0
+    }
+  }
+  
+  .quick-filter[data-v-abf0b134] {
+    margin-bottom: 20px
+  }
+  
+  .cargo-route[data-v-25099b80] {
+    margin-bottom: 40px
+  }
+  
+  .cargo-route h2[data-v-25099b80] {
+    font-family: Orbitron, tahoma, sans-serif
+  }
+  
+  .cargo-route .cargo-route-point[data-v-25099b80] {
+    padding: 10px;
+    text-align: center
+  }
+  
+  .cargo-route .cargo-route-point h3[data-v-25099b80] {
+    font-size: 140%;
+    font-family: Orbitron, tahoma, sans-serif
+  }
+  
+  .cargo-route .cargo-route-center[data-v-25099b80] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+  }
+  
+  .cargo-route .cargo-route-center .profit[data-v-25099b80] {
+    margin-top: 10px;
+    color: #428bca;
+    font-size: 120%
+  }
+  
+  .cargo-route .cargo-route-center i[data-v-25099b80],
+  .cargo-route .cargo-route-center svg[data-v-25099b80] {
+    font-size: 200%
+  }
+  
+  .cargo-routes-blank[data-v-25099b80] {
+    padding: 20px;
+    font-size: 120%;
+    line-height: 2;
+    text-align: center
+  }
+  
+  @media (max-width:992px) {
+    .cargo-route-center[data-v-25099b80] {
+      margin-top: 10px;
+      margin-bottom: 10px
+    }
+  }
+  
+  .starmap[data-v-16ecc99c] {
+    position: relative
+  }
+  /*
+  .starmap img[data-v-16ecc99c] {
+    width: 100%
+  }
+  */
+  .starmap .starsystem[data-v-16ecc99c] {
+    position: absolute;
+    display: block;
+    width: 1.716506766%;
+    height: 2.166476625%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #428bca;
+    transition: box-shadow .5s ease, border 1s ease
+  }
+
+  a[data-v-16ecc99c] {
+    color: #FFF;
+  }
+  
+  .starmap .starsystem[data-v-16ecc99c]:hover {
+    border: 1px solid #428bca;
+    box-shadow: 0 0 30px #428bca
+  }
+  
+  .station-list>.panel {
+    min-height: 400px;
+    background-color: #000
+  }
+  
+  .station-list>.panel .panel-heading .panel-title {
+    margin-top: 10px;
+    font-size: 30px;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-list>.panel>.panel-inner {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+  
+  .station-list .panel-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 16px;
+    opacity: .7
+  }
+  
+  .station-list .panel-stats dd,
+  .station-list .panel-stats dt {
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-list .items {
+    margin-top: 140px
+  }
+  
+  .station-list .items h3 {
+    margin: 10px;
+    font-family: Orbitron, sans-serif;
+    text-align: right;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .station-list .items .row {
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end
+  }
+  
+  .station-list .items .station-item>.panel .panel-image {
+    height: 160px
+  }
+  
+  @media (max-width:992px) {
+    .station-list .items {
+      position: relative
+    }
+  }
+  
+  .station-item>.panel .panel-image {
+    height: 350px;
+    border-bottom: none;
+    border-radius: 16px;
+    opacity: .8
+  }
+  
+  .station-item>.panel .panel-image img {
+    border-radius: 16px
+  }
+  
+  .station-item>.panel .panel-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin-bottom: 0;
+    text-shadow: 0 0 2px #000
+  }
+  
+  h2[data-v-e1f453dc] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: Orbitron, sans-serif;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .shop-list>.panel {
+    min-height: 400px;
+    background-color: #000
+  }
+  
+  .shop-list>.panel .panel-heading .panel-title {
+    margin-top: 10px;
+    overflow: auto;
+    font-size: 30px;
+    white-space: normal;
+    text-overflow: inherit;
+    text-shadow: 0 0 2px #000
+  }
+  
+  .shop-list>.panel>.panel-inner {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+  
+  .shop-list h2 small {
+    font-size: 20px
+  }
+  
+  .shop-list .panel-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 16px;
+    opacity: .7
+  }
+  
+  .shop-list .panel-bg:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 70%;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5) 50%, transparent);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    content: ""
+  }
+  
+  .dock-item[data-v-d8f222a4] {
+    display: inline-block;
+    padding-right: 5px;
+    white-space: nowrap
+  }
+  
+  .image[data-v-2f7a43c1] {
+    width: 100%;
+    max-height: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #000
+  }
+  
+  .description[data-v-2f7a43c1] {
+    margin: 20px 0
+  }
+  
+  h2[data-v-2f7a43c1] {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: Orbitron, tahoma, sans-serif;
+    text-transform: uppercase
+  }
+  
+  .gallery-image[data-v-f326dff0] {
+    height: 250px !important
+  }
+  
+  .add-to-cart[data-v-2e9cef70] {
+    margin: 0
+  }
+  
+  .add-to-cart i[data-v-2e9cef70] {
+    font-size: 1.5rem
+  }
+  

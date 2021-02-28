@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebTest1
+namespace ArisCorpWeb
 {
     public class Startup
     {
@@ -24,6 +24,7 @@ namespace WebTest1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            // services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,13 +46,33 @@ namespace WebTest1
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "systeme",
+                    pattern: "VerseExkurs/systeme/{*system}",
+                    defaults: new { controller = "VerseExkurs", action = "Systeme" });
+
+            endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            /**app.UseMvc(routes =>
+            {
+
+            routes.MapRoute(
+                name: "Systeme",
+                template: "VerseExkurs/Systeme/{System}",
+                defaults:new {controller="VerseExkurs",action= "Systeme" }
+                );
+
+
+            routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            }); **/
         }
     }
 }

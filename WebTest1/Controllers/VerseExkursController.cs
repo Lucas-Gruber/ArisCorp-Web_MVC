@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using WebTest1.Models;
+using ArisCorpWeb.Models;
 
-namespace WebTest1.Controllers
+namespace ArisCorpWeb.Controllers
 {
     public class VerseExkursController : Controller
     {
@@ -18,6 +18,10 @@ namespace WebTest1.Controllers
         public ActionResult Disclaimer()
         {
             return View();
+        }
+        public IActionResult Systeme(string System)
+        {
+            return Content("System=" + System);
         }
     }
 }

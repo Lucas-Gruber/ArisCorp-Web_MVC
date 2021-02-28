@@ -1,6 +1,6 @@
 using System;
 
-namespace WebTest1.Models
+namespace ArisCorpWeb.Models
 {
     public class ErrorViewModel
     {

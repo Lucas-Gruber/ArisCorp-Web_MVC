@@ -6,7 +6,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ArisCorpWeb.Models;
+<<<<<<< HEAD:ArisCorpWeb/Controllers/HomeController.cs
 using System.Data.SqlClient;
+=======
+>>>>>>> alpha:WebTest1/Controllers/HomeController.cs
 
 namespace ArisCorpWeb.Controllers
 {

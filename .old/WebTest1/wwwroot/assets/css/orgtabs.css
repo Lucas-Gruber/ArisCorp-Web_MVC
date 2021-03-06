@@ -1,0 +1,47 @@
+
+
+/* Generic Utility */
+.hide { position: absolute; top: -9999px; left: -9999px; }
+
+
+/* Specific to example one */
+
+/* #maintabs { background: #eee; padding: 10px; margin: 0 0 20px 0; -moz-box-shadow: 0 0 5px #666; -webkit-box-shadow: 0 0 5px #666; } */
+
+#maintabs .nav { overflow: hidden; margin: 0 0 10px 0; }
+#maintabs .nav li { float: left; margin: 0 10px 0 0; }
+#maintabs .nav li.last { margin-right: 0; }
+#maintabs .nav li a { display: block; padding: 5px; color: white; font-size: 10px; text-align: center; border: 0; color: #808080; }
+
+#maintabs ul { list-style: none; }
+#maintabs ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; }
+#maintabs ul li a:hover { color: #909090; }
+#maintabs ul li:last-child a { border: none; }
+
+#maintabs ul li.nav-home a.current, #maintabs ul#home li a:hover {  color: #00ffe8; }
+#maintabs ul li.nav-one a.current, #maintabs ul#geschichte li a:hover {  color: #00ffe8; }
+#maintabs ul li.nav-two a.current, #maintabs ul#uee-regierung li a:hover { color: #00ffe8; }
+#maintabs ul li.nav-three a.current, #maintabs ul#uee-leben li a:hover { color: #00ffe8; }
+#maintabs ul li.nav-four a.current, #maintabs ul#starmap li a:hover { color: #00ffe8; }
+#maintabs ul li.nav-five a.current, #maintabs ul#alienrassen li a:hover { color: #00ffe8; }
+#maintabs ul li.nav-six a.current, #maintabs ul#firmen li a:hover { color: #00ffe8; }
+#maintabs ul li.nav-seven a.current, #maintabs ul#technologien li a:hover { color: #00ffe8; }
+
+
+
+/* Specific to example two */
+
+#example-two .list-wrap { background: #eee; padding: 10px; margin: 0 0 15px 0; }
+
+#example-two ul { list-style: none; }
+#example-two ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; }
+#example-two ul li a:hover { background: #333; color: white; }
+#example-two ul li:last-child a { border: none; }
+
+#example-two .nav { overflow: hidden; }
+#example-two .nav li { width: 97px; float: left; margin: 0 10px 0 0; }
+#example-two .nav li.last { margin-right: 0; }
+#example-two .nav li a { display: block; padding: 5px; background: #666; color: white; font-size: 10px; text-align: center; border: 0; }
+
+#example-two li a.current,#example-two li a.current:hover { background-color: #eee !important; color: black; }
+#example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}

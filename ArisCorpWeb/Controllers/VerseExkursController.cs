@@ -19,17 +19,11 @@ namespace ArisCorpWeb.Controllers
         {
             return View();
         }
-<<<<<<< HEAD:ArisCorpWeb/Controllers/VerseExkursController.cs
 
         [Route ("VerseExkurs/Systeme/{System}")]
         public IActionResult System(string System)
         {
             return View(System);
-=======
-        public IActionResult Systeme(string System)
-        {
-            return Content("System=" + System);
->>>>>>> alpha:WebTest1/Controllers/VerseExkursController.cs
         }
     }
 }

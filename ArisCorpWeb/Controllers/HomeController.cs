@@ -6,10 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ArisCorpWeb.Models;
-<<<<<<< HEAD:ArisCorpWeb/Controllers/HomeController.cs
 using System.Data.SqlClient;
-=======
->>>>>>> alpha:WebTest1/Controllers/HomeController.cs
 
 namespace ArisCorpWeb.Controllers
 {
@@ -23,20 +20,6 @@ namespace ArisCorpWeb.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        private void FetchData()
-        {
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult About()
         {
             return View();
         }

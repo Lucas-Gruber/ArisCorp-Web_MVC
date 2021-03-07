@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+@Html.Partial("_Head")
+<body>
+    @if (IsSectionDefined("HomeStaff"))
+    {
+        @RenderSection("HomeStaff")
+    }
+    @Html.Partial("_Head")
+    @Html.Partial("_HomeHeader")
+    @Html.Partial("_Header")
+    <!-- /// HERO SECTION /// -->
+    @if (IsSectionDefined("Hero"))
+    {
+        <div id="hero-section" class="medium-margin">
+            @RenderSection("Hero")
+        </div><!-- Hero Section End -->
+    }
+
+    <!-- /// Main Container /// -->
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @Html.Partial("_Footer")
+
+    <style>
+        .tabinator input {
+            display: none;
+        }
+
+        gin-left: -1px;
+        .tabinator label:before {
+            display: block;
+        }
+
+        .tabinator label:hover {
+            cursor: pointer;
+        }
+
+        .tabinator input:checked + label {
+            position: relative;
+        }
+
+            .tabinator input:checked + label:after {
+                display: block;
+                content: '';
+                position: absolute;
+            }
+
+        #content1, #content2, #content3, #content4 {
+            display: none;
+        }
+
+        #tab1:checked ~ #content1,
+        #tab2:checked ~ #content2,
+        #tab3:checked ~ #content3,
+        #tab4:checked ~ #content4 {
+            display: block;
+        }
+    </style>
+
+    <!-- //// SCRIPTS //// -->
+    <script src="~/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/blazy.min.js"></script>
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/assets/js/lightbox.min.js"></script>
+    <script src="~/assets/js/jquery-modal-video.min.js"></script>
+    <script src="~/assets/js/validator.min.js"></script>
+    <script src="~/assets/js/strider.js"></script>
+</body>
+</html> 

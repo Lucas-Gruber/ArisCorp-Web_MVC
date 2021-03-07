@@ -742,6 +742,9 @@ button {
     font-family: 'Nasa';
     font-style: oblique;
 }
+.team-card {
+    margin: 0 auto;
+}
 /* --------------------------- /////////// VIII. CAREERS SECTION /////////// --------------------------- */
 .job-card {
     text-align: center;

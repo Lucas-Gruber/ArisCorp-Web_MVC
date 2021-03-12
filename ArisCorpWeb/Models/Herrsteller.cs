@@ -13,6 +13,5 @@ namespace ArisCorpWeb.Models
 
         public string Name { get; set; }
 
-
     }
 }

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -54,9 +54,14 @@ namespace ArisCorpWeb
                     pattern: "VerseExkurs/systeme/{*system}",
                     defaults: new { controller = "VerseExkurs", action = "Systeme" });
 
-            endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "404-PageNotFound",
+                    pattern: "{*url}",
+                    defaults: new { controller = "ErrorController", action = "PageNotFound" });
             });
 
             /**app.UseMvc(routes =>

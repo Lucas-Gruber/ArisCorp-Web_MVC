@@ -8,4 +8,32 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\assets\js\blazy.min.js" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\gulp.js" />
+    <None Include="wwwroot\assets\js\image-map-pro.min.js" />
+    <None Include="wwwroot\assets\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\assets\js\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\assets\js\jquery-modal-video.min.js" />
+    <None Include="wwwroot\assets\js\jquery.easing.min.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\jquery.unobtrusive-ajax.js" />
+    <None Include="wwwroot\assets\js\jquery.unobtrusive-ajax.min.js" />
+    <None Include="wwwroot\assets\js\lightbox.min.js" />
+    <None Include="wwwroot\assets\js\organictabs.jquery.js" />
+    <None Include="wwwroot\assets\js\popper.min.js" />
+    <None Include="wwwroot\assets\js\strider-exkurs.js" />
+    <None Include="wwwroot\assets\js\strider.js" />
+    <None Include="wwwroot\assets\js\tabbis.es6.js" />
+    <None Include="wwwroot\assets\js\tabbis.js" />
+    <None Include="wwwroot\assets\js\tabs.js" />
+    <None Include="wwwroot\assets\js\validator.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jQuery.Ajax.Unobtrusive" Version="2.0.20710" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+  </ItemGroup>
+
 </Project>

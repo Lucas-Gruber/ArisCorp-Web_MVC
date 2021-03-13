@@ -5,10 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\assets\js\starmap.js" />
+    <Content Remove="wwwroot\assets\js\technologien.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\assets\js\technologien.js" />
+    <None Include="wwwroot\assets\js\starmap.js" />
     <None Include="wwwroot\assets\js\blazy.min.js" />
     <None Include="wwwroot\assets\js\bootstrap.min.js" />
     <None Include="wwwroot\assets\js\gulp.js" />

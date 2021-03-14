@@ -4,3 +4,29 @@
         <div class="container">
             <!-- Site Logo -->
             <a id="logo" target="_blank" class="navbar-brand" href="https://robertsspaceindustries.com/orgs/ARISCORP"><img class="img-fluid" src="~/assets/img/misc/aris-logo.webp" alt="ArisCorp Logo"></a>
+            <!-- Dropdown Button -->
+            <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="about">Über Uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="tabs">Mitglieder, die Flotte & Aufgabenfelder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="recruitment">Bewerben</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" asp-area="" asp-controller="VerseExkurs" asp-action="Disclaimer"><img class="img-fluid" src="/assets/img/excurs/util/ARISBannerVerseExkurs-128.webp" alt="ArisCorp Logo"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header><!-- Header End -->

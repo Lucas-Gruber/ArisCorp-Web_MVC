@@ -59,5 +59,9 @@ namespace ArisCorpWeb.Controllers
         {
             return View(Alienrasse);
         }
+        public ActionResult svg()
+        {
+            return View();
+        }
     }
 }

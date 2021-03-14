@@ -1,19 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
+
 @Html.Partial("_Head")
 <body>
-    @Html.Partial("_NormalHeader")
-    @Html.Partial("_Header")
-    <!-- /// HERO SECTION /// -->
-    <div id="hero-section" class="medium-margin"></div>
-    <!-- Hero Section End -->
-    <!-- /// Main Container /// -->
-    <div class="container">
-        @RenderBody()
-    </div>
 
+    @Html.Partial("_SideNav")
+    <!-- /// Main Container /// -->
+    <div id="fotterwrapper">
+        <div class="container padding-top-5">
+            @RenderBody()
+        </div>
+    </div>
+    <!-- //// NAVBAR-STYLES //// -->
+    @Html.Partial("_NavbarStyle")
+
+    <!-- //// NAVBAR-SCRIPTS //// -->
+    <!-- //// FOOTER //// -->
     @Html.Partial("_Footer")
 
+<style>
+    .padding-top-5 {
+        padding-top: 5rem;
+    }
+</style>
     <!-- //// SCRIPTS //// -->
     <script src="~/assets/js/jquery-3.2.1.min.js"></script>
     <script src="~/assets/js/popper.min.js"></script>

@@ -1,4 +1,8 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Verse Exkurs: Firmen";
+    ViewData["Back"] = "Index";
+}
+
 <div class="" style="border-top: none;">
     <div class="tab">
         <button class="tablinks" onclick="openExcurs(event, 'hersteller')"><h2 style="float: right; font-family: 'Nasa';" class="animation-element slide-down"><span class="coloredwhite" style="font-size: unset;">H</span>ERSTELLER</h2></button>
@@ -312,36 +316,36 @@
     <hr class="animation-element extend">
 </div>
 <script>
-        function openExcurs(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
+    function openExcurs(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
         }
-        document.getElementById("defaultOpen").click();
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
 </script>
 
 <script>
-        function openHersteller(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent2");
-          for (i = 0; i < tabcontent.length; i++) {
+    function openHersteller(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent2");
+        for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks2");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active2", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active2";
         }
+        tablinks = document.getElementsByClassName("tablinks2");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active2", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active2";
+    }
 </script>
 
 

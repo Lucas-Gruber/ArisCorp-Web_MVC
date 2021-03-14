@@ -8,7 +8,6 @@
     }
     @Html.Partial("_Head")
     @Html.Partial("_HomeHeader")
-    @Html.Partial("_Header")
     <!-- /// HERO SECTION /// -->
     @if (IsSectionDefined("Hero"))
     {
@@ -57,6 +56,152 @@
         #tab3:checked ~ #content3,
         #tab4:checked ~ #content4 {
             display: block;
+        }
+        /* -Loading Screen- */
+        #loader-wrapper {
+            background: #111;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            text-align: center;
+            z-index: 1050;
+        }
+
+        .loader-logo {
+            position: relative;
+            color: #FFF;
+            top: 43%;
+            font-family: Anurati, sans-serif;
+            letter-spacing: 5px;
+        }
+
+        #progress {
+            width: 0;
+            height: 2px;
+            background: #E48632;
+            position: relative;
+            top: 45%;
+        }
+
+        .loader-text {
+            position: relative;
+            color: #FFF;
+            top: 48%;
+        }
+
+        .loader-gif {
+            position: relative;
+            color: #FFF;
+        }
+
+        /* -Loading Screen Animation- */
+        .loaded {
+            -moz-transform: translate3d(0px, -100%, 0px);
+            -webkit-transform: translate3d(0px, -100%, 0px);
+            -o-transform: translate(0px, -100%);
+            -ms-transform: translate(0px, -100%);
+            transform: translate3d(0px, -100%, 0px);
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        /* --------------------------- /////////// III. HEADER & NAVIGATION /////////// --------------------------- */
+        #logo {
+            font-family: Anurati, sans-serif;
+            font-size: 1.75rem;
+            28px;
+            letter-spacing: 5px;
+        }
+
+        .navbar-dark {
+            background-color: rgba(0,0,0,0);
+            border: 1px solid rgba(0,0,0,0);
+            z-index: 900;
+            transition: 0.3s;
+        }
+
+        .scrolled {
+            background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+            z-index: 900;
+        }
+
+        .nav-link {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-top: 5px;
+            transition: 0.2s;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #FFF;
+        }
+
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: #E48632;
+            }
+
+            .navbar-dark .navbar-nav .nav-link:active {
+                color: #E48632;
+            }
+
+            .navbar-dark .navbar-nav .nav-link:focus {
+                color: #E48632;
+            }
+
+        .navbar-toggler {
+            border: none;
+            cursor: pointer;
+        }
+
+        #hamburger .icon-bar {
+            display: block;
+            height: 2px;
+            width: 25px;
+            background: #FFF;
+            margin: 7px 0;
+            transition: .3s ease-in-out;
+        }
+            /* - Mobile menu animation - */
+            #hamburger .icon-bar:nth-child(1) {
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+            #hamburger .icon-bar:nth-child(2) {
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+            #hamburger .icon-bar:nth-child(3) {
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+        #hamburger.open .icon-bar:nth-child(1) {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #hamburger.open .icon-bar:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+        }
+
+        #hamburger.open .icon-bar:nth-child(3) {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
         }
     </style>
 

@@ -1,0 +1,39 @@
+﻿@model ArisCorpWeb.Models.Biografien
+
+@{
+    ViewData["Title"] = "Biografie nicht gefunden.";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+    ViewData["BackF"] = "tabs";
+}
+
+<div id="bio" class='large-margin'>
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris">@(ViewContext.RouteData.Values["Id"]) nicht gefunden!</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11"> 
+            <h2 class="short-hr-left">Das Mitglied: "@(ViewContext.RouteData.Values["Id"])" wurde nicht gefunden!</h2>
+            <img src="/assets/img/member/Arkalanna.webp" alt="@(ViewContext.RouteData.Values["Id"]) Nicht gefunden" style="float: right;" />
+
+            <div>
+                <span>Bio unbekannt.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    html {
+        height: 100%;
+    }
+
+    #footer {
+        margin-top: -218px;
+    }
+</style>

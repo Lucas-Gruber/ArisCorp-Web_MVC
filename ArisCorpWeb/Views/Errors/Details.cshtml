@@ -1,0 +1,50 @@
+﻿@model ArisCorpWeb.Models.Biografien
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+<div id="bio" class='large-margin'>
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris">@Html.DisplayFor(model => model.Mitglied)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            <h2 class="short-hr-left">Bio von @Html.DisplayFor(model => model.Titel)</h2>
+            <img src="@Html.DisplayFor(model => model.Picture)" alt="Potrait von @Html.DisplayFor(model => model.Mitglied)" style="float: right;"/>
+
+            <div style="font-size: 75%;">
+                <span>@Html.DisplayFor(model => model.Content1)</span>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <span>@Html.DisplayFor(model => model.Content2)</span>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h2 class="short-hr-left">@Html.DisplayFor(model => model.Content3)</h2>
+
+                <br>
+                <br>
+                <br>
+
+                <span>@Html.DisplayFor(model => model.Content4)</span>
+            </div>
+        </div>
+    </div>
+</div>

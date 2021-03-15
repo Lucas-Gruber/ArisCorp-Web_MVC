@@ -102,7 +102,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a asp-controller="VerseExkurs" asp-action="@ViewData["Back"]" class="nav-link">
+            <a asp-controller="@ViewData["BackC"]" asp-action="@ViewData["BackA"]" asp-fragment="@ViewData["BackF"]" class="nav-link">
                 @Html.Raw(Resources.Resources.nav_back_svg)
                 <span class="link-text">Zurück</span>
             </a>

@@ -26,7 +26,9 @@ namespace ArisCorpWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            // services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            services.AddDbContext<BiografienContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("BiografienContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

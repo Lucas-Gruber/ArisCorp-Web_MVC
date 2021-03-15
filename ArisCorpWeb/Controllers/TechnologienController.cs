@@ -10,22 +10,22 @@ using ArisCorpWeb.Models;
 
 namespace ArisCorpWeb.Controllers
 {
-    public class AlienrassenController : Controller
+    public class TechnologienController : Controller
     {
-        private readonly AlienrassenContext _context;
+        private readonly TechnologienContext _context;
 
-        public AlienrassenController(AlienrassenContext context)
+        public TechnologienController(TechnologienContext context)
         {
             _context = context;
         }
 
-        // GET: Alienrassen
+        // GET: Technologien
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alienrassen.ToListAsync());
+            return View(await _context.Technologien.ToListAsync());
         }
 
-        // GET: Alienrassen/Details/5
+        // GET: Technologien/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen
+            var technologien = await _context.Technologien
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (alienrassen == null)
+            if (technologien == null)
             {
                 return NotFound();
             }
 
-            return View(alienrassen);
+            return View(technologien);
         }
 
-        // GET: Alienrassen/Create
+        // GET: Technologien/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Alienrassen/Create
+        // POST: Technologien/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Alienrassen alienrassen)
+        public async Task<IActionResult> Create([Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Technologien technologien)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(alienrassen);
+                _context.Add(technologien);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(alienrassen);
+            return View(technologien);
         }
 
-        // GET: Alienrassen/Edit/5
+        // GET: Technologien/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen.FindAsync(id);
-            if (alienrassen == null)
+            var technologien = await _context.Technologien.FindAsync(id);
+            if (technologien == null)
             {
                 return NotFound();
             }
-            return View(alienrassen);
+            return View(technologien);
         }
 
-        // POST: Alienrassen/Edit/5
+        // POST: Technologien/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Alienrassen alienrassen)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Technologien technologien)
         {
-            if (id != alienrassen.Id)
+            if (id != technologien.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace ArisCorpWeb.Controllers
             {
                 try
                 {
-                    _context.Update(alienrassen);
+                    _context.Update(technologien);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlienrassenExists(alienrassen.Id))
+                    if (!TechnologienExists(technologien.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace ArisCorpWeb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(alienrassen);
+            return View(technologien);
         }
 
-        // GET: Alienrassen/Delete/5
+        // GET: Technologien/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen
+            var technologien = await _context.Technologien
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (alienrassen == null)
+            if (technologien == null)
             {
                 return NotFound();
             }
 
-            return View(alienrassen);
+            return View(technologien);
         }
 
-        // POST: Alienrassen/Delete/5
+        // POST: Technologien/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var alienrassen = await _context.Alienrassen.FindAsync(id);
-            _context.Alienrassen.Remove(alienrassen);
+            var technologien = await _context.Technologien.FindAsync(id);
+            _context.Technologien.Remove(technologien);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlienrassenExists(string id)
+        private bool TechnologienExists(string id)
         {
-            return _context.Alienrassen.Any(e => e.Id == id);
+            return _context.Technologien.Any(e => e.Id == id);
         }
     }
 }

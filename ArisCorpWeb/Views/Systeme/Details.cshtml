@@ -1,24 +1,20 @@
-﻿@model ArisCorpWeb.Models.Alienrassen
+﻿@model ArisCorpWeb.Models.Systeme
 
 @{
     ViewData["Title"] = "Details";
-    Layout = null;
-    ViewData["BackC"] = "Home";
-    ViewData["BackA"] = "Index";
-    ViewData["BackF"] = "tabs";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>Alienrassen</h4>
+    <h4>Systeme</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Rasse)
+            @Html.DisplayNameFor(model => model.System)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Rasse)
+            @Html.DisplayFor(model => model.System)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Extra1)
@@ -289,6 +285,18 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Content30)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reisewarunung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reisewarunung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlusternImWind)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlusternImWind)
         </dd>
     </dl>
 </div>

@@ -21,26 +21,7 @@ namespace ArisCorpWeb.Controllers
         {
             return View();
         }
-        public ActionResult Starmap()
-        {
-            return View();
-        }
 
-        [Route ("VerseExkurs/Starmap/{System}")]
-        public IActionResult System(string System)
-        {
-            return View(System);
-        }
-        public ActionResult Technologien()
-        {
-            return View();
-        }
-
-        [Route("VerseExkurs/Technologien/{Technologie}")]
-        public IActionResult Technologien(string Technologie)
-        {
-            return View(Technologie);
-        }
         public ActionResult Firmen()
         {
             return View();
@@ -51,25 +32,36 @@ namespace ArisCorpWeb.Controllers
         {
             return View(Firma);
         }
-        public ActionResult Alienrassen()
+
+        [Route("VerseExkurs/Alienrassen")]
+        public IActionResult Alienrassen()
         {
-            return View();
+            return View("AlienrassenList");
         }
 
-        private readonly AlienrassenContext _context;
-
-        public VerseExkursController(AlienrassenContext context)
+        [Route("VerseExkurs/Starmap")]
+        public IActionResult Starmap()
         {
-            _context = context;
+            return View("StarmapList");
         }
 
-        // GET: Alienrassen
-        public async Task<IActionResult> AlienrassenList()
+        [Route("VerseExkurs/Technologien")]
+        public IActionResult Technologien()
         {
-            return View(await _context.Alienrassen.ToListAsync());
+            return View("TechnologienList");
         }
 
-        // GET: Alienrassen/Alienrassen/5
+        private readonly AlienrassenContext _Acontext;
+        private readonly SystemeContext _Scontext;
+        private readonly TechnologienContext _Tcontext;
+        public VerseExkursController(AlienrassenContext Acontext, SystemeContext Scontext, TechnologienContext Tcontext)
+        {
+            _Acontext = Acontext;
+            _Scontext = Scontext;
+            _Tcontext = Tcontext;
+        }
+
+        [Route("VerseExkurs/Alienrassen/{id}")]
         public async Task<IActionResult> Alienrassen(string id)
         {
             if (id == null)
@@ -77,121 +69,50 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var Alienrassen = await _context.Alienrassen
+            var alienrassen = await _Acontext.Alienrassen
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (Alienrassen == null)
+            if (alienrassen == null)
             {
                 return NotFound();
             }
 
-            return View(Alienrassen);
+            return View(alienrassen);
         }
 
-        // GET: Alienrassen/AlienrassenCreate
-        public IActionResult AlienrassenCreate()
-        {
-            return View();
-        }
-
-        // POST: Alienrassen/AlienrassenCreate
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more Alienrassen, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AlienrassenCreate([Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Alienrassen Alienrassen)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(Alienrassen);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(AlienrassenList));
-            }
-            return View(Alienrassen);
-        }
-
-        // GET: Alienrassen/AlienrassenEdit/5
-        public async Task<IActionResult> AlienrassenEdit(string id)
+        [Route("VerseExkurs/Starmap/{id}")]
+        public async Task<IActionResult> Starmap(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var Alienrassen = await _context.Alienrassen.FindAsync(id);
-            if (Alienrassen == null)
-            {
-                return NotFound();
-            }
-            return View(Alienrassen);
-        }
-
-        // POST: Alienrassen/AlienrassenEdit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more Alienrassen, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AlienrassenEdit(string id, [Bind("Id,Rasse,Extra1,Extra2,Extra3,Extra4,Extra5,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,Picture7,Picture8,Picture9,Picture10,Content1,Content2,Content3,Content4,Content5,Content6,Content7,Content8,Content9,Content10,Content11,Content12,Content13,Content14,Content15,Content16,Content17,Content18,Content19,Content20,Content21,Content22,Content23,Content24,Content25,Content26,Content27,Content28,Content29,Content30")] Alienrassen Alienrassen)
-        {
-            if (id != Alienrassen.Id)
+            var systeme = await _Scontext.Systeme
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (systeme == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(Alienrassen);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AlienrassenExists(Alienrassen.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(AlienrassenList));
-            }
-            return View(Alienrassen);
+            return View(systeme);
         }
 
-        // GET: Alienrassen/AlienrassenDelete/5
-        public async Task<IActionResult> AlienrassenDelete(string id)
+        [Route("VerseExkurs/Technologien/{id}")]
+        public async Task<IActionResult> Technologien(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var Alienrassen = await _context.Alienrassen
+            var technologien = await _Tcontext.Technologien
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (Alienrassen == null)
+            if (technologien == null)
             {
                 return NotFound();
             }
 
-            return View(Alienrassen);
-        }
-
-        // POST: Alienrassen/AlienrassenDelete/5
-        [HttpPost, ActionName("AlienrassenDelete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AlienrassenDeleteConfirmed(string id)
-        {
-            var Alienrassen = await _context.Alienrassen.FindAsync(id);
-            _context.Alienrassen.Remove(Alienrassen);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(AlienrassenList));
-        }
-
-        private bool AlienrassenExists(string id)
-        {
-            return _context.Alienrassen.Any(e => e.Id == id);
+            return View(technologien);
         }
     }
 }

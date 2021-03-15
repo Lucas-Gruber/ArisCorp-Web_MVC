@@ -12,6 +12,7 @@ namespace ArisCorpWeb.Controllers
 {
     public class BiografienController : Controller
     {
+        [Route("Biografien")]
         public IActionResult Index()
         {
             return View();
@@ -31,6 +32,7 @@ namespace ArisCorpWeb.Controllers
         }
 
         // GET: Biografien/Details/5
+        [Route("Biografien/{id}")]
         public async Task<IActionResult> Member(string id)
         {
             if (id == null)

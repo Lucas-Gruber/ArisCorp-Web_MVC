@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    Layout = "/Views/Shared/_HomeLayout.cshtml";
     ViewData["Title"] = "Homepage";
 }
 @section HomeStaff {
@@ -18,7 +18,7 @@
         <h1 class="loader-logo"><span class="colored">ARIS</span>CORP</h1>
         <div id="progress"></div>
         <h3 class="loader-text">LOADING</h3>
-        <img ref="preload" class="loader-gif" style="top: 47%; left: 1.5%;" src="~/assets/img/misc/aris-loading.gif">
+        <img ref="preload" class="loader-gif" style="top: 47%; left: 1.5%;" src="/assets/img/misc/aris-loading.gif">
     </div>
     <!-- End Loading Screen -->
 }
@@ -27,12 +27,12 @@
 
     <div class="row hero-unit">
         <div class="hero-overlay"></div>
-        <video autoplay loop muted poster="~/assets/img/poster.jpg" id="bgvid" class="img-fluid">
-            <source src="~/assets/img/bg-vid.mp4" type="video/mp4"><!-- your video goes here -->
+        <video autoplay loop muted poster="/assets/img/poster.jpg" id="bgvid" class="img-fluid">
+            <source src="/assets/img/bg-vid.mp4" type="video/mp4"><!-- your video goes here -->
         </video>
         <div class="hero-caption">
             <h1>Willkommen <span class="colored">bei der</span></h1>
-            <h1><img class="img-fluid" src="~/assets/img/misc/aris-banner.webp" alt="Banner"></h1>
+            <h1><img class="img-fluid" src="/assets/img/misc/aris-banner.webp" alt="Banner"></h1>
         </div>
     </div>
 

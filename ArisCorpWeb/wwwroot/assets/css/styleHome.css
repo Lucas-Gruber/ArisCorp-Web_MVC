@@ -627,6 +627,9 @@ button {
     margin: 20px 0 60px 0;
     border: none;
 }
+.team-card {
+    margin: 0 auto;
+}
 /* -- Buttons -- */
 .steam-btn {
     display: inline-block;

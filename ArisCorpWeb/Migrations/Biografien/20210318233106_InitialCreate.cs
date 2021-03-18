@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ArisCorpWeb.Migrations
+namespace ArisCorpWeb.Migrations.Biografien
 {
     public partial class InitialCreate : Migration
     {

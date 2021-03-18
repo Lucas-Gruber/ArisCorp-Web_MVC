@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArisCorpWeb.Migrations.Technologien
 {
     [DbContext(typeof(TechnologienContext))]
-    [Migration("20210315171754_InitialCreate")]
+    [Migration("20210318233231_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

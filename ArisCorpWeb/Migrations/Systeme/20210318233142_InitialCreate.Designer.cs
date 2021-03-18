@@ -3,14 +3,16 @@ using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArisCorpWeb.Migrations.Alienrassen
+namespace ArisCorpWeb.Migrations.Systeme
 {
-    [DbContext(typeof(AlienrassenContext))]
-    partial class AlienrassenContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(SystemeContext))]
+    [Migration("20210318233142_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,7 +20,7 @@ namespace ArisCorpWeb.Migrations.Alienrassen
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ArisCorpWeb.Models.Alienrassen", b =>
+            modelBuilder.Entity("ArisCorpWeb.Models.Systeme", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -128,6 +130,9 @@ namespace ArisCorpWeb.Migrations.Alienrassen
                     b.Property<string>("Extra5")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FlusternImWind")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Picture1")
                         .HasColumnType("nvarchar(max)");
 
@@ -158,12 +163,15 @@ namespace ArisCorpWeb.Migrations.Alienrassen
                     b.Property<string>("Picture9")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rasse")
+                    b.Property<string>("Reisewarunung")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("System")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Alienrassen");
+                    b.ToTable("Systeme");
                 });
 #pragma warning restore 612, 618
         }

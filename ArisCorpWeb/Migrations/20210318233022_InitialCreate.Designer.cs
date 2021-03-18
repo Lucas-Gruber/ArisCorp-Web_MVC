@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArisCorpWeb.Migrations.Systeme
+namespace ArisCorpWeb.Migrations
 {
-    [DbContext(typeof(SystemeContext))]
-    [Migration("20210315170753_InitialCreate")]
+    [DbContext(typeof(AlienrassenContext))]
+    [Migration("20210318233022_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace ArisCorpWeb.Migrations.Systeme
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ArisCorpWeb.Models.Systeme", b =>
+            modelBuilder.Entity("ArisCorpWeb.Models.Alienrassen", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -130,9 +130,6 @@ namespace ArisCorpWeb.Migrations.Systeme
                     b.Property<string>("Extra5")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FlusternImWind")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Picture1")
                         .HasColumnType("nvarchar(max)");
 
@@ -163,15 +160,12 @@ namespace ArisCorpWeb.Migrations.Systeme
                     b.Property<string>("Picture9")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Reisewarunung")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("System")
+                    b.Property<string>("Rasse")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Systeme");
+                    b.ToTable("Alienrassen");
                 });
 #pragma warning restore 612, 618
         }

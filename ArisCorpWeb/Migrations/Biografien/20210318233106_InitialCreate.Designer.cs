@@ -3,14 +3,16 @@ using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArisCorpWeb.Migrations
+namespace ArisCorpWeb.Migrations.Biografien
 {
     [DbContext(typeof(BiografienContext))]
-    partial class BiografienContextModelSnapshot : ModelSnapshot
+    [Migration("20210318233106_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

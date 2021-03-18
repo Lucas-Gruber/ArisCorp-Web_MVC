@@ -3,16 +3,14 @@ using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArisCorpWeb.Migrations.Alienrassen
+namespace ArisCorpWeb.Migrations
 {
     [DbContext(typeof(AlienrassenContext))]
-    [Migration("20210315160315_IntialCreate")]
-    partial class IntialCreate
+    partial class AlienrassenContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

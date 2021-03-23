@@ -9,10 +9,11 @@ namespace ArisCorpWeb.Models
 {
     public class Biografien
     {
+        //Biografie Seite
         public string Id { get; set; }
         public string Mitglied { get; set; }
         public string Titel { get; set; }
-        public string Picture { get; set; }
+        public string Potrait { get; set; }
 
         [DataType(DataType.Html)]
         public string Content1 { get; set; }
@@ -25,5 +26,12 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string Content4 { get; set; }
+
+        //Biografie Homepage
+        public string HomepageName { get; set; }
+        public string HomepageRolle { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Link { get; set; }
     }
 }

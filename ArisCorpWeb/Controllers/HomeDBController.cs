@@ -10,22 +10,22 @@ using ArisCorpWeb.Models;
 
 namespace ArisCorpWeb.Controllers
 {
-    public class AlienrassenController : Controller
+    public class HomeDBController : Controller
     {
-        private readonly AlienrassenContext _context;
+        private readonly HomeDBContext _context;
 
-        public AlienrassenController(AlienrassenContext context)
+        public HomeDBController(HomeDBContext context)
         {
             _context = context;
         }
 
-        // GET: Alienrassen
+        // GET: HomeDB
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alienrassen.ToListAsync());
+            return View(await _context.Home.ToListAsync());
         }
 
-        // GET: Alienrassen/Details/5
+        // GET: HomeDB/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen
+            var homeDB = await _context.Home
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (alienrassen == null)
+            if (homeDB == null)
             {
                 return NotFound();
             }
 
-            return View(alienrassen);
+            return View(homeDB);
         }
 
-        // GET: Alienrassen/Create
+        // GET: HomeDB/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Alienrassen/Create
+        // POST: HomeDB/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rasse,PictureEinleitung,PictureGeschichte,PictureHeimatwelt,PicturePolitik,PictureDiplomatie,PictureSprache,PictureReligion,PictureMilitar,PictureKriminalitat,PictureKultur,PictureBesuch,PictureSicherheit,Einleitung,Geschichte,Heimatwelt,Politik,Diplomatie,Sprache,Religion,Militar,Kriminalitat,Kultur,Besuch,Sicherheit")] Alienrassen alienrassen)
+        public async Task<IActionResult> Create([Bind("Id,About,History,Manifest,Charter,Member,Fleet,Partner")] HomeDB homeDB)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(alienrassen);
+                _context.Add(homeDB);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(alienrassen);
+            return View(homeDB);
         }
 
-        // GET: Alienrassen/Edit/5
+        // GET: HomeDB/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen.FindAsync(id);
-            if (alienrassen == null)
+            var homeDB = await _context.Home.FindAsync(id);
+            if (homeDB == null)
             {
                 return NotFound();
             }
-            return View(alienrassen);
+            return View(homeDB);
         }
 
-        // POST: Alienrassen/Edit/5
+        // POST: HomeDB/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Rasse,PictureEinleitung,PictureGeschichte,PictureHeimatwelt,PicturePolitik,PictureDiplomatie,PictureSprache,PictureReligion,PictureMilitar,PictureKriminalitat,PictureKultur,PictureBesuch,PictureSicherheit,Einleitung,Geschichte,Heimatwelt,Politik,Diplomatie,Sprache,Religion,Militar,Kriminalitat,Kultur,Besuch,Sicherheit")] Alienrassen alienrassen)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,About,History,Manifest,Charter,Member,Fleet,Partner")] HomeDB homeDB)
         {
-            if (id != alienrassen.Id)
+            if (id != homeDB.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace ArisCorpWeb.Controllers
             {
                 try
                 {
-                    _context.Update(alienrassen);
+                    _context.Update(homeDB);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlienrassenExists(alienrassen.Id))
+                    if (!HomeDBExists(homeDB.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace ArisCorpWeb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(alienrassen);
+            return View(homeDB);
         }
 
-        // GET: Alienrassen/Delete/5
+        // GET: HomeDB/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _context.Alienrassen
+            var homeDB = await _context.Home
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (alienrassen == null)
+            if (homeDB == null)
             {
                 return NotFound();
             }
 
-            return View(alienrassen);
+            return View(homeDB);
         }
 
-        // POST: Alienrassen/Delete/5
+        // POST: HomeDB/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var alienrassen = await _context.Alienrassen.FindAsync(id);
-            _context.Alienrassen.Remove(alienrassen);
+            var homeDB = await _context.Home.FindAsync(id);
+            _context.Home.Remove(homeDB);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlienrassenExists(string id)
+        private bool HomeDBExists(string id)
         {
-            return _context.Alienrassen.Any(e => e.Id == id);
+            return _context.Home.Any(e => e.Id == id);
         }
     }
 }

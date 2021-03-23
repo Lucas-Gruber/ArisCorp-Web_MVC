@@ -39,6 +39,9 @@ namespace ArisCorpWeb
 
             services.AddDbContext<TechnologienContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
+
+            services.AddDbContext<HomeDBContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210319220931_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210319220931_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\assets\js\starmap.js" />
     <Content Remove="wwwroot\assets\js\technologien.js" />
     <Content Remove="wwwroot\xiansvg.cshtml" />

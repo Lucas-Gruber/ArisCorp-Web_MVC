@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ArisCorpWeb.Migrations.Systeme
 {
-    [DbContext(typeof(SystemeContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     partial class SystemeContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

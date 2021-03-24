@@ -12,9 +12,9 @@ namespace ArisCorpWeb.Controllers
 {
     public class AlienrassenController : Controller
     {
-        private readonly AlienrassenContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public AlienrassenController(AlienrassenContext context)
+        public AlienrassenController(ApplicationDBContext context)
         {
             _context = context;
         }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ArisCorpWeb.Migrations.Biografien
 {
-    [DbContext(typeof(BiografienContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     partial class BiografienContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -23,25 +23,28 @@ namespace ArisCorpWeb.Migrations.Biografien
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Content1")
+                    b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Content2")
+                    b.Property<string>("HomepageRolle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Content3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Content4")
+                    b.Property<string>("Link")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Mitglied")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Picture")
+                    b.Property<string>("Potrait")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Steckbrief")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Titel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Zusatz")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

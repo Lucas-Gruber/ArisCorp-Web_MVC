@@ -12,15 +12,15 @@ namespace ArisCorpWeb.Controllers
 {
     public class TechnologienController : Controller
     {
-        private readonly TechnologienContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public TechnologienController(TechnologienContext context)
+        public TechnologienController(ApplicationDBContext context)
         {
             _context = context;
         }
 
         // GET: Technologien
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> List()
         {
             return View(await _context.Technologien.ToListAsync());
         }

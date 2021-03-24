@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ArisCorpWeb.Migrations.Technologien
 {
-    [DbContext(typeof(TechnologienContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     [Migration("20210318233231_InitialCreate")]
     partial class InitialCreate
     {

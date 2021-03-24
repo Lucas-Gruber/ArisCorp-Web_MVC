@@ -12,9 +12,9 @@ namespace ArisCorpWeb.Controllers
 {
     public class SystemeController : Controller
     {
-        private readonly SystemeContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public SystemeController(SystemeContext context)
+        public SystemeController(ApplicationDBContext context)
         {
             _context = context;
         }

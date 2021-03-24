@@ -51,14 +51,10 @@ namespace ArisCorpWeb.Controllers
             return View("TechnologienList");
         }
 
-        private readonly AlienrassenContext _Acontext;
-        private readonly SystemeContext _Scontext;
-        private readonly TechnologienContext _Tcontext;
-        public VerseExkursController(AlienrassenContext Acontext, SystemeContext Scontext, TechnologienContext Tcontext)
+        private readonly ApplicationDBContext _context;
+        public VerseExkursController(ApplicationDBContext context)
         {
-            _Acontext = Acontext;
-            _Scontext = Scontext;
-            _Tcontext = Tcontext;
+            _context = context;
         }
 
         [Route("VerseExkurs/Alienrassen/{id}")]
@@ -69,7 +65,7 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var alienrassen = await _Acontext.Alienrassen
+            var alienrassen = await _context.Alienrassen
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (alienrassen == null)
             {
@@ -87,7 +83,7 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var systeme = await _Scontext.Systeme
+            var systeme = await _context.Systeme
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (systeme == null)
             {
@@ -105,7 +101,7 @@ namespace ArisCorpWeb.Controllers
                 return NotFound();
             }
 
-            var technologien = await _Tcontext.Technologien
+            var technologien = await _context.Technologien
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (technologien == null)
             {

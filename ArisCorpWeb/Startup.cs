@@ -28,16 +28,7 @@ namespace ArisCorpWeb
             
             services.AddControllersWithViews();
 
-            services.AddDbContext<BiografienContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
-
-            services.AddDbContext<AlienrassenContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
-
-            services.AddDbContext<SystemeContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
-
-            services.AddDbContext<TechnologienContext>(options =>
+            services.AddDbContext<ApplicationDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
 
             services.AddCoreAdmin();

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ArisCorpWeb.Migrations
 {
-    [DbContext(typeof(AlienrassenContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     partial class AlienrassenContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

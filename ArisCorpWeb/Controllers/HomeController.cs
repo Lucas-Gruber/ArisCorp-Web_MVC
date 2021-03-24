@@ -9,28 +9,29 @@ using ArisCorpWeb.Models;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ArisCorpWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDBContext _context;
 
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDBContext context)
         {
-            _logger = logger;
+            _context = context;
+        }
+        public IActionResult List()
+        {
+            //var data = _bdb.Biografien.ToList();
+            return View(_context.Biografien.ToList());
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+
+        public async Task<IActionResult> Index()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(await _context.Biografien.ToListAsync());
         }
     }
 }

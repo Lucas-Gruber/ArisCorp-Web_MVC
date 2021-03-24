@@ -18,9 +18,9 @@ namespace ArisCorpWeb.Controllers
             return View();
         }
 
-        private readonly BiografienContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public BiografienController(BiografienContext context)
+        public BiografienController(ApplicationDBContext context)
         {
             _context = context;
         }

@@ -20,7 +20,7 @@
     <div class="row medium-margin tab-manifesto">
         <div class="col-md-11">
             <h2 class="short-hr-left">Bio von @Html.DisplayFor(model => model.Titel)</h2>
-            <img src="@Html.DisplayFor(model => model.Potrait)" alt="Potrait von @Html.DisplayFor(model => model.Mitglied)" style="float: right;" />
+            <img src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(model => model.Titel)" style="float: right;">
 
             <div style="font-size: 75%;">
                 <span>@Html.DisplayFor(model => model.Steckbrief)</span>

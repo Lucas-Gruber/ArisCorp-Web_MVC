@@ -27,5 +27,8 @@ namespace ArisCorpWeb.Models
         
         //Biografie Homepage
         public string HomepageRolle { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Link { get; set; }
     }
 }

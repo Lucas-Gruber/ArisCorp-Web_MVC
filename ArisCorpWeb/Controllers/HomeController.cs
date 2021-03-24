@@ -6,45 +6,32 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ArisCorpWeb.Models;
-<<<<<<< HEAD:ArisCorpWeb/Controllers/HomeController.cs
 using System.Data.SqlClient;
-=======
->>>>>>> alpha:WebTest1/Controllers/HomeController.cs
+using Microsoft.EntityFrameworkCore;
+using ArisCorpWeb.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ArisCorpWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ApplicationDBContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDBContext context)
         {
-            _logger = logger;
+            _context = context;
+        }
+        public IActionResult List()
+        {
+            //var data = _bdb.Biografien.ToList();
+            return View(_context.Biografien.ToList());
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        private void FetchData()
-        {
-        }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(await _context.Biografien.ToListAsync());
         }
     }
 }

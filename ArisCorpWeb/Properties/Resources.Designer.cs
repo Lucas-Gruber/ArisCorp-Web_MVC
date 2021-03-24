@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArisCorpWeb.Properties {
+namespace Resources {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace ArisCorpWeb.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ArisCorpWeb.Properties {
         ///   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ArisCorpWeb.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace ArisCorpWeb.Properties {
         ///   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,204 @@ namespace ArisCorpWeb.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Data Source=Gaming-PC;database=&quot;ArisCorpWebsite&quot;;Integrated Security=True ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;cat&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512.363 512.363&quot; class=&quot;svg-inline--fa fa-cat fa-w-16 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M255.52,445.61c-29.61,32.63-66.37,48.51-110.73,42.4-44.19-6.09-75-31.38-95-70.71,2.1-2.65,5.28-2.7,8-3.75l7.88-3c20,41.1,59,59.49,84.45,59.92V402.29a23.25,23.25,0,0,1,4.76,0c13.13,3,26.81-2.54,35.26-13.21a36.21,36.21,0,0,0,7.64-19.81c.7 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
-        internal static string ConnectionString2 {
+        public static string alien_logo_svg {
             get {
-                return ResourceManager.GetString("ConnectionString2", resourceCulture);
+                return ResourceManager.GetString("alien_logo_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M279.25,511.81c-1.66-2.23-4.51-2.49-6.66-4-2.93-2-3.37-2.73-1.06-4.95a41.7,41.7,0,0,1,5-3.91c.36-.25,1.13,0,1.69.13s.86.54,1.27.52c.95-.05,2.57-.08,2.7-.49a5.7,5.7,0,0,0-.24-3.33c-.4 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string banu_head_svg {
+            get {
+                return ResourceManager.GetString("banu_head_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M.19,265c2.91-.11,5.57,1.4,8.58,1.08,2.82-.29,5.46,1.33,8.17,1.73,1.91.28,3.9,1.13,6.19.36,1.93-.65,4.64-.93,6.24,1.52a.76.76,0,0,0,.33.25c2.75-2.62,5.46.16,8.19.16,1.81,0,.76-2.18,2 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string biestarium_head_svg {
+            get {
+                return ResourceManager.GetString("biestarium_head_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;space-station-moon-alt&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 219.151 219.151&quot;
+        ///                     class=&quot;svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                        &lt;path fill=&quot;currentColor&quot;
+        ///                              [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_back_svg {
+            get {
+                return ResourceManager.GetString("nav_back_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;space-station-moon-alt&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 512 512&quot;
+        ///                     height=&quot;512&quot;
+        ///                     class=&quot;svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                        &lt;path fill=&quot;currentColor&quot;
+        ///   [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_firma_svg {
+            get {
+                return ResourceManager.GetString("nav_firma_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;cat&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 512.363 512.363&quot;
+        ///                     class=&quot;svg-inline--fa fa-cat fa-w-16 fa-9x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                        &lt;path fill=&quot;currentColor&quot;
+        ///                              d=&quot;m439.581 72.204h24.832c10.084 0 18 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_history_svg {
+            get {
+                return ResourceManager.GetString("nav_history_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;space-shuttle&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 512 512&quot;
+        ///                     class=&quot;svg-inline--fa fa-space-shuttle fa-w-20 fa-5x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                        &lt;path fill=&quot;currentColor&quot;
+        ///                              d=&quot;M166.07,291.13c0-2,0-2 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_starmap_svg {
+            get {
+                return ResourceManager.GetString("nav_starmap_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;space-station-moon-alt&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 24 24&quot;
+        ///                     class=&quot;svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                        &lt;path fill=&quot;currentColor&quot;
+        ///                              d=&quot;M8.75  [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_tech_svg {
+            get {
+                return ResourceManager.GetString("nav_tech_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-primary&quot; d=&quot;M172.58,61V451.59c-9.67-5.07-18.78-9.29-27.32-14.45a199.89,199.89,0,0,1-44.86-36.75C89.12,388,78.93,374.77,71.06,359.9c-3.21-6-5.81-12.44-9.18-18.4-3.53-6.25-4.56-12.72-4.53-19.83q.28- [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_uee_sub_svg {
+            get {
+                return ResourceManager.GetString("nav_uee_sub_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
+        ///                     focusable=&quot;false&quot;
+        ///                     data-prefix=&quot;fad&quot;
+        ///                     data-icon=&quot;space-station-moon-alt&quot;
+        ///                     role=&quot;img&quot;
+        ///                     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     viewBox=&quot;0 0 512 512&quot;
+        ///                     height=&quot;512&quot;
+        ///                     class=&quot;svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x&quot;&gt;
+        ///                    &lt;g class=&quot;fa-group&quot;&gt;
+        ///                            &lt;path fill=&quot;currentColor&quot; [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string nav_uee_svg {
+            get {
+                return ResourceManager.GetString("nav_uee_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M325,291.51c-13.33,12.65-13.44,11.95-13.31,11.3.9-4.29-1.59-7.41-3.74-10.59-1.5-2.22-4.16-2.86-6.46-3.86-2.46-1.08-3.81-2.82-5.12-5.14-1.42-2.53-.65-4.28.72-6.05a18.79,18.79,0,0,1,6- [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string tevarin_head_svg {
+            get {
+                return ResourceManager.GetString("tevarin_head_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M-.1,234.31H.41c1.42-.13,3,.51,4.13-1,1.07,1.08,2.11,2.2,3.24,3.22A2.55,2.55,0,0,0,12,236c.33-.52.44-1.17.74-1.72,1.55-2.91,2.9-3.73,5.76-2.92,1.19.34,2.41,1.7,3.5.63a7.12,7.12,0,0,0 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string vanduul_head_svg {
+            get {
+                return ResourceManager.GetString("vanduul_head_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
+        ///  &lt;g class=&quot;fa-group&quot;&gt;
+        ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M218.31,215.1c4-.12,4-.12,7.83-2.16,4,2.41,8.43,4.33,9.93,9.45-2,2-3.71-.25-5.33-.57-4.4-.86-12.62-1.34-16.18.24a27.7,27.7,0,0,0-4.56,3.15,46,46,0,0,0,.05,5.3,29.19,29.19,0,0,0,1.27, [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string xian_head_svg {
+            get {
+                return ResourceManager.GetString("xian_head_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        public static byte[] xiansvg {
+            get {
+                object obj = ResourceManager.GetObject("xiansvg", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

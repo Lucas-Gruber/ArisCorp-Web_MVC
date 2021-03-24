@@ -1,0 +1,109 @@
+﻿@model ArisCorpWeb.Models.Alienrassen
+
+@{
+    ViewData["Title"] = "Alienrassen: " + Model.Rasse;
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">ALIENRASSE: <span class="coloredaris">@Html.DisplayFor(model => model.Rasse)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @Html.DisplayFor(model => model.PictureEinleitung)
+            <h2 class="short-hr-left">Excurs - Alienrasse: @Html.DisplayFor(model => model.Rasse)</h2>
+
+            <div class="nasa">
+
+                <span>@Html.DisplayFor(model => model.Einleitung)</span>
+
+
+                @Html.DisplayFor(model => model.PictureGeschichte)
+
+                <span>@Html.DisplayFor(model => model.Geschichte)</span>
+
+
+                @Html.DisplayFor(model => model.PictureHeimatwelt)
+
+                <span>@Html.DisplayFor(model => model.Heimatwelt)</span>
+
+
+                @Html.DisplayFor(model => model.PicturePolitik)
+
+                <span>@Html.DisplayFor(model => model.Politik)</span>
+
+
+                @Html.DisplayFor(model => model.PictureDiplomatie)
+
+                <span>@Html.DisplayFor(model => model.Diplomatie)</span>
+
+
+                @Html.DisplayFor(model => model.PictureSprache)
+
+                <span>@Html.DisplayFor(model => model.Sprache)</span>
+
+
+                @Html.DisplayFor(model => model.PictureReligion)
+
+                <span>@Html.DisplayFor(model => model.Religion)</span>
+
+
+                @Html.DisplayFor(model => model.PictureMilitar)
+
+                <span>@Html.DisplayFor(model => model.Militar)</span>
+
+
+                @Html.DisplayFor(model => model.PictureKriminalitat)
+
+                <span>@Html.DisplayFor(model => model.Kriminalitat)</span>
+
+
+                @Html.DisplayFor(model => model.PictureKultur)
+
+                <span>@Html.DisplayFor(model => model.Kultur)</span>
+
+
+                @Html.DisplayFor(model => model.PictureBesuch)
+
+                <span>@Html.DisplayFor(model => model.Besuch)</span>
+
+
+                @Html.DisplayFor(model => model.PictureSicherheit)
+
+                <span>@Html.DisplayFor(model => model.Sicherheit)</span>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .diplomatie-rasse {
+        font-style: oblique;
+        width: 115px;
+    }
+
+    @@font-face {
+        font-family: 'Banu-reg';
+        src: url('/assets/fonts/Banu-Regular.otf');
+    }
+
+    @@font-face {
+        font-family: 'XiAn-reg';
+        src: url('/assets/fonts/xiinthlea-Regular.otf');
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $(".nasa").toggleClass("@Html.DisplayFor(model => model.Rasse)");
+        });
+    });
+</script>

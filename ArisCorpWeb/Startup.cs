@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ArisCorpWeb.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArisCorpWeb
 {
@@ -23,8 +25,13 @@ namespace ArisCorpWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllersWithViews();
-            // services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            services.AddDbContext<ApplicationDBContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
+
+            services.AddCoreAdmin();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,11 +57,10 @@ namespace ArisCorpWeb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "systeme",
-                    pattern: "VerseExkurs/systeme/{*system}",
-                    defaults: new { controller = "VerseExkurs", action = "Systeme" });
+                    name: "MyArea",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
-            endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

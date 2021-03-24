@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ArisCorpWeb.Models.Biografien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Mitglied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Steckbrief)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zusatz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomepageRolle)
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mitglied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Steckbrief)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zusatz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomepageRolle)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

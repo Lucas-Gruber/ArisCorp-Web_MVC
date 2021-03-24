@@ -74,4 +74,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Homepage\Data\" />
+    <Folder Include="Areas\Homepage\Models\" />
+    <Folder Include="Areas\VerseExkurs\Data\" />
+  </ItemGroup>
+
 </Project>

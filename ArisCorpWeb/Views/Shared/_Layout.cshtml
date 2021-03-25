@@ -14,12 +14,11 @@
             @RenderSection("Hero")
         </div><!-- Hero Section End -->
     }
-
     <!-- /// Main Container /// -->
     <div class="container">
         @RenderBody()
+        <!--<partial name="_CookieConsentPartial" />-->
     </div>
-
     @Html.Partial("_Footer")
 
     <style>

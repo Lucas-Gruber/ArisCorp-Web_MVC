@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace ArisCorpWeb
 {
@@ -32,6 +33,12 @@ namespace ArisCorpWeb
                     options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
 
             services.AddCoreAdmin();
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +60,9 @@ namespace ArisCorpWeb
             app.UseRouting();
 
             app.UseAuthorization();
-            
+
+            app.UseCookiePolicy();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -64,21 +73,6 @@ namespace ArisCorpWeb
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            /**app.UseMvc(routes =>
-            {
-
-            routes.MapRoute(
-                name: "Systeme",
-                template: "VerseExkurs/Systeme/{System}",
-                defaults:new {controller="VerseExkurs",action= "Systeme" }
-                );
-
-
-            routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            }); **/
         }
     }
 }

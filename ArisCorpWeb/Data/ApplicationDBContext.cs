@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Models;
+using ArisCorpWeb.Data;
 
 namespace ArisCorpWeb.Data
 {

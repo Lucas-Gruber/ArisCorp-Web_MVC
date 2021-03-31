@@ -52,6 +52,11 @@ namespace ArisCorpWeb
                     areaName: "VerseExkurs",
                     pattern: "VerseExkurs/{controller=Home}/{action=Index}/{id?}");
 
+                endpoints.MapAreaControllerRoute(
+                    name: "MyAreaIdentity",
+                    areaName: "Identity",
+                    pattern: "Identity/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

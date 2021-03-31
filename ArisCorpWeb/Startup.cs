@@ -12,6 +12,10 @@ using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using ArisCorpWeb.Handlers;
+using ArisCorpWeb.Services;
 
 namespace ArisCorpWeb
 {
@@ -32,15 +36,30 @@ namespace ArisCorpWeb
 
             services.AddDbContext<ApplicationDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
+            services.AddDbContext<IdentityDBContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
 
-            services.Configure<CookiePolicyOptions>(options =>
+            services.AddDefaultIdentity<IdentityUser>(options =>
             {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+            })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDBContext>();
 
-            services.AddCoreAdmin();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddRazorPages();
+            services.AddMemoryCache();
+
+            services.AddScoped<IDataAccessService, DataAccessService>();
+            services.AddScoped<IAuthorizationHandler, PermissionHandler>();
+            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
+
+            services.AddCoreAdmin("Admin");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +80,7 @@ namespace ArisCorpWeb
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCookiePolicy();
@@ -68,12 +88,18 @@ namespace ArisCorpWeb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "areaRoute",
+                    pattern: "{area:exists}/{controller}/{action}",
+                    defaults: new { action = "Index" });
+
+                /** endpoints.MapControllerRoute(
                     name: "MyArea",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"); */
 
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

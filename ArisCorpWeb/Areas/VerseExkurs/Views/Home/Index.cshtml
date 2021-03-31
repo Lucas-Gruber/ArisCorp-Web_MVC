@@ -2,6 +2,45 @@
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<div class="modal fade" id="popupMaintenanceModal" tabindex="-1" role="dialog" aria-labelledby="titreCentré" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-auto">
+                    <h1 style="font-size: 1.83rem">Verse <span class="coloredaris">Excurs-Disclaimer</span></h1>
+                </div>
+            </div>
+
+            <div class="col-md-11 modal-body">
+                <h2 class="short-hr-left">Der Verse Excurs ist aktuell im Aufbau!</h2>
+                <div>
+
+                    <span>Der Verse Excurs ist eine riesige Datenbank mit allem was das Herz eines Citizen begehrt.</span>
+
+                    <br>
+                    <br>
+
+                    <span>Hier wirst du bald alles finden was Lore angeht! Egal ob du etwas über einzelne Systeme herausfinden möchtest, oder über die Geschichte von 2075 bis Heute, oder einfach über das Leben wie es im UEE.</span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="d-flex flex-grow-1 justify-content-start custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="popupMaintenanceCheckbox" name="checkbox-maintenance" />
+                    <label class="custom-control-label checkbox-maintenance" for="popupMaintenanceCheckbox">Nicht mehr zeigen</label>
+                </div>
+                <button type="button" class="btn btn-maintenance" data-dismiss="modal">Schließen</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<img src="/assets/img/exkurs/util/ARISBannerVerseExkurs.webp" alt="ArisCorp Exkursbanner" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: -5%;" width="75%" />
 <div class="img-gameplays-line">
     <hr class="animation-element extend">
 </div>
@@ -47,3 +86,66 @@
 <div class="img-gameplays-line">
     <hr class="animation-element extend">
 </div>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        if ($.cookie("ariscorp-exkurs-disclaimer-modal")) {
+            $("#popupMaintenanceModal").remove();
+        } else {
+            $("#popupMaintenanceModal").modal("show");
+        }
+
+        $("#popupMaintenanceCheckbox").click(function () {
+            if ($(this).is(":checked")) {
+                $("#popupMaintenanceModal").modal("hide");
+                $.cookie("ariscorp-exkurs-disclaimer-modal", true);
+            } else {
+                $.cookie("ariscorp-exkurs-disclaimer-modal", false);
+            }
+        })
+    });
+</script>
+
+<style>
+    /* texte dans le content du popup */
+    .popupSTMaintenance {
+        font-size: 0.875rem; /* 14px */
+        font-weight: 500;
+    }
+
+    /* Customiser la checkbox */
+    .checkbox-maintenance:before {
+        background-color: #111111;
+        border: 0.1rem solid;
+        border-radius: 0.15rem !important;
+        border-color: #00FFE8 !important;
+    }
+
+    .custom-checkbox .custom-control-input:checked ~ .checkbox-maintenance::before {
+        background-color: #00FFE8;
+        border-color: #00FFE8 !important;
+    }
+
+    /* Taille du texte 'j'ai compris, ne plus afficher ..." */
+    .checkbox-maintenance {
+        font-size: 0.75rem; /*12px*/
+    }
+
+    /* bouton "fermer" */
+    .btn-maintenance {
+        font-size: 0.75rem; /*12px*/
+        font-weight: 500;
+        color: #00FFE8;
+        background-color: #111111;
+        border: 0.1rem solid;
+        border-color: #00FFE8;
+    }
+        /* Quand hover */
+        .btn-maintenance:hover, .btn-maintenance:focus, .btn-maintenance.focus {
+            color: #111111;
+            background-color: #00FFE8;
+            border-color: #00FFE8;
+            box-shadow: none;
+        }
+</style>

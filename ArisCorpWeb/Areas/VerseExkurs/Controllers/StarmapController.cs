@@ -21,9 +21,10 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         }
 
         // GET: VerseExkurs/Starmap
+        [Route("VerseExkurs/Starmap")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Systeme.ToListAsync());
+            return View();
         }
 
         // GET: VerseExkurs/Starmap/5

@@ -13,11 +13,6 @@
   <ItemGroup>
     <Content Remove="wwwroot\assets\js\starmap.js" />
     <Content Remove="wwwroot\assets\js\technologien.js" />
-    <Content Remove="wwwroot\xiansvg.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="wwwroot\xiansvg.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

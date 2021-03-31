@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
     [Area("VerseExkurs")]
-    public class Geschichte : Controller
+    public class GeschichteController : Controller
     {
         [Route("VerseExkurs/Geschichte")]
         public IActionResult Index()

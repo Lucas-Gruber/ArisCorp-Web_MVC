@@ -21,9 +21,10 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         }
 
         // GET: VerseExkurs/Alienrassen
+        [Route("VerseExkurs/Alienrassen")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alienrassen.ToListAsync());
+            return View();
         }
 
         // GET: VerseExkurs/Alienrassen/5

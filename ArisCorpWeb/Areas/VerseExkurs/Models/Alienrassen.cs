@@ -34,6 +34,9 @@ namespace ArisCorpWeb.Models
         public string PictureReligion { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureSozialverhalten { get; set; }
+
+        [DataType(DataType.Html)]
         public string PictureMilitar { get; set; }
 
         [DataType(DataType.Html)]
@@ -68,6 +71,9 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string Religion { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Sozialverhalten { get; set; }
 
         [DataType(DataType.Html)]
         public string Militar { get; set; }

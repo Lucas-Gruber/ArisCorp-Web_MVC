@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Models;
+using ArisCorpWeb.Data;
 
 namespace ArisCorpWeb.Data
 {

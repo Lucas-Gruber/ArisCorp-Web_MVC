@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ArisCorpWeb.Handlers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 

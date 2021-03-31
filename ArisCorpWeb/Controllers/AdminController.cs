@@ -15,7 +15,7 @@ namespace ArisCorpWeb.Controllers
 	[Authorize]
 	public class AdminController : Controller
 	{
-        private readonly UserManager<IdentityUser> _userManager;
+		private readonly UserManager<IdentityUser> _userManager;
 		private readonly RoleManager<IdentityRole> _roleManager;
 		private readonly IDataAccessService _dataAccessService;
 		private readonly ILogger<AdminController> _logger;

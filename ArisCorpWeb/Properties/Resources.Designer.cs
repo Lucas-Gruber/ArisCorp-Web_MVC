@@ -220,6 +220,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        public static string schwerregJS {
+            get {
+                return ResourceManager.GetString("schwerregJS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die $(&apos;#image-map-pro-container&apos;).imageMapPro({ &quot;id&quot;: 466, &quot;editor&quot;: { &quot;selected_shape&quot;: &quot;oval-6533&quot;, &quot;tool&quot;: &quot;select&quot;, &quot;shapeCounter&quot;: { &quot;rects&quot;: 1, &quot;ovals&quot;: 1, &quot;polys&quot;: 2 } }, &quot;general&quot;: { &quot;name&quot;: &quot;Starmap&quot;, &quot;width&quot;: 1200, &quot;height&quot;: 841, &quot;naturalWidth&quot;: 1200, &quot;naturalHeight&quot;: 841 }, &quot;image&quot;: { &quot;url&quot;: &quot;/assets/img/exkurs/util/Starmap.webp&quot; }, &quot;fullscreen&quot;: { &quot;start_in_fullscreen_mode&quot;: 1 }, &quot;shapes&quot;: { &quot;glowing_shapes&quot;: 1, &quot;glowing_shapes_color&quot;: &quot;#428bca&quot;, &quot;glow_opacity&quot;: 0.25555555555555554, &quot;stop_glowing_on [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string starmapJS {
+            get {
+                return ResourceManager.GetString("starmapJS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; data-prefix=&quot;fad&quot; data-icon=&quot;alien-monster&quot; role=&quot;img&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot; height=&quot;50%&quot; style=&quot;margin-left: 0.5rem;&quot; class=&quot;svg-inline--fa fa-alien-monster fa-w-18 fa-9x&quot;&gt;
         ///  &lt;g class=&quot;fa-group&quot;&gt;
         ///    &lt;path fill=&quot;currentColor&quot; class=&quot;fa-secondary&quot; d=&quot;M325,291.51c-13.33,12.65-13.44,11.95-13.31,11.3.9-4.29-1.59-7.41-3.74-10.59-1.5-2.22-4.16-2.86-6.46-3.86-2.46-1.08-3.81-2.82-5.12-5.14-1.42-2.53-.65-4.28.72-6.05a18.79,18.79,0,0,1,6- [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.

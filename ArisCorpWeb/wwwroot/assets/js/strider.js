@@ -4,7 +4,7 @@ $(document).ready(function(){
     // NAVBAR RESIZE FUNCTION
     $(window).scroll( function() {
         var value = $(this).scrollTop();
-        if ( value > $(window).height() * 1 )
+        if ( value > $(window).height() * 0.1 )
             $(".navbar-dark").addClass("scrolled");
         else
             $(".navbar-dark").removeClass("scrolled");

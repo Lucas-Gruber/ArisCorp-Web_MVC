@@ -1,36 +1,336 @@
-﻿@{
+﻿@model ArisCorpWeb.Models.Systeme
+
+@{
     ViewData["Title"] = "System: " + Model.System;
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Starmap";
     ViewData["BackA"] = "Index";
 }
 
-<div class="img-gameplays-line">
-    <hr class="animation-element extend">
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">SYSTEM: <span class="coloredaris">@Html.DisplayFor(model => model.System)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @Html.DisplayFor(model => model.PictureEinleitung)
+            <h2 class="short-hr-left">Exkurs - Alienrasse: @Html.DisplayFor(model => model.System)</h2>
+
+            <div class="nasa">
+
+                <span>@Html.DisplayFor(model => model.Einleitung)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1)
+
+                <span>@Html.DisplayFor(model => model.Content1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content1Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content1Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content1Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content1Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent1Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content1Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2)
+
+                <span>@Html.DisplayFor(model => model.Content2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content2Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content2Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content2Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content2Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent2Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content2Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3)
+
+                <span>@Html.DisplayFor(model => model.Content3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content3Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content3Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content3Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content3Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent3Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content3Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4)
+
+                <span>@Html.DisplayFor(model => model.Content4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content4Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content4Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content4Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content4Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent4Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content4Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5)
+
+                <span>@Html.DisplayFor(model => model.Content5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content5Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content5Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content5Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content5Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent5Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content5Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6)
+
+                <span>@Html.DisplayFor(model => model.Content6)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content6Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content6Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content6Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content6Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent6Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content6Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7)
+
+                <span>@Html.DisplayFor(model => model.Content7)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content7Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content7Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content7Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content7Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent7Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content7Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8)
+
+                <span>@Html.DisplayFor(model => model.Content8)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content8Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content8Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content8Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content8Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent8Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content8Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9)
+
+                <span>@Html.DisplayFor(model => model.Content9)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content9Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content9Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content9Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content9Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent9Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content9Sub5)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10)
+
+                <span>@Html.DisplayFor(model => model.Content10)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10Sub1)
+
+                <span>@Html.DisplayFor(model => model.Content10Sub1)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10Sub2)
+
+                <span>@Html.DisplayFor(model => model.Content10Sub2)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10Sub3)
+
+                <span>@Html.DisplayFor(model => model.Content10Sub3)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10Sub4)
+
+                <span>@Html.DisplayFor(model => model.Content10Sub4)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent10Sub5)
+
+                <span>@Html.DisplayFor(model => model.Content10Sub5)</span>
+
+
+                <span>@Html.DisplayFor(model => model.Reisewarunung)</span>
+
+                <span>@Html.DisplayFor(model => model.FlusternImWind)</span>
+            </div>
+        </div>
+    </div>
 </div>
-
-<h2 style="font-family: 'Nasa'; text-align: center;">Zur Systembeschreibung auf System klicken.</h2>
-
-<img src="/assets/img/exkurs/util/Starmap_Legende.webp" usemap="#image-map3">
-
-<div style="margin-top: 1.2rem"></div>
-
-<link rel="stylesheet" href="/assets/css/image-map-pro.min.css">
-<div id="image-map-pro-container"></div>
-
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/image-map-pro.min.js"></script>
-<script src="/assets/js/starmap.js"></script>
-
-<map name="image-map3">
-    <area target="" alt="Xi'An" title="Xi'An" href="https://www.ariscorp.de/sites/exkurs/aliens/XiAn.php" coords="337,148,300,148,372,61,407,64" shape="poly">
-    <area target="" alt="Vanduul" title="Vanduul" href="https://www.ariscorp.de/sites/exkurs/aliens/Vanduul.php" coords="450,61,410,63,342,147,376,146" shape="poly">
-    <area target="" alt="Banu" title="Banu" href="https://www.ariscorp.de/sites/exkurs/aliens/Banu.php" coords="488,62,451,63,386,142,420,142" shape="poly">
-    <area target="" alt="UEE" title="UEE" href="#" coords="493,64,529,65,462,144,429,141" shape="poly" onclick="ueeRegTab()">
-</map>
-
-<div class="img-gameplays-line">
-    <hr class="animation-element extend">
-</div>
-
-<div style="margin-bottom: 5rem"></div>

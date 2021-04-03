@@ -17,7 +17,23 @@
 
   <ItemGroup>
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
+    <None Include="Views\CoreAdminData\Create.cshtml" />
+    <None Include="Views\CoreAdminData\DeleteEntity.cshtml" />
+    <None Include="Views\CoreAdminData\Edit.cshtml" />
+    <None Include="Views\CoreAdminData\Index.cshtml" />
+    <None Include="Views\CoreAdminHome\Index.cshtml" />
+    <None Include="Views\Shared\Components\CoreAdminMenu\Default.cshtml" />
     <None Include="Views\Shared\Components\NavigationMenu\Default.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\DefaultEntity.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Guid.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <None Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+    <None Include="Views\Shared\MvcGrid\_Pager.cshtml" />
     <None Include="wwwroot\assets\js\technologien.js" />
     <None Include="wwwroot\assets\js\starmap.js" />
     <None Include="wwwroot\assets\js\blazy.min.js" />
@@ -43,8 +59,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CoreAdmin" Version="1.2.0" />
+    <PackageReference Include="DevExpress.Data" Version="20.2.6" />
+    <PackageReference Include="DevExpress.MVC" Version="12.2.0" />
+    <PackageReference Include="iGrid.NET" Version="1.1.0" />
     <PackageReference Include="jQuery.Ajax.Unobtrusive" Version="2.0.20710" />
+    <PackageReference Include="jQWidgets.AspNetCore.Mvc.TagHelpers" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />
@@ -59,6 +78,9 @@
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.10.0" />
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="6.2.4" />
+    <PackageReference Include="NonFactors.Grid.Mvc6" Version="6.2.4" />
+    <PackageReference Include="vue" Version="2.6.11" />
   </ItemGroup>
 
   <ItemGroup>

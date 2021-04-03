@@ -15,6 +15,8 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string Einleitung { get; set; }
+        [DataType(DataType.Html)]
+        public string PictureEinleitung { get; set; }
 
 
         [DataType(DataType.Html)]

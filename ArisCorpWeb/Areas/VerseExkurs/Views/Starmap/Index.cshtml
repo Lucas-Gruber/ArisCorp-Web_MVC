@@ -18,9 +18,14 @@
 <link rel="stylesheet" href="/assets/css/image-map-pro.min.css">
 <div id="image-map-pro-container"></div>
 
-<script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/image-map-pro.min.js"></script>
-<script src="/assets/js/starmap.js"></script>
+<script type="text/javascript">
+        ;(function ($, window, document, undefined) {
+            $(document).ready(function() {
+                @Html.Raw(Resources.Resources.starmapJS)
+            });
+        })(jQuery, window, document);
+</script>
 
 <map name="image-map3">
     <area target="" alt="Xi'An" title="Xi'An" href="https://www.ariscorp.de/sites/exkurs/aliens/XiAn.php" coords="337,148,300,148,372,61,407,64" shape="poly">

@@ -9,8 +9,8 @@ using ArisCorpWeb.Models;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
+using ArisCorpWeb.ViewModels;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using DevExpress.Web.Mvc;
 
 namespace ArisCorpWeb.Controllers
 {

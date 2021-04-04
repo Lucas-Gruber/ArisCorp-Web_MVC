@@ -1,0 +1,116 @@
+﻿@model IEnumerable<ArisCorpWeb.Models.Biografien>
+
+@{
+    ViewData["Title"] = "Alienrassen";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+<div id="aliens" class="" style="border: 1px solid transparent; border-top: none;">
+
+    <a asp-controller="Alienrassen" asp-action="Banu" class="linkc captiontext1hover al">
+        <figure class="captionitem1" height="auto">
+            <img src="/assets/img/exkurs/aliens/BanuEinleitung.webp" class="decklinkimg1" />
+            <figcaption class="captiontext1 captiontext1hover">
+                <h2 style="font-family: BanuFont; font-size: 300%; margin-left: 5%; display: inline; color: white;">BANU</h2>
+            </figcaption>
+        </figure>
+    </a>
+
+    <a asp-controller="Alienrassen" asp-action="Tevarin" class="linkc al">
+        <figure class="captionitem1" height="auto">
+            <img src="/assets/img/exkurs/aliens/TevarinEinleitung.webp" class="decklinkimg1" />
+            <figcaption class="captiontext1 captiontext1hover">
+                <h2 style="font-family: TevarinFont; font-size: 200%; margin-left: 5%; display: inline; color: white;">TEVARIN</h2>
+            </figcaption>
+        </figure>
+    </a>
+
+    <a asp-controller="Alienrassen" asp-action="Vanduul" class="linkc al">
+        <figure class="captionitem1" height="auto">
+            <img src="/assets/img/exkurs/aliens/VanduulEinleitung.webp" class="decklinkimg1" />
+            <figcaption class="captiontext1 captiontext1hover">
+                <h2 style="font-family: VanduulFont; font-size: 300%; margin-left: 5%; display: inline; color: white;">VANDUUL</h2>
+            </figcaption>
+        </figure>
+    </a>
+
+    <a asp-controller="Alienrassen" asp-action="XiAn" class="linkc al">
+        <figure class="captionitem1" height="auto">
+            <img src="/assets/img/exkurs/aliens/XiAnPotrait.webp" class="decklinkimg1" />
+            <figcaption class="captiontext1 captiontext1hover">
+                <h2 style="font-family: XiAnFont; font-size: 300%; margin-left: 5%; display: inline; color: white;">XI'AN</h2>
+            </figcaption>
+        </figure>
+    </a>
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="img-gameplays-line">
+        <hr class="animation-element extend">
+    </div>
+
+    <a asp-controller="Alienrassen" asp-action="Biestarium" class="linkc">
+        <figure class="captionitem1" height="auto" style="float: none;">
+            <img src="/assets/img/exkurs/aliens/Tiere.png" width="400%" height="auto" />
+            <figcaption class="captiontext1 captiontext1hover">
+                <h2 style="font-family: 'Nasa'; font-size: 350%; margin-left: 5%; display: inline; color: white;">BIESTARIUM</h2>
+            </figcaption>
+        </figure>
+    </a>
+    <div class="img-gameplays-line">
+        <hr class="animation-element extend">
+    </div>
+    <style>
+        figure {
+            width: 25%;
+            float: left;
+            margin: 0px;
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .decklinkimg1 {
+            height: 325px;
+        }
+
+        .captiontext1 {
+            text-align: center;
+        }
+
+        .captiontext1hover:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
+
+
+    <style>
+        @@font-face {
+          font-family: BanuFont;
+          src: url(https://www.ariscorp.de/assets/fonts/Alien_lines-banu.ttf);
+        }
+
+        @@font-face {
+          font-family: TevarinFont;
+          src: url(https://www.ariscorp.de/assets/fonts/neuropol-tevarin.ttf);
+        }
+
+        @@font-face {
+          font-family: VanduulFont;
+          src: url(https://www.ariscorp.de/assets/fonts/Dark\ Future\ Italic.ttf);
+        }
+
+        @@font-face {
+          font-family: XiAnFont;
+          src: url(https://www.ariscorp.de/assets/fonts/yonder_recoil-xi-an.ttf);
+        }
+
+    </style>
+
+</div>

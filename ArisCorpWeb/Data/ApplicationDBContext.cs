@@ -20,5 +20,6 @@ namespace ArisCorpWeb.Data
         public DbSet<Alienrassen> Alienrassen { get; set; }
         public DbSet<Systeme> Systeme { get; set; }
         public DbSet<Technologien> Technologien { get; set; }
+        public DbSet<Firmen> Firmen { get; set; }
     }
 }

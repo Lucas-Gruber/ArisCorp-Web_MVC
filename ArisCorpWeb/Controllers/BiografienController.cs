@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
+using ArisCorpWeb.ViewModels;
 
 namespace ArisCorpWeb.Controllers
 {
@@ -15,7 +16,9 @@ namespace ArisCorpWeb.Controllers
         [Route("Biografien")]
         public IActionResult Index()
         {
-            return View();
+            var model = new HomepageViewModel();
+            model.biografien = _context.Biografien.ToList();
+            return View(model);
         }
 
         private readonly ApplicationDBContext _context;

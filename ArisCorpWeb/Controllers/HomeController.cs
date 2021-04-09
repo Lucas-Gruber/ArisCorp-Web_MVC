@@ -18,6 +18,7 @@ namespace ArisCorpWeb.Controllers
     {
         private ApplicationDBContext _context;
 
+
         public HomeController(ApplicationDBContext context)
         {
             _context = context;
@@ -28,9 +29,14 @@ namespace ArisCorpWeb.Controllers
             return View(_context.Biografien.ToList());
         }
 
-        public async Task<IActionResult> Index()
+
+        public IActionResult Index()
         {
-            return View(await _context.Biografien.ToListAsync());
+
+            var model = new HomepageViewModel();
+            model.biografien = _context.Biografien.ToList();
+            model.gameplays = _context.Gameplays.ToList();
+            return View(model);
         }
     }
 }

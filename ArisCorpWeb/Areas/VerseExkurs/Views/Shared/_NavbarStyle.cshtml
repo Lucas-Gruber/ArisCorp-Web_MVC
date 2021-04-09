@@ -14,31 +14,26 @@
     }
     a {
         color: #fff;
-        font-family: Raleway, sans-serif;
         text-decoration: none;
     }
 
         a:visited {
             color: #fff;
-            font-family: Raleway, sans-serif;
             text-decoration: none;
         }
 
         a:hover {
             color: #fff;
-            font-family: Raleway, sans-serif;
             text-decoration: none;
         }
 
         a:active {
             color: #fff;
-            font-family: Raleway, sans-serif;
             text-decoration: none;
         }
 
         a:focus {
             color: #fff;
-            font-family: Raleway, sans-serif;
             text-decoration: none;
         }
 
@@ -59,18 +54,6 @@
         --bg-primary: #23232e;
         --bg-secondary: #141418;
         --transition-speed: 600ms;
-    }
-
-    body::-webkit-scrollbar {
-        width: 0.25rem;
-    }
-
-    body::-webkit-scrollbar-track {
-        background: #1e1e24;
-    }
-
-    body::-webkit-scrollbar-thumb {
-        background: #00ffe8;
     }
 
     .navbar {
@@ -378,6 +361,14 @@
                 $('.fa-alien').toggleClass('fa-spin-0-nota');
             });
         });
+        $(document).ready(function () {
+            $('.sub-firmen-btn > .nav-link').click(function (e) {
+                e.preventDefault();
+                $(this).next('.sub-firmen-menu').slideToggle('slow');
+                $('.fa-firmen').toggleClass('fa-spin-90-nota');
+                $('.fa-firmen').toggleClass('fa-spin-0-nota');
+            });
+        });
 </script>
 
 <style>
@@ -392,6 +383,10 @@
     }
 
     .sub-alien-menu {
+        display: none;
+    }
+
+    .sub-firmen-menu {
         display: none;
     }
 </style>

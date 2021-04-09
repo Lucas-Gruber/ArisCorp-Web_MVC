@@ -8,6 +8,7 @@ namespace ArisCorpWeb.ViewModels
 {
     public class HomepageViewModel
     {
-        public IEnumerable<Biografien> Biografien { get; set; }
+        public IEnumerable<Biografien> biografien { get; set; }
+        public IEnumerable<Gameplays> gameplays { get; set; }
     }
 }

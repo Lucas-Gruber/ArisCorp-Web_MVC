@@ -10,111 +10,134 @@ namespace ArisCorpWeb.Models
     public class Technologien
     {
         public string Id { get; set; }
-        public string Rasse { get; set; }
-        public string Extra1 { get; set; }
-        public string Extra2 { get; set; }
-        public string Extra3 { get; set; }
-        public string Extra4 { get; set; }
-        public string Extra5 { get; set; }
-        public string Picture1 { get; set; }
-        public string Picture2 { get; set; }
-        public string Picture3 { get; set; }
-        public string Picture4 { get; set; }
-        public string Picture5 { get; set; }
-        public string Picture6 { get; set; }
-        public string Picture7 { get; set; }
-        public string Picture8 { get; set; }
-        public string Picture9 { get; set; }
-        public string Picture10 { get; set; }
+        public string Technologie { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Einleitung { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureEinleitung { get; set; }
+
+
 
         [DataType(DataType.Html)]
         public string Content1 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent1 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content2 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent2 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content3 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent3 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content4 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent4 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content5 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent5 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content6 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent6 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content7 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent7 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content8 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent8 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content9 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content10{ get; set; }
+        public string PictureContent9 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content11{ get; set; }
+        public string Content10 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content12{ get; set; }
+        public string PictureContent10 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content13{ get; set; }
+        public string Content11 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content14{ get; set; }
+        public string PictureContent11 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content12 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent12 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content13 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent13 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content14 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent14 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content15 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent15 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content16 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent16 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content17 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent17 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content18 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent18 { get; set; }
 
         [DataType(DataType.Html)]
         public string Content19 { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureContent19 { get; set; }
+
+        [DataType(DataType.Html)]
         public string Content20 { get; set; }
 
         [DataType(DataType.Html)]
-        public string Content21 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content22 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content23 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content24 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content25 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content26 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content27 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content28 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content29 { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Content30 { get; set; }
+        public string PictureContent20 { get; set; }
     }
 }

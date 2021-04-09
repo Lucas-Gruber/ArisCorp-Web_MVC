@@ -340,7 +340,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die $(&apos;#image-map-pro-container&apos;).imageMapPro({&quot;id&quot;:2362,&quot;editor&quot;:{&quot;previewMode&quot;:1,&quot;selected_shape&quot;:&quot;poly-4505&quot;,&quot;tool&quot;:&quot;select&quot;,&quot;shapeCounter&quot;:{&quot;polys&quot;:12}},&quot;general&quot;:{&quot;name&quot;:&quot;Technologie2&quot;,&quot;shortcode&quot;:&quot;Technologie2&quot;,&quot;width&quot;:1825,&quot;height&quot;:635,&quot;naturalWidth&quot;:1825,&quot;naturalHeight&quot;:635},&quot;image&quot;:{&quot;url&quot;:&quot;https://www.ariscorp.de/Schwerreck2.png&quot;},&quot;spots&quot;:[{&quot;id&quot;:&quot;poly-2867&quot;,&quot;title&quot;:&quot;Triebwerke Mount&quot;,&quot;type&quot;:&quot;poly&quot;,&quot;x&quot;:6.119,&quot;y&quot;:38.374,&quot;width&quot;:2.053,&quot;height&quot;:11.447,&quot;x_image_background&quot;:6.146637265711136,&quot;y_image_backgro [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         public static string schwerregJS {
             get {

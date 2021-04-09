@@ -20,6 +20,27 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             _context = context;
         }
 
+        public IActionResult Hersteller()
+        {
+            return View();
+        }
+        public IActionResult Dienstleister()
+        {
+            return View();
+        }
+        public IActionResult Geschäfte()
+        {
+            return View();
+        }
+        public IActionResult Organisationen()
+        {
+            return View();
+        }
+        public IActionResult Verschiedenes()
+        {
+            return View();
+        }
+
         // GET: VerseExkurs/Firmen
         [Route("VerseExkurs/Firmen")]
         public async Task<IActionResult> Index()

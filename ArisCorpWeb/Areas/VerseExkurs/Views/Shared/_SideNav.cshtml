@@ -1,4 +1,5 @@
-﻿<nav class="navbar" style="overflow: hidden">
+﻿<link rel="stylesheet" href="https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/style.css">
+<nav class="navbar" style="overflow: hidden">
     <ul class="navbar-nav">
         <li class="logo">
             <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">
@@ -63,20 +64,20 @@
             <ul class="sub-alien-menu">
                 <a asp-controller="Alienrassen" asp-action="Banu" class="nav-underlink">
                     @Html.Raw(Resources.Resources.banu_head_svg)
-                    <span class="link-text" style="font-family: BanuFont; font-size: 155%;">Banu</span>
+                    <span class="link-text" style="font-family: Alien-Banu; font-size: 155%;">Banu</span>
                 </a>
                 <a asp-controller="Alienrassen" asp-action="Tevarin" class="nav-underlink">
                     @Html.Raw(Resources.Resources.tevarin_head_svg)
-                    <span class="link-text" style="font-family: TevarinFont;">Tevarin</span>
+                    <span class="link-text" style="font-family: Alien-Tevarin;">Tevarin</span>
                 </a>
                 <a asp-controller="Alienrassen" asp-action="Vanduul" class="nav-underlink">
                     @Html.Raw(Resources.Resources.vanduul_head_svg)
-                    <span class="link-text" style="font-family: VanduulFont;">Vanduul</span>
+                    <span class="link-text" style="font-family: Alien-Vanduul;">Vanduul</span>
                 </a>
 
                 <a asp-controller="Alienrassen" asp-action="XiAn" class="nav-underlink">
                     @Html.Raw(Resources.Resources.xian_head_svg)
-                    <span class="link-text" style="font-family: XiAnFont;">Xi'An</span>
+                    <span class="link-text" style="font-family: Alien-XiAn;">Xi'An</span>
                 </a>
                 <a class="nav-underlink-placeholder">
                     <span class="link-text"></span>
@@ -88,11 +89,34 @@
             </ul>
         </li>
 
-        <li class="nav-item">
-            <a asp-action="Firmen" asp-action="Index" class="nav-link">
+        <li class="nav-item sub-firmen-btn">
+            <a asp-action="" class="nav-link">
                 @Html.Raw(Resources.Resources.nav_firma_svg)
                 <span class="link-text">Firmen</span>
+                <i class="fas fa-chevron-right fa-lg fa-spin-0-nota fa-rotate fa-firmen" style="margin-left: 1.5rem;"></i>
             </a>
+            <ul class="sub-firmen-menu">
+                <a asp-controller="Firmen" asp-action="Hersteller" class="nav-underlink">
+                    <span class="arisicon-wrench" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text" >Hersteller</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Dienstleister" class="nav-underlink">
+                    <span class="arisicon-user-tie" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text" >Dienstleister</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Shops" class="nav-underlink">
+                    <span class="arisicon-cart" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Geschäfte</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Organisationen" class="nav-underlink">
+                    <span class="arisicon-tree" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text" >Organisationen</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Verschiedenes" class="nav-underlink">
+                    <span class="arisicon-svg" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text" >Verschiedenes</span>
+                </a>
+            </ul>
         </li>
 
         <li class="nav-item">

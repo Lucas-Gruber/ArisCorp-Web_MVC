@@ -6,7 +6,7 @@
     ViewData["BackA"] = "Index";
     ViewData["BackF"] = "tabs";
 }
-
+<div class="large-margin"></div>
 <div id="bio" class='large-margin'>
     <div class="row heading tiny-margin">
         <div class="col-md-auto">
@@ -16,10 +16,10 @@
             <hr class="animation-element extend">
         </div>
     </div>
-    <div class="row medium-margin tab-manifesto">
+    <div class="row medium-margin">
         <div class="col-md-11"> 
             <h2 class="short-hr-left">Das Mitglied: "@(ViewContext.RouteData.Values["Id"])" wurde nicht gefunden!</h2>
-            <img src="/assets/img/member/Placeholder.webp" alt="@(ViewContext.RouteData.Values["Id"]) Nicht gefunden" style="float: right;" />
+            <img src="/assets/img/member/Placeholder.webp" alt="@(ViewContext.RouteData.Values["Id"]) Nicht gefunden" style="float: right;" class="small-margin"/>
 
             <div>
                 <span>Bio unbekannt.</span>

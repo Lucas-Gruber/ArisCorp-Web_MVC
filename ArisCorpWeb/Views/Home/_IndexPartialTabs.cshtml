@@ -1,5 +1,4 @@
-﻿@model IEnumerable<ArisCorpWeb.Models.Biografien>
-@{
+﻿@{
     var student = ViewData["Me"]
             as ArisCorpWeb.Models.Biografien;
 }
@@ -13,32 +12,7 @@
 <hr class="animation-element extend">
 
 <div id="member" class="tabcontent">
-    <div id="team" class="medium-margin">
-        <div class="row medium-margin">
-            <div id="full-row" class="row text-center">
-                @foreach (var db in Model)
-                {
-                    <div class="col-md-3 team-card">
-                        <figure>
-                            <img src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.Titel)">
-                            <figcaption class="team-caption">
-                                <hr class="hr-short">
-                                <p>“@Html.DisplayFor(modelItem => db.HomepageRolle)“</p>
-                                <hr class="hr-short">
-                                <ul>
-                                    <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => db.Link)">
-                                        <span class="bio-link colored">BIOGRAFIE</span>
-                                    </a>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <p class="team-name">@Html.DisplayFor(modelItem => db.Titel)</p>
-                        <p class="subtle">Mitglied</p>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
+    @Html.Partial("~/Views/Home/Shared/_Members.cshtml")
 </div>
 
 <div id="fleet" class="tabcontent">
@@ -68,16 +42,15 @@
     </p>
 </div>
 <div id="gameplays" class="tabcontent">
-
-    <div class="img-gameplays-line">
-        <hr class="animation-element extend">
+    <div id="accordionGameplays">
+        @Html.Partial("~/Views/Home/Shared/_Gameplays.cshtml")
     </div>
 </div>
-<style>
-    .modal-footer-gameplays {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 1rem;
-    }
-</style>
+    <style>
+        .modal-footer-gameplays {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1rem;
+        }
+    </style>

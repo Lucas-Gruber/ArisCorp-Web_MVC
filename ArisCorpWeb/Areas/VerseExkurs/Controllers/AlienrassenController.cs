@@ -20,6 +20,13 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             _context = context;
         }
 
+        // GET: VerseExkurs/Alienrassen/Biestarium
+        [Route("VerseExkurs/Alienrassen/Biestarium")]
+        public async Task<IActionResult> Biestarium()
+        {
+            return View(await _context.Biestarium.ToListAsync());
+        }
+
         // GET: VerseExkurs/Alienrassen
         [Route("VerseExkurs/Alienrassen")]
         public async Task<IActionResult> Index()

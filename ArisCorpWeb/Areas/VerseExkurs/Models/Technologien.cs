@@ -139,5 +139,65 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string PictureContent20 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content21 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent21 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content22 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent22 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content23 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent23 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content24 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent24 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content25 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent25 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content26 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent26 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content27 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent27 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content28 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent28 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content29 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent29 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content30 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent30 { get; set; }
     }
 }

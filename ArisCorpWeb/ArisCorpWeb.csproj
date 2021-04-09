@@ -65,7 +65,6 @@
     <PackageReference Include="bootstrap" Version="4.6.0" />
     <PackageReference Include="DevExpress.Data" Version="20.2.6" />
     <PackageReference Include="DevExpress.MVC" Version="12.2.0" />
-    <PackageReference Include="Gulp.js" Version="1.0.2" />
     <PackageReference Include="iGrid.NET" Version="1.1.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="3.9.1" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64" Version="3.9.1" />
@@ -80,7 +79,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.13" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.13" />
-    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="3.1.14" />
     <PackageReference Include="Microsoft.ClearScript.V8.Native.linux-arm64" Version="7.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
@@ -129,6 +127,7 @@
     <Folder Include="Areas\Homepage\Data\" />
     <Folder Include="Areas\Homepage\Models\" />
     <Folder Include="Areas\VerseExkurs\Data\" />
+    <Folder Include="wwwroot\assets\img\exkurs\logos\firmen\dienstleister\" />
     <Folder Include="wwwroot\assets\img\gameplays\img\" />
   </ItemGroup>
 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
+using ArisCorpWeb.ViewModels;
 
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
@@ -22,23 +23,36 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 
         public async Task<IActionResult> Hersteller()
         {
-            return View();
+            var model = new FirmenViewModel();
+            model.hersteller_raumschiffe = _context.Firmen_Hersteller_Raumschiffe.ToList();
+            model.hersteller_komponenten = _context.Firmen_Hersteller_Komponenten.ToList();
+            model.hersteller_waffen = _context.Firmen_Hersteller_Waffen.ToList();
+            model.hersteller_personenausrüstung = _context.Firmen_Hersteller_Personenausrüstung.ToList();
+            return View(model);
         }
         public async Task<IActionResult> Dienstleister()
         {
-            return View(await _context.Firmen_Dienstleister.ToListAsync());
+            var model = new FirmenViewModel();
+            model.dienstleister = _context.Firmen_Dienstleister.ToList();
+            return View(model);
         }
         public async Task<IActionResult> Geschäfte()
         {
-            return View();
+            var model = new FirmenViewModel();
+            model.geschäfte = _context.Firmen_Geschäfte.ToList();
+            return View(model);
         }
         public async Task<IActionResult> Organisationen()
         {
-            return View();
+            var model = new FirmenViewModel();
+            model.organisationen = _context.Firmen_Organisationen.ToList();
+            return View(model);
         }
         public async Task<IActionResult> Verschiedenes()
         {
-            return View();
+            var model = new FirmenViewModel();
+            model.verschiedenes = _context.Firmen_Verschiedenes.ToList();
+            return View(model);
         }
 
         // GET: VerseExkurs/Firmen

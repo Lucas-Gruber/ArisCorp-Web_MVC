@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\assets\js\bootstrap - backup.min.js" />
+    <Content Remove="wwwroot\assets\js\jquery-ui.js" />
     <Content Remove="wwwroot\assets\js\starmap.js" />
     <Content Remove="wwwroot\assets\js\technologien.js" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <None Include="Views\Shared\MvcGrid\_Grid.cshtml" />
     <None Include="Views\Shared\MvcGrid\_Pager.cshtml" />
     <None Include="wwwroot\assets\js\bootstrap - backup.min.js" />
+    <None Include="wwwroot\assets\js\jquery-ui.js" />
     <None Include="wwwroot\assets\js\technologien.js" />
     <None Include="wwwroot\assets\js\starmap.js" />
     <None Include="wwwroot\assets\js\blazy.min.js" />
@@ -127,7 +129,6 @@
     <Folder Include="Areas\Homepage\Data\" />
     <Folder Include="Areas\Homepage\Models\" />
     <Folder Include="Areas\VerseExkurs\Data\" />
-    <Folder Include="wwwroot\assets\img\exkurs\logos\firmen\dienstleister\" />
     <Folder Include="wwwroot\assets\img\gameplays\img\" />
   </ItemGroup>
 

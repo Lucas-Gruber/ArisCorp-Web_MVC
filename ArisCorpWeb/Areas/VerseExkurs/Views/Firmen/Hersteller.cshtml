@@ -1,11 +1,100 @@
-﻿@{
-    ViewData["Title"] = "Hersteller";
+﻿@model ArisCorpWeb.ViewModels.FirmenViewModel
+
+@{
+    ViewData["Title"] = "Firmen - Hersteller";
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
 
-<div class="img-gameplays-line">
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+<div id="tabs">
+    <ul>
+        <li><a href="#Raumschiffe_und_Fahrzeuge"><h1>RAUMSCHIFFE & FAHRZEUGE</h1></a></li> <br /><br /><br />
+        <li><a href="#Komponenten"><h1>KOMPONENTEN</h1></a></li>
+        <li><a href="#Waffen"><h1>WAFFEN</h1></a></li>
+        <li><a href="#Personenausruestung"><h1>PERSONENAUSRÜSTUNG</h1></a></li>
+    </ul>
+
+    <div class="img-gameplays-line">
+        <hr class="animation-element extend">
+    </div>
+
+
+    <div id="Raumschiffe_und_Fahrzeuge">
+        <div class="row">
+            @foreach (var model in Model.hersteller_raumschiffe)
+            {
+                <div class="column">
+                    <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="Komponenten">
+        <div class="row">
+            @foreach (var model in Model.hersteller_komponenten)
+            {
+                <div class="column">
+                    <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="Waffen">
+        <div class="row">
+            @foreach (var model in Model.hersteller_waffen)
+            {
+                <div class="column">
+                    <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="Personenausruestung">
+        <div class="row">
+            @foreach (var model in Model.hersteller_personenausrüstung)
+            {
+                <div class="column">
+                    <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="img-gameplays-line show">
     <hr class="animation-element extend">
 </div>
 
+
+<style>
+    /* The grid: Four equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+            .column img:hover {
+                opacity: 1;
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ArisCorpWeb.Models.Firmen_Dienstleister>
+﻿@model ArisCorpWeb.ViewModels.FirmenViewModel
 
 @{
     ViewData["Title"] = "Dienstleister";
@@ -12,10 +12,10 @@
 </div>
 
 <div class="row">
-    @foreach (var model in Model)
+    @foreach (var model in Model.dienstleister)
     {
         <div class="column">
-            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".png")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
         </div>
     }
 </div>

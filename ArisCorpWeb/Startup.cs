@@ -16,6 +16,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using ArisCorpWeb.Handlers;
 using ArisCorpWeb.Services;
+using ShieldUI.AspNetCore.Mvc;
+
+
 
 namespace ArisCorpWeb
 {
@@ -60,6 +63,8 @@ namespace ArisCorpWeb
             services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
 
             services.AddCoreAdmin("Admin");
+
+            services.AddShieldUI();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +89,8 @@ namespace ArisCorpWeb
             app.UseAuthorization();
 
             app.UseCookiePolicy();
+
+            app.UseShieldUI();
 
             app.UseEndpoints(endpoints =>
             {

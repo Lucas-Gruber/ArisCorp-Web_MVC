@@ -324,10 +324,18 @@
 
                 <span>@Html.DisplayFor(model => model.Content10Sub5)</span>
 
-
+            
+                @if (Model.Reisewarunung != null)
+                {
+                    <br><img src="/assets/img/exkurs/util/Tsb.webp">
+                }
+                else
+                { 
+                    
+                }
                 <span>@Html.DisplayFor(model => model.Reisewarunung)</span>
 
-                <span>@Html.DisplayFor(model => model.FlusternImWind)</span>
+                <span class="font-italic">@Html.DisplayFor(model => model.FlusternImWind)</span>
             </div>
         </div>
     </div>

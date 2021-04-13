@@ -19,6 +19,7 @@ namespace ArisCorpWeb.Data
         public DbSet<Biografien> Biografien { get; set; }
         public DbSet<Alienrassen> Alienrassen { get; set; }
         public DbSet<Biestarium> Biestarium { get; set; }
+        public DbSet<Pflanzen> Pflanzen { get; set; }
         public DbSet<Systeme> Systeme { get; set; }
         public DbSet<Technologien> Technologien { get; set; }
         public DbSet<Gameplays> Gameplays { get; set; }

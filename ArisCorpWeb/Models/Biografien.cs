@@ -12,6 +12,8 @@ namespace ArisCorpWeb.Models
     {
         //Biografie Seite
         [ForeignKey("BiografienId")]
+
+        [DataType(DataType.Html)]
         public string Id { get; set; }
         public string Mitglied { get; set; }
         public string Titel { get; set; }
@@ -27,8 +29,5 @@ namespace ArisCorpWeb.Models
         
         //Biografie Homepage
         public string HomepageRolle { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Link { get; set; }
     }
 }

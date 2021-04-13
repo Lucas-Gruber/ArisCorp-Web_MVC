@@ -25,7 +25,7 @@
                     @foreach (var db in Model.biografien)
                     {
                         <div class="col-md-3 team-card">
-                            <a id="figurelink" asp-action="Member" asp-route-id="@Html.DisplayFor(modelItem => db.Link)">
+                            <a id="figurelink" asp-action="Member" asp-route-id="@Html.DisplayFor(modelItem => db.Id)">
                                 <figure>
                                     <img src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.Titel)">
                                 </figure>

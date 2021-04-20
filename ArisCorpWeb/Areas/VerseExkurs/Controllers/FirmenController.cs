@@ -30,6 +30,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             model.hersteller_personenausrüstung = _context.Firmen_Hersteller_Personenausrüstung.ToList();
             return View(model);
         }
+
         public async Task<IActionResult> Dienstleister()
         {
             var model = new FirmenViewModel();

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'ArisIcons';
-    src: url('https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/ArisIcons.eot?3cuvyr');
-    src: url('https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/ArisIcons.eot?3cuvyr#iefix') format('embedded-opentype'), url('https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/ArisIcons.ttf?3cuvyr') format('truetype'), url('https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/ArisIcons.woff?3cuvyr') format('woff'), url('https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/ArisIcons.svg?3cuvyr#ArisIcons') format('svg');
+    src: url('/assets/fonts/ArisIcons.eot?x2zuwr');
+    src: url('/assets/fonts/ArisIcons.eot?x2zuwr#iefix') format('embedded-opentype'), url('/assets/fonts/ArisIcons.ttf?x2zuwr') format('truetype'), url('/assets/fonts/ArisIcons.woff?x2zuwr') format('woff'), url('/assets/fonts/ArisIcons.svg?x2zuwr#ArisIcons') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;

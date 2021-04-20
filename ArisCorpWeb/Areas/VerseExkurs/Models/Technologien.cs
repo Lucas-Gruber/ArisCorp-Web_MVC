@@ -199,5 +199,125 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string PictureContent30 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content31 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent31 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content32 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent32 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content33 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent33 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content34 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent34 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content35 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent35 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content36 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent36 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content37 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent37 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content38 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent38 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content39 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent39 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content40 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent40 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content41 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent41 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content42 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent42 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content43 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent43 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content44 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent44 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content45 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent45 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content46 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent46 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content47 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent47 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content48 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent48 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content49 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent49 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string Content50 { get; set; }
+
+        [DataType(DataType.Html)]
+        public string PictureContent50 { get; set; }
     }
 }

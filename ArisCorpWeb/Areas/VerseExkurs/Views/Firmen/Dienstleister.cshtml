@@ -5,3 +5,13 @@
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
+
+<a class="nav-link" data-toggle="tooltip" title="Über die ArisCorp" onclick="redirectcontact()">test</a>
+
+<script>
+    function redirectcontact() {
+        window.location = "/VerseExkurs/Firmen/Hersteller"; //rom home page to redirect to about.php
+        document.getElementById("tabkomponenten").click(); //command to execute when on about.php
+
+    }
+</script>

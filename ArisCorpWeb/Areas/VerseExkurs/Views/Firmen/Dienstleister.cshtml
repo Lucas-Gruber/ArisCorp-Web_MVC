@@ -1,4 +1,5 @@
-﻿
+﻿@model ArisCorpWeb.ViewModels.FirmenViewModel
+
 @{
     ViewData["Title"] = "Dienstleister";
     ViewData["BackAR"] = "VerseExkurs";
@@ -6,12 +7,44 @@
     ViewData["BackA"] = "Index";
 }
 
-<a class="nav-link" data-toggle="tooltip" title="Über die ArisCorp" onclick="redirectcontact()">test</a>
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
 
-<script>
-    function redirectcontact() {
-        window.location = "/VerseExkurs/Firmen/Hersteller"; //rom home page to redirect to about.php
-        document.getElementById("tabkomponenten").click(); //command to execute when on about.php
-
+<div class="row">
+    @foreach (var model in Model.dienstleister)
+    {
+        <div class="column">
+            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+        </div>
     }
-</script>
+</div>
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+
+
+<style>
+    /* The grid: Four equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+            .column img:hover {
+                opacity: 1;
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

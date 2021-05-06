@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Start\**" />
+    <Content Remove="App_Start\**" />
+    <EmbeddedResource Remove="App_Start\**" />
+    <None Remove="App_Start\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20210319220931_InitialCreate.cs" />
     <Compile Remove="Migrations\20210319220931_InitialCreate.Designer.cs" />
   </ItemGroup>
@@ -95,16 +102,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="6.2.4" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="6.2.4" />
-    <PackageReference Include="React.AspNet" Version="5.2.11" />
-    <PackageReference Include="React.AspNet.Middleware" Version="5.2.11" />
-    <PackageReference Include="React.Core" Version="5.2.11" />
-    <PackageReference Include="React.Router" Version="5.2.11" />
-    <PackageReference Include="React.Router.Mvc4" Version="5.2.11" />
-    <PackageReference Include="React.Web" Version="5.2.11" />
-    <PackageReference Include="React.Web.Mvc4" Version="5.2.11" />
     <PackageReference Include="ShieldUI.AspNetCore.Mvc" Version="1.7.34" />
-    <PackageReference Include="Sitecore.React" Version="2.0.0" />
-    <PackageReference Include="Sitecore.React.Web" Version="2.0.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Web.Optimization.React" Version="5.2.11" />
     <PackageReference Include="vue" Version="2.6.11" />
@@ -130,7 +128,6 @@
     <Folder Include="Areas\Homepage\Data\" />
     <Folder Include="Areas\Homepage\Models\" />
     <Folder Include="Areas\VerseExkurs\Data\" />
-    <Folder Include="App_Start\" />
     <Folder Include="wwwroot\assets\img\gameplays\img\" />
     <Folder Include="wwwroot\lib\shieldui\" />
   </ItemGroup>

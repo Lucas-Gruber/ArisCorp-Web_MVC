@@ -9,6 +9,7 @@ namespace ArisCorpWeb.Models
 {
     public class Firmen_Hersteller_Waffen
     {
+        [DataType(DataType.Html)]
         public string Id { get; set; }
         public string Firma { get; set; }
 

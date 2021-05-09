@@ -104,7 +104,6 @@
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="6.2.4" />
     <PackageReference Include="ShieldUI.AspNetCore.Mvc" Version="1.7.34" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="System.Web.Optimization.React" Version="5.2.11" />
     <PackageReference Include="vue" Version="2.6.11" />
   </ItemGroup>
 

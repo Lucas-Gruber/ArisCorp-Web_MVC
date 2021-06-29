@@ -74,7 +74,7 @@
     <PackageReference Include="bootstrap" Version="4.6.0" />
     <PackageReference Include="DevExpress.Data" Version="20.2.6" />
     <PackageReference Include="DevExpress.MVC" Version="12.2.0" />
-    <PackageReference Include="iGrid.NET" Version="1.1.0" />
+    <PackageReference Include="iGrid.NET" Version="1.2.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="3.9.1" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64" Version="3.9.1" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.win-x64" Version="3.9.1" />
@@ -84,6 +84,7 @@
     <PackageReference Include="jQuery.Ajax.Unobtrusive" Version="2.0.20710" />
     <PackageReference Include="jQWidgets.AspNetCore.Mvc.TagHelpers" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.13" />
@@ -103,6 +104,7 @@
     <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="6.2.4" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="6.2.4" />
     <PackageReference Include="ShieldUI.AspNetCore.Mvc" Version="1.7.34" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="vue" Version="2.6.11" />
   </ItemGroup>

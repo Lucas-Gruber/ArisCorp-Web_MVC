@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
@@ -26,23 +29,37 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             return View(await _context.Technologien.ToListAsync());
         }
 
-        // GET: VerseExkurs/Technologien/5
-        [Route("VerseExkurs/Technologien/{id}")]
-        public async Task<IActionResult> Details(string id)
+        string APIBaseurl = "https://cms.ariscorp.de/";
+        [Route("VerseExkurs/Technologien/{technologie}")]
+        public async Task<ActionResult> Details(string technologie)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            TechnologieRootobject TechnologieInfo = new TechnologieRootobject();
 
-            var technologien = await _context.Technologien
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (technologien == null)
+            using (var client = new HttpClient())
             {
-                return NotFound();
-            }
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
 
-            return View(technologien);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/technologien/" + technologie.Replace("_", "") + "?access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var TechnologieResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    TechnologieInfo = JsonConvert.DeserializeObject<TechnologieRootobject>(TechnologieResponse);
+
+                }
+                //returning the employee list to view  
+                return View(TechnologieInfo.data);
+            }
         }
 
         private bool TechnologienExists(string id)

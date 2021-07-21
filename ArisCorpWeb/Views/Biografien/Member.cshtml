@@ -1,16 +1,17 @@
-﻿@model ArisCorpWeb.Models.Biografien
+﻿@model BiografienAPI
 
 @{
-    ViewData["Title"] = "Biografie: " + Model.Titel;
+    ViewData["Title"] = "Biografie: " + Model.titel;
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
     ViewData["BackF"] = "tabs";
 }
+@addTagHelper *, Westwind.AspNetCore.Markdown
 <div class="large-margin"></div>
 <div id="bio" class='large-margin'>
     <div class="row heading tiny-margin">
         <div class="col-md-auto">
-            <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris">@Html.DisplayFor(model => model.Mitglied)</span></h1>
+            <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris"> @Html.DisplayFor(model => model.titel)</span></h1>
         </div>
         <div class="col">
             <hr class="animation-element extend">
@@ -18,17 +19,13 @@
     </div>
     <div class="row medium-margin">
         <div class="col-md-11">
-            <h2 class="short-hr-left">Bio von @Html.DisplayFor(model => model.Titel)</h2>
-            <img src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(model => model.Titel)" style="float: right;">
+            <h2 class="short-hr-left">Bio von  @Html.DisplayFor(model => model.titel)</h2>
+            <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => model.potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(model => model.titel)" style="float: right;">
+            <div style="font-size: 90%"><markdown markdown="steckbrief" /></div>
 
-            <div style="font-size: 75%;">
-                <span>@Html.DisplayFor(model => model.Steckbrief)</span>
-            </div>
-            <div>
-                <span>@Html.DisplayFor(model => model.Bio)</span>
-
-                <span>@Html.DisplayFor(model => model.Zusatz)</span>
-            </div>
+            <br />
+            <br />
+            <markdown markdown="bio" />
         </div>
     </div>
 </div>

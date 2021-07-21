@@ -320,4 +320,25 @@ namespace ArisCorpWeb.Models
         [DataType(DataType.Html)]
         public string PictureContent50 { get; set; }
     }
+
+
+
+    public class TechnologieRootobject
+    {
+        public TechnologieAPI data { get; set; }
+    }
+
+    public class TechnologieAPI
+    {
+        public string name { get; set; }
+        public string status { get; set; }
+        public object sort { get; set; }
+        public string user_created { get; set; }
+        public DateTime date_created { get; set; }
+        public string user_updated { get; set; }
+        public DateTime date_updated { get; set; }
+        public string text { get; set; }
+        public string technologie_banner { get; set; }
+    }
+
 }

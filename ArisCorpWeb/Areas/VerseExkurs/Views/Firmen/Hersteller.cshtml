@@ -8,61 +8,59 @@
 }
 
 <div id="tabsContainer">
-    @(Html.ShieldTabs()
-          .Name("tabsDiv")
-          .Html(@<text>
-            <ul>
-                <li id="tabschiffe"><h1>RAUMSCHIFFE & FAHRZEUGE</h1></li>
-                <br />
-                <li id="tabkomponenten"><h1>KOMPONENTEN</h1></li>
-                <li id="tabwaffen"><h1>WAFFEN</h1></li>
-                <li id="tabpersonenausruestung"><h1>PERSONENAUSRÜSTUNG</h1></li>
-                <div class="img-gameplays-line">
-                    <hr class="animation-element extend">
-                </div>
-            </ul>
-            <div class="tabcontent">
-                <div class="row">
-                    @foreach (var model in Model.hersteller_raumschiffe)
-                    {
-                        <div class="column">
-                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                        </div>
-                    }
-                </div>
+    
+    <div id="tabsDiv">
+        <ul>
+            <li id="tabschiffe"><h1>RAUMSCHIFFE & FAHRZEUGE</h1></li>
+            <br />
+            <li id="tabkomponenten"><h1>KOMPONENTEN</h1></li>
+            <li id="tabwaffen"><h1>WAFFEN</h1></li>
+            <li id="tabpersonenausruestung"><h1>PERSONENAUSRÜSTUNG</h1></li>
+            <div class="img-gameplays-line">
+                <hr class="animation-element extend">
             </div>
-            <div class="tabcontent">
-                <div class="row">
-                    @foreach (var model in Model.hersteller_komponenten)
-                    {
-                        <div class="column">
-                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                        </div>
-                    }
-                </div>
+        </ul>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var model in Model.hersteller_raumschiffe)
+                {
+                    <div class="column">
+                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                    </div>
+                }
             </div>
-            <div class="tabcontent">
-                <div class="row">
-                    @foreach (var model in Model.hersteller_waffen)
-                    {
-                        <div class="column">
-                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                        </div>
-                    }
-                </div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var model in Model.hersteller_komponenten)
+                {
+                    <div class="column">
+                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                    </div>
+                }
             </div>
-            <div class="tabcontent">
-                <div class="row">
-                    @foreach (var model in Model.hersteller_personenausrüstung)
-                    {
-                        <div class="column">
-                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                        </div>
-                    }
-                </div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var model in Model.hersteller_waffen)
+                {
+                    <div class="column">
+                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                    </div>
+                }
             </div>
-        </text>))
-</div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var model in Model.hersteller_personenausrüstung)
+                {
+                    <div class="column">
+                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div></div>
 <div class="img-gameplays-line show">
     <hr class="animation-element extend">
 </div>
@@ -92,5 +90,10 @@
         content: "";
         display: table;
         clear: both;
+    }
+
+    .sui-tabs-top .sui-tabs-tablist > li h1, .sui-tabs-bottom .sui-tabs-tablist li h1 {
+        font-size: 214%;
+        float: left;
     }
 </style>

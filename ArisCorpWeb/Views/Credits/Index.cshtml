@@ -1,4 +1,7 @@
-﻿@{
+﻿@model CreditsAPI
+@addTagHelper *, Westwind.AspNetCore.Markdown
+
+@{
     ViewData["Title"] = "Credits";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
@@ -7,78 +10,10 @@
 
 <a href="EXCURS"></a><!-- Nav Anchor -->
 <div class="large-margin"></div>
-<div class="row heading tiny-margin">
-    <div class="col-md-auto">
-        <h1 class="animation-element slide-down">CREDITS UND DANKSAGUNG <span class="coloredaris">AN ALLE HELFER UND UNTERSTÜTZER</span></h1>
-    </div>
-    <div class="col">
-        <hr class="animation-element extend">
-    </div>
-</div>
-<div class="row medium-margin">
-    <div class="col-md-11">
-        <div id="team" class="small-margin">
-            <div>
-                <div id="full-row">
-                    <h3></h3>
-                    <li>Awork - Für das kostenlose bereitstellen ihres Planungstools, das die Planung sehr erleichtert hat. <a target="_blank" href="https://awork.io"><img style="height: 40px;" src="https://cdn.awork.io/app/prod/assets/images/visuals/logo-white.svg" alt="Logo von Awork" /></a></li>
-                    <li>Github - Für das tolle Version Control System.<a target="_blank" href="https://github.com"><img style="height: 50px;" src="https://cdn1.vogel.de/Y0oaSrQTCFCwPmj1irm7Wz2XsJI=/fit-in/1200x630/filters:format(png):quality(90)/images.vogel.de/vogelonline/bdb/1286800/1286845/original.jpg" alt="Logo von GitHub" /></a></li>
-                    <li>Und danke an Torlek Maru (ersteller von <a target="_blank" href="https://fleetyards.net">FleetYards.Net</a>) für seine Hilfe mit der API und einigen Tipps! <a target="_blank" href="https://fleetyards.net"><img style="height: 60px;" src="https://fleetyards.net/packs/media/images/logo-home-efafe21f4dffe4d73d91f4c3a1d62fea.png" alt="Logo von FleetYards" /></a></li>
 
-                    <br />
-                    <br />
-                    <div id="ArisCredits">
-                        <h3 class="font-weight-bolder">Und das größte Danke geht raus an unsere fleißigen Helfer aus der ArisCorp!</h3>
-                        <br />
-                        <div class="aris-frame">
-                            <h4>Danke an die fleißigen Mitglieder, die alle Texte nochmal durchgegangen sind und sie Korregiert haben.</h4>
-
-                            <!-- <h4>Danke für die fleißigen Korrekturen von:</h4> -->
-                            <li>Aaron Price</li>
-                            <li>Dr. Med. John Blackwood</li>
-                            <li>Jabea</li>
-                            <li>Match Maker</li>
-                            <li>Will James Douglas</li>
-
-                            <br />
-                            <h4>Und danke für das erstellen der tollen Grafiken von:</h4>
-                            <li>Decon Vorn</li>
-                            <li>Jabea</li>
-                            <div class="image">
-                                <img src="/assets/img/misc/ARISCORPLOGO_1080_.webp" alt="ArisCorp Logo" />
-                            </div>
-
-                            <br />
-                            <br />
-                            <br />
-                            <h4>
-                                Ersteller der Seite:
-                                <br />
-                                <li>Decon Vorn - Autor und Übersetzer der Texte</li>
-                                <li>Thomas Blakeney - Programmierung der Seite</li>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<markdown markdown="credits" />
 
 <style>
-    h4 {
-        font-size: 100%;
-    }
     img {
-        margin-left: 2rem;
+        max-width: 100%;
     }
-    .aris-frame > * {
-        vertical-align: middle;
-    }
-    .aris-frame img {
-        max-width: 300px;
-        margin-top: -100px;
-        top: 50%;
-        float: right;
-    }
-</style>

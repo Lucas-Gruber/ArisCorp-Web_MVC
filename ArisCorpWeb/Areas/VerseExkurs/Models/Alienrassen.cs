@@ -90,4 +90,27 @@ namespace ArisCorpWeb.Models
         [DataType(DataType.Html)]
         public string Sicherheit { get; set; }
     }
+
+
+
+
+
+    public class AlienrassenRootobject
+    {
+        public AlienrassenAPI data { get; set; }
+    }
+
+    public class AlienrassenAPI
+    {
+        public string alienrasse { get; set; }
+        public string status { get; set; }
+        public object sort { get; set; }
+        public string user_created { get; set; }
+        public DateTime date_created { get; set; }
+        public string user_updated { get; set; }
+        public DateTime date_updated { get; set; }
+        public string text { get; set; }
+        public string banner { get; set; }
+    }
+
 }

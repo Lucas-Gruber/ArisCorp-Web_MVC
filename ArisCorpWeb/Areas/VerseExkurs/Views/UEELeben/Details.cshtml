@@ -1,0 +1,35 @@
+﻿@model UEEAPI
+
+@{
+    ViewData["Title"] = Model.titel;
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+@addTagHelper *, Westwind.AspNetCore.Markdown
+<div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+    <div class="img-gameplays-line">
+        <hr class="animation-element extend">
+    </div>
+    <h1 class="short-hr-left">@Html.DisplayFor(model => model.titel)</h1>
+    <markdown markdown="text" />
+    <div class="img-gameplays-line">
+        <hr class="animation-element extend">
+    </div>
+</div>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+
+    ul {
+        list-style-type:;
+        padding:;
+    }
+
+    dl, ol, ul {
+        margin-top:;
+        margin-bottom:;
+    }
+</style>

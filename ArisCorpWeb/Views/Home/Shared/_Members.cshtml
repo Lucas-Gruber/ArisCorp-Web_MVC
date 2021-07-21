@@ -1,24 +1,24 @@
-﻿@model ArisCorpWeb.ViewModels.HomepageViewModel
+﻿@model HomeAPI
 <div id="team" class="medium-margin">
     <div class="row medium-margin">
         <div id="full-row" class="row text-center">
-            @foreach (var db in Model.biografien)
+            @foreach (var api in Model.ariscorp_member)
             {
                 <div class="col-md-3 team-card">
                     <figure>
-                        <img src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.Titel)">
+                        <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => api.potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.titel)">
                         <figcaption class="team-caption">
                             <hr class="hr-short">
-                            <p>“@Html.DisplayFor(modelItem => db.HomepageRolle)“</p>
+                            <p></p>
                             <hr class="hr-short">
                             <ul>
-                                <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => db.Id)">
+                                <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => api.name)">
                                     <span class="font-italic colored">BIOGRAFIE</span>
                                 </a>
                             </ul>
                         </figcaption>
                     </figure>
-                    <p class="team-name">@Html.DisplayFor(modelItem => db.Titel)</p>
+                    <p class="team-name">@Html.DisplayFor(modelItem => api.titel)</p>
                     <p class="subtle">Mitglied</p>
                 </div>
             }

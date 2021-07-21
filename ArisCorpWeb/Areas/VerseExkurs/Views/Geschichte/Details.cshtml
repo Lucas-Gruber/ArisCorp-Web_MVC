@@ -1,0 +1,25 @@
+﻿@model GeschichteAPI
+@addTagHelper *, Westwind.AspNetCore.Markdown
+@{
+    ViewData["Title"] = "Geschichte";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+<link href="/assets/css/tima.css" rel="stylesheet" />
+
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+
+<markdown markdown="text" />
+
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>

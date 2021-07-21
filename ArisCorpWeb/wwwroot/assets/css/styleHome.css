@@ -178,10 +178,10 @@ p {
 
 ul {
     list-style-type: none;
-    padding: 0;
+    /* padding: 0; */
 }
 /* -Margins and Floats- */
-.floated-left {
+    .floated-left {
     float: left;
 }
 

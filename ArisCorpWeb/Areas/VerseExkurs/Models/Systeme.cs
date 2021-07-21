@@ -281,7 +281,7 @@ namespace ArisCorpWeb.Models
 
 
         [DataType(DataType.Html)]
-        public string Content10{ get; set; }
+        public string Content10 { get; set; }
         [DataType(DataType.Html)]
         public string Content10Sub1 { get; set; }
         [DataType(DataType.Html)]
@@ -314,5 +314,27 @@ namespace ArisCorpWeb.Models
 
         [DataType(DataType.Html)]
         public string FlusternImWind { get; set; }
+    }
+
+
+
+
+    public class SystemeRootobject
+    {
+        public SystemeAPI data { get; set; }
+    }
+
+    public class SystemeAPI
+    {
+        public string system_name { get; set; }
+        public string status { get; set; }
+        public object sort { get; set; }
+        public string user_created { get; set; }
+        public DateTime date_created { get; set; }
+        public string user_updated { get; set; }
+        public DateTime date_updated { get; set; }
+        public string text { get; set; }
+        public bool system { get; set; }
+        public string banner { get; set; }
     }
 }

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
@@ -20,19 +23,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             _context = context;
         }
 
-        // GET: VerseExkurs/Alienrassen/Biestarium
-        [Route("VerseExkurs/Alienrassen/Biestarium")]
-        public async Task<IActionResult> Biestarium()
-        {
-            return View(await _context.Biestarium.ToListAsync());
-        }
-        // GET: VerseExkurs/Alienrassen/Pflanzen
-        [Route("VerseExkurs/Alienrassen/Pflanzen")]
-        public async Task<IActionResult> Pflanzen()
-        {
-            return View(await _context.Pflanzen.ToListAsync());
-        }
-
         // GET: VerseExkurs/Alienrassen
         [Route("VerseExkurs/Alienrassen")]
         public async Task<IActionResult> Index()
@@ -40,23 +30,37 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
             return View();
         }
 
-        // GET: VerseExkurs/Alienrassen/5
-        [Route("VerseExkurs/Alienrassen/{id}")]
-        public async Task<IActionResult> Details(string id)
+        string APIBaseurl = "https://cms.ariscorp.de/";
+        [Route("VerseExkurs/Alienrassen/{rasse}")]
+        public async Task<ActionResult> Details(string rasse)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            AlienrassenRootobject AlienrasseInfo = new AlienrassenRootobject();
 
-            var alienrassen = await _context.Alienrassen
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (alienrassen == null)
+            using (var client = new HttpClient())
             {
-                return NotFound();
-            }
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
 
-            return View(alienrassen);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/alienrassen/" + rasse + "?access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AlienrasseResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    AlienrasseInfo = JsonConvert.DeserializeObject<AlienrassenRootobject>(AlienrasseResponse);
+
+                }
+                //returning the employee list to view  
+                return View(AlienrasseInfo.data);
+            }
         }
 
         private bool AlienrassenExists(string id)

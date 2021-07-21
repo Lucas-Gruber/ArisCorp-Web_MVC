@@ -17,22 +17,172 @@
     </div>
     <!-- End Loading Screen -->
 }
-    
+
 
 @section Hero {
 
     <div class="row hero-unit">
         <div class="hero-overlay"></div>
-        <video autoplay loop muted poster="/assets/img/poster.jpg" id="bgvid" class="img-fluid">
-            <source src="/assets/img/bg-vid.mp4" type="video/mp4">
+        <video autoplay loop muted controlsList="nofullscreen nodownload" id="bgvid" class="img-fluid">
+            <source src="https://cms.ariscorp.de/assets/2fe8455b-d879-4703-b81f-2c9485794d93" type='video/webm; codecs="vp8, vorbis"'>
         </video>
-        <div class="hero-caption">
+        <div id="bgvid-fullscreen-fadeout" class="hero-caption">
             <h1>Willkommen <span class="colored">bei der</span></h1>
             <h1><img class="img-fluid" src="/assets/img/misc/aris-banner.webp" alt="Banner"></h1>
+            <div id="cinema-button">
+                <button class="cinemabutton">
+                    <img src="https://cms.ariscorp.de/assets/f40a7c07-5873-41b0-a56b-eb65d023c556" alt="Cinema Button" />
+                    <br />
+                    <span>Zum Kinomodus hier klicken</span>
+                </button>
+            </div>
         </div>
-    </div>
 
+    </div>
 }
+<style>
+    .cinemabutton {
+        background: none;
+        border: none;
+    }
+
+        .cinemabutton img {
+            width: 48px;
+        }
+
+        .cinemabutton span {
+            font-size: 80%;
+            color: white;
+        }
+</style>
+
+<script>
+    var audio = document.getElementById("bgvid");
+    audio.volume = 0;
+</script>
+
+<script>
+    var $video = $('#bgvid');
+    var vid = document.getElementById('bgvid');
+
+
+
+
+    $(document).ready(function () {
+        function sleep(num) {
+            var now = new Date();
+            var stop = now.getTime() + num;
+            while (true) {
+                now = new Date();
+                if (now.getTime() > stop) return;
+            }
+        }
+        $(".cinemabutton").click(function () {
+            // Scroll to top
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            // Stop Video and skip to start
+            function pauseVideo() {
+                $video.trigger('pause');
+                $video.get(0).currentTime = 0;
+            }
+            setTimeout(pauseVideo, 600);
+
+            // Caption and Header fadeout
+            $("#bgvid-fullscreen-fadeout").fadeOut("slow");
+            $("#main-header").fadeOut("slow");
+
+            // Enter fullscreen and resize Video
+            function EnterFullscreenAndResizeVideo() {
+                $video.css({
+                    "height": "100vh"
+                })
+                enableFullscreen();
+            }
+            setTimeout(EnterFullscreenAndResizeVideo, 1400);
+
+            // Enable Controls
+            function EnableControls() {
+                $video.prop('controls', true);
+            }
+            setTimeout(EnableControls, 1700);
+
+            // Start Video and fade Volume
+            function StartVideoAndFadeVolume() {
+                $("#bgvid").prop('muted', false);
+                $video.trigger('play');
+                $video.animate({ volume: 1 }, 15000);
+                $(".hero-overlay").animate({ backgroundColor: "rgba(0,0,0,0)" }, 1000);
+                /*$(".hero-overlay").css({
+                    "background-color": "rgba(0,0,0,0)"
+                })*/
+                $video.css({
+                    "cursor": "pointer"
+                })
+            }
+            setTimeout(StartVideoAndFadeVolume, 2000);
+
+        });
+
+
+        // EXIT CINEMA MODE
+        $video.click(function () {
+            vid.play;
+            $(".hero-overlay").animate({ backgroundColor: "rgba(0,0,0,0.6)" }, 5000);
+            $video.animate({ volume: 0 }, 5000);
+
+            function muteVideo() {
+                $("#bgvid").prop('muted', true);
+                $video.prop('controls', false);
+            }
+            setTimeout(muteVideo, 5000);
+
+            function toggleFullscreen() {
+                disableFullscreen();
+                $video.css({
+                    "height": ""
+                })
+            }
+            setTimeout(toggleFullscreen, 5300);
+
+            function CaptionHeaderFadeIn() {
+                $("#bgvid-fullscreen-fadeout").fadeIn("slow");
+                $("#main-header").fadeIn("slow");
+            }
+            setTimeout(CaptionHeaderFadeIn, 5600);
+
+            $video.css({
+                "cursor": ""
+            })
+        });
+    });
+
+    function enableFullscreen(elem) {
+        elem = elem || document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+    }
+
+    function disableFullscreen(elem) {
+        elem = elem || document.documentElement;
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+</script>
 
 <!-- /// ABOUT SECTION /// -->
 <div id="about" style="padding-top: 60px; margin-top: -60px;"></div>

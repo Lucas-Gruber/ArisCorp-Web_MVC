@@ -1,86 +1,29 @@
-﻿@{
+﻿@model ExkursHomeAPI
+@addTagHelper *, Westwind.AspNetCore.Markdown
+
+@{
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<div class="modal fade" id="popupMaintenanceModal" tabindex="-1" role="dialog" aria-labelledby="titreCentré" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
 
-            <div class="modal-header">
-                <div class="col-md-auto">
-                    <h1 style="font-size: 1.83rem">Verse <span class="coloredaris">Excurs-Disclaimer</span></h1>
-                </div>
-            </div>
+<markdown markdown="text" />
 
-            <div class="col-md-11 modal-body">
-                <h2 class="short-hr-left">Der Verse Excurs ist aktuell im Aufbau!</h2>
-                <div>
-
-                    <span>Der Verse Exkurs ist eine riesige Datenbank mit allem was das Herz eines Citizen begehrt.</span>
-
-                    <br>
-                    <br>
-
-                    <span>Hier wirst du bald alles finden was Lore angeht! Egal ob du etwas über einzelne Systeme herausfinden möchtest, oder über die Geschichte von 2075 bis Heute, oder einfach über das Leben im UEE.</span>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <div class="d-flex flex-grow-1 justify-content-start custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="popupMaintenanceCheckbox" name="checkbox-maintenance" />
-                    <label class="custom-control-label checkbox-maintenance" for="popupMaintenanceCheckbox">Nicht mehr zeigen</label>
-                </div>
-                <button type="button" class="btn btn-maintenance" data-dismiss="modal">Schließen</button>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<img src="/assets/img/exkurs/util/ARISBannerVerseExkurs.webp" alt="ArisCorp Exkursbanner" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: -5%;" width="75%" />
-<div class="img-gameplays-line">
-    <hr class="animation-element extend">
-</div>
-<h2 style="font-family: 'Nasa'">Herzlich Willkommen beim Verse Exkurs der ARIS Corporation!</h2>
-<br>
-
-<span>
-    Die ArisCorp hat es sich neben ihrem finanziellem Erfolg ebenfalls zur Aufgabe gemacht, das Wissen der Menschheit zu erweitern und das Unbekannte zu ergründen. Auch das Vermitteln bestehendem Wissens ohne Komplikationen und Übersichtseinbußen ist für uns von immenser Bedeutung.
-    <br /><br />Aus diesem Grund haben wir den Verse Exkurs ins Leben gerufen. Wir haben eine deutschsprachige Quelle schaffen wollen, die für alle leicht übersichtlich ist. Hier können alle Bürgerinnen und Bürger die wichtigsten Informationen aus 930 Jahren Entwicklung und Geschehnissen nachlesen.
-    <br /><br /><h3>Zu dieser Rubrik zählen:</h3>
-    <li>Unsere Zeittafel von den 2000er Jahren bis ins heutige Jahr 2951</li>
-    <br /><li>Eine vollständige Übersicht des Lebens der Menschen im heutigen UEE</li>
-    <br /><li>Informationen über sämtliche Firmen und Organisationen im Verse</li>
-    <br /><li>Eine interaktive Karte des bekannten Weltraums mit Beschreibungen der Sternensysteme</li>
-    <br /><li>Eine Übersicht zu allen bekannten außerirdischen Rassen, deren Kultur und Leben</li>
-    <br /><li>Ein technischer Guide zu vielen Technologien, die im Verse Verwendung finden</li>
-    <br /><br /><br /><h3>Zusätzlich arbeiten wir an weiteren Dingen wie:</h3>
-    <li>Einer Datenbank für Raumschiffe und Fahrzeuge</li>
-    <br /><li>Einer Flugschule für Anfänger und Fortgeschrittene</li>
-    <br /><li>Weitere ideen sind in der Konzeptphase</li>
-    <br /><br /><br /><br />Sämtliche Inhalte des Verse Exkurses wurden aus Englischsprachigen Original Loreposts von RobertsSpaceIndustries.Com von unserem Team ins Deutsche übersetzt.
-    <br /><br />Als Referenz für unsere Inhalte geben wir folgende Quellen an:
-    <br /><br /><br /><br />
-</span>
+<br />
+<br />
 
 <div class="quellenimg">
-    <a target="_blank" href="https://robertsspaceindustries.com/starmap">
-        <img src="https://www.ariscorp.de/assets/img/excurs/util/Ark.webp" alt="ARK STARMAP" class="decklinkimg">
+    <a id="ark-logo" target="_blank" href="https://robertsspaceindustries.com/starmap">
     </a>
 
-    <a target="_blank" href="https://robertsspaceindustries.com/galactapedia">
-        <img src="https://www.ariscorp.de/assets/img/excurs/util/galaktipedia.webp" alt="Glactapedia" class="decklinkimg">
+    <a id="galactapedia-logo" target="_blank" href="https://robertsspaceindustries.com/galactapedia">
     </a>
 
-    <a target="_blank" href="https://robertsspaceindustries.com/comm-link">
-        <img src="https://www.ariscorp.de/assets/img/excurs/util/Comlink.webp" alt="Comlink" class="decklinkimg">
+    <a id="comm-links-logo" target="_blank" href="https://robertsspaceindustries.com/comm-link">
     </a>
 
-    <a target="_blank" href="https://robertsspaceindustries.com/roadmap/release-view">
-        <img src="https://www.ariscorp.de/assets/img/excurs/util/Roadmap.webp" alt="Roadmap" class="decklinkimg">
+    <a id="roadmap-logo" target="_blank" href="https://robertsspaceindustries.com/roadmap/release-view">
     </a>
 </div>
 <div class="img-gameplays-line">
@@ -104,6 +47,19 @@
                 $.cookie("ariscorp-exkurs-disclaimer-modal", false);
             }
         })
+    });
+
+    $(document).ready(function (e) {
+        $('#ark-logo').load('https://cms.ariscorp.de/assets/8ec4f460-e40b-40a6-93b9-3a8d593082c7');
+    });
+    $(document).ready(function (e) {
+        $('#galactapedia-logo').load('https://cms.ariscorp.de/assets/4bb422c5-5d87-4396-95cd-94f5be5f2df8');
+    });
+    $(document).ready(function (e) {
+        $('#comm-links-logo').load('https://cms.ariscorp.de/assets/9265477c-fe53-4b69-8a61-1c78fbf2d270');
+    });
+    $(document).ready(function (e) {
+        $('#roadmap-logo').load('https://cms.ariscorp.de/assets/7269144e-9975-4d5b-8403-757bf268b920');
     });
 </script>
 
@@ -147,5 +103,14 @@
             background-color: #00FFE8;
             border-color: #00FFE8;
             box-shadow: none;
+        }
+
+    svg.aris-hover-glow {
+        /*width: 400px;*/
+    }
+
+        svg.aris-hover-glow:hover > path {
+            fill: white;
+            filter: url(#aris-glow);
         }
 </style>

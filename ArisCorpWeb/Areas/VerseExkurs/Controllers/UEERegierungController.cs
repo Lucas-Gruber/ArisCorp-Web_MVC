@@ -9,7 +9,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
     [Area("VerseExkurs")]
     public class UEERegierungController : Controller
     {
-        [Route("VerseExkurs/UEE-Regierung")]
+        [Route("VerseExkurs/UEE-reg")]
         public IActionResult Index()
         {
             return View();

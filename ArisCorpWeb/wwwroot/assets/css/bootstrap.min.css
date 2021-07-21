@@ -98,7 +98,7 @@ address {
     line-height: inherit
 }
 
-dl, ol, ul {
+dl, ol {
     margin-top: 0;
     margin-bottom: 1rem
 }
@@ -10169,4 +10169,3 @@ a.text-dark:focus, a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-/*# sourceMappingURL=bootstrap.min.css.map */

@@ -196,10 +196,6 @@ p {
     text-align: right;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
 /* -Margins and Floats- */
 .floated-left {
     float: left;
@@ -1419,11 +1415,11 @@ div.captionitem {
     border-radius: 6px;
   }
 */
-.banu {
+.Banu {
     font-family: 'Banu-reg';
 }
 
-.xian {
+.Xi&#x27;An {
     font-family: 'XiAn-reg';
 }
 

@@ -10,5 +10,8 @@ namespace ArisCorpWeb.ViewModels
     {
         public IEnumerable<Biografien> biografien { get; set; }
         public IEnumerable<Gameplays> gameplays { get; set; }
+
+
+        public IEnumerable<BiografienIndexAPI> biografieindexapi { get; set; }
     }
 }

@@ -123,7 +123,6 @@ html, body {
     font-size: 16px;
     line-height: 1.5rem; /* 24px */
     max-width: 100%;
-    overflow-x: hidden;
     height: 100%;
     margin: 0;
     font-family: Nasa;
@@ -139,6 +138,9 @@ html, body {
     body::-webkit-scrollbar-thumb {
         background: #00ffe8;
     }
+body {
+    overflow-x: hidden;
+}
 /* -Full width fluid container- */
 .full-width {
     padding-left: 0;

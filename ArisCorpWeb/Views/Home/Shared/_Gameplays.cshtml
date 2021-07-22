@@ -1,30 +1,32 @@
 ﻿@model HomeAPI
-@foreach (var api in Model.ariscorp_gameplays)
-{
-    <div class="gameplay-img">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="@Html.Raw("#collapse" + api.gameplay)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + api.gameplay)">
-            <img src="//cms.ariscorp.de/assets/@Html.Raw(api.gameplay_logo)" alt="Gameplay @api.gameplay" class="btn-img img-gameplays">
-        </button>
-    </div>
-}
-<div class="img-gameplays-line">
-    <hr class="animation-element extend in-view">
-</div>
+@addTagHelper *, Westwind.AspNetCore.Markdown
 
-@foreach (var api in Model.ariscorp_gameplays)
-{
-    <div type="button" data-toggle="collapse" data-target="@Html.Raw("#collapse" + api.gameplay)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + api.gameplay)">
-        <div id="@Html.Raw("collapse" + api.gameplay)" class="collapse" aria-labelledby="@Html.Raw("heading" + api.gameplay)" data-parent="#accordionGameplays">
-            <img src="//cms.ariscorp.de/assets/@Html.Raw(api.bild1)" alt="Gameplay: @api.gameplay Screenshot-1" class="gameplay-pic" style="float: left;" />
-            <img src="//cms.ariscorp.de/assets/@Html.Raw(api.bild2)" alt="Gameplay: @api.gameplay Screenshot-2" class="gameplay-pic" style="float: right;" />
-            <div class="card-body">
-                
-                <br /><span class="font-60">*clicken zum schließen</span>
+<div id="accordionGameplays">
+    @foreach (var api in Model.ariscorp_gameplays)
+    {
+        <div class="gameplay-img">
+            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@Html.Raw("#collapse" + api.gameplay)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + api.gameplay)">
+                <img src="//cms.ariscorp.de/assets/@Html.Raw(api.gameplay_logo)" alt="Gameplay @api.gameplay" class="btn-img img-gameplays">
+            </button>
+        </div>
+    }
+    <hr>
+    @foreach (var api in Model.ariscorp_gameplays)
+    {
+        <div type="button" data-bs-toggle="collapse" data-bs-target="@Html.Raw("#collapse" + api.gameplay)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + api.gameplay)">
+            <div id="@Html.Raw("collapse" + api.gameplay)" class="collapse collapse-transition" aria-labelledby="@Html.Raw("collapse")" data-bs-parent="#accordionGameplays">
+                <div>
+                    <img src="//cms.ariscorp.de/assets/@Html.Raw(api.bild1)" alt="Gameplay: @api.gameplay Screenshot-1" class="gameplay-pic" style="float: left;" />
+                    <img src="//cms.ariscorp.de/assets/@Html.Raw(api.bild2)" alt="Gameplay: @api.gameplay Screenshot-2" class="gameplay-pic" style="float: right;" />
+                    <div class="card-body">
+                        <markdown markdown="@api.gameplay_beschreibung" />
+                        <br /><span class="font-60">*clicken zum schließen</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-}
-
+    }
+</div>
 <style>
     .gameplay-pic {
         width: 49%;
@@ -49,10 +51,22 @@
     .img-gameplays {
         width: 140px;
     }
+    .collapsing {
+        height: 0;
+        overflow: hidden;
+    }
+    .collapse-transition {
+        transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+    }
+    .collapsed {
+        transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+    }
 </style>
  <script>
-    var $accordionGameplays = $('#accordionGameplays');
+    /* var $accordionGameplays = $('#accordionGameplays');
     $accordionGameplays.on('show', '.collapse', function () {
         $accordionGameplays.find('.collapse.in').collapse('hide');
-    });
+    }); */
 </script>

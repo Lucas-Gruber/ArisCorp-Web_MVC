@@ -4,12 +4,16 @@
         <div id="full-row" class="row text-center">
             @foreach (var api in Model.ariscorp_member)
             {
+                string[] rollen = api.rollen;
+                string rollenlist = String.Join(", ", rollen);
+                
+                string rollenfinal = rollenlist.Replace("member", "Member").Replace("marketing", "Marketing & Presse").Replace("recruitment", "Rekrutierung");
                 <div class="col-md-3 team-card">
                     <figure>
                         <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => api.potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.titel)">
                         <figcaption class="team-caption">
                             <hr class="hr-short">
-                            <p></p>
+                            <p>“@rollenfinal“</p>
                             <hr class="hr-short">
                             <ul>
                                 <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => api.name)">

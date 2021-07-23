@@ -1,4 +1,4 @@
-﻿@model ArisCorpWeb.ViewModels.FirmenViewModel
+﻿@model IEnumerable<FirmenAPI>
 
 @{
     ViewData["Title"] = "Hersteller";
@@ -22,41 +22,53 @@
         </ul>
         <div class="tabcontent">
             <div class="row">
-                @foreach (var model in Model.hersteller_raumschiffe)
+                @foreach (var api in Model)
                 {
-                    <div class="column">
-                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                    </div>
+                    @if (api.firmenkategorie == "schiffshersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
                 }
             </div>
         </div>
         <div class="tabcontent">
             <div class="row">
-                @foreach (var model in Model.hersteller_komponenten)
+                @foreach (var api in Model)
                 {
-                    <div class="column">
-                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                    </div>
+                    @if (api.firmenkategorie == "komponentenhersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
                 }
             </div>
         </div>
         <div class="tabcontent">
             <div class="row">
-                @foreach (var model in Model.hersteller_waffen)
+                @foreach (var api in Model)
                 {
-                    <div class="column">
-                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                    </div>
+                    @if (api.firmenkategorie == "waffenhersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
                 }
             </div>
         </div>
         <div class="tabcontent">
             <div class="row">
-                @foreach (var model in Model.hersteller_personenausrüstung)
+                @foreach (var api in Model)
                 {
-                    <div class="column">
-                        <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@Html.DisplayFor(modelItem => model.Id)" class="button-ships"><img src="/assets/img/exkurs/logos/@Html.DisplayFor(modelItem => model.Id)@Html.Raw(".webp")" alt="@Html.DisplayFor(modelItem => model.Firma)" style="width:100%" onclick="myFunction(this);"></a>
-                    </div>
+                    @if (api.firmenkategorie == "Personenausruestungshersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
                 }
             </div>
         </div>

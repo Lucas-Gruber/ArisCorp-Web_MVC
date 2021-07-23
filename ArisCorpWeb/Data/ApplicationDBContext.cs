@@ -22,7 +22,6 @@ namespace ArisCorpWeb.Data
         public DbSet<Pflanzen> Pflanzen { get; set; }
         public DbSet<Systeme> Systeme { get; set; }
         public DbSet<Technologien> Technologien { get; set; }
-        public DbSet<Gameplays> Gameplays { get; set; }
 
 
         public DbSet<Firmen_Dienstleister> Firmen_Dienstleister { get; set; }

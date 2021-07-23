@@ -8,161 +8,185 @@ using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
 using ArisCorpWeb.ViewModels;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
     [Area("VerseExkurs")]
     public class FirmenController : Controller
     {
-        private readonly ApplicationDBContext _context;
+        string APIBaseurl = "https://cms.ariscorp.de/";
 
-        public FirmenController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
 
+        //HERSTELLER
+        [Route("VerseExkurs/Firmen/Hersteller")]
         public async Task<IActionResult> Hersteller()
         {
-            var model = new FirmenViewModel();
-            model.hersteller_raumschiffe = _context.Firmen_Hersteller_Raumschiffe.ToList();
-            model.hersteller_komponenten = _context.Firmen_Hersteller_Komponenten.ToList();
-            model.hersteller_waffen = _context.Firmen_Hersteller_Waffen.ToList();
-            model.hersteller_personenausrüstung = _context.Firmen_Hersteller_Personenausrüstung.ToList();
-            return View(model);
+            FirmenRootobject FirmenInfo = new FirmenRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing LiteraturResponse response details recieved from web api   
+                    var FirmenResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    FirmenInfo = JsonConvert.DeserializeObject<FirmenRootobject>(FirmenResponse);
+
+                }
+                //returning the employee list to view  
+                return View(FirmenInfo.data);
+            }
         }
 
+
+        //DIENSTLEISTER
+        [Route("VerseExkurs/Firmen/Dienstleister")]
         public async Task<IActionResult> Dienstleister()
         {
-            var model = new FirmenViewModel();
-            model.dienstleister = _context.Firmen_Dienstleister.ToList();
-            return View(model);
+            FirmenRootobject FirmenInfo = new FirmenRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=dienstleister&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing LiteraturResponse response details recieved from web api   
+                    var FirmenResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    FirmenInfo = JsonConvert.DeserializeObject<FirmenRootobject>(FirmenResponse);
+
+                }
+                //returning the employee list to view  
+                return View(FirmenInfo.data);
+            }
         }
+
+
+        //GESCHÄFTE
+        [Route("VerseExkurs/Firmen/Geschäfte")]
         public async Task<IActionResult> Geschäfte()
         {
-            var model = new FirmenViewModel();
-            model.geschäfte = _context.Firmen_Geschäfte.ToList();
-            return View(model);
+            FirmenRootobject FirmenInfo = new FirmenRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=geschäfte&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing LiteraturResponse response details recieved from web api   
+                    var FirmenResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    FirmenInfo = JsonConvert.DeserializeObject<FirmenRootobject>(FirmenResponse);
+
+                }
+                //returning the employee list to view  
+                return View(FirmenInfo.data);
+            }
         }
+
+
+        //ORGANISATIONEN
+        [Route("VerseExkurs/Firmen/Organisationen")]
         public async Task<IActionResult> Organisationen()
         {
-            var model = new FirmenViewModel();
-            model.organisationen = _context.Firmen_Organisationen.ToList();
-            return View(model);
+            FirmenRootobject FirmenInfo = new FirmenRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=organisation&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing LiteraturResponse response details recieved from web api   
+                    var FirmenResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    FirmenInfo = JsonConvert.DeserializeObject<FirmenRootobject>(FirmenResponse);
+
+                }
+                //returning the employee list to view  
+                return View(FirmenInfo.data);
+            }
         }
+
+
+        //VERSCHIEDENES
+        [Route("VerseExkurs/Firmen/Verschiedenes")]
         public async Task<IActionResult> Verschiedenes()
         {
-            var model = new FirmenViewModel();
-            model.verschiedenes = _context.Firmen_Verschiedenes.ToList();
-            return View(model);
-        }
+            FirmenRootobject FirmenInfo = new FirmenRootobject();
 
-        // GET: VerseExkurs/Firmen
-        [Route("VerseExkurs/Firmen")]
-        public async Task<IActionResult> Index()
-        {
-            return View();
-        }
-
-        // GET: VerseExkurs/Firmen/5
-        [Route("VerseExkurs/Firmen/{id?}")]
-        public async Task<IActionResult> Details(string id)
-        {
-            if (id == null)
+            using (var client = new HttpClient())
             {
-                return View();
-            }
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
 
-            var hersteller_raumschiffe = await _context.Firmen_Hersteller_Raumschiffe
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (hersteller_raumschiffe == null)
-            {
-                var hersteller_komponenten = await _context.Firmen_Hersteller_Komponenten
-                .FirstOrDefaultAsync(m => m.Id == id);
-                if (hersteller_komponenten == null)
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=verschiedenes&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
                 {
-                    var hersteller_waffen = await _context.Firmen_Hersteller_Waffen
-                .FirstOrDefaultAsync(m => m.Id == id);
-                    if (hersteller_waffen == null)
-                    {
-                        var hersteller_personenausrüstung = await _context.Firmen_Hersteller_Personenausrüstung
-                .FirstOrDefaultAsync(m => m.Id == id);
-                        if (hersteller_personenausrüstung == null)
-                        {
-                            var dienstleister = await _context.Firmen_Dienstleister
-                .FirstOrDefaultAsync(m => m.Id == id);
-                            if (dienstleister == null)
-                            {
-                                var geschäfte = await _context.Firmen_Geschäfte
-                .FirstOrDefaultAsync(m => m.Id == id);
-                                if (geschäfte == null)
-                                {
-                                    var organisationen = await _context.Firmen_Organisationen
-                .FirstOrDefaultAsync(m => m.Id == id);
-                                    if (organisationen == null)
-                                    {
-                                        var verschiedenes = await _context.Firmen_Verschiedenes
-                .FirstOrDefaultAsync(m => m.Id == id);
-                                        if (verschiedenes == null)
-                                        {
-                                            return NotFound();
-                                        }
+                    //Storing LiteraturResponse response details recieved from web api   
+                    var FirmenResponse = Res.Content.ReadAsStringAsync().Result;
 
-                                        return View("Details_Verschiedenes", verschiedenes);
-                                    }
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    FirmenInfo = JsonConvert.DeserializeObject<FirmenRootobject>(FirmenResponse);
 
-                                    return View("Details_Organisationen", organisationen);
-                                }
-
-                                return View("Details_Geschäfte", geschäfte);
-                            }
-
-                            return View("Details_Dienstleister", dienstleister);
-                        }
-
-                        return View("Details_Hersteller_Personenausrüstung", hersteller_personenausrüstung);
-                    }
-
-                    return View("Details_Hersteller_Waffen", hersteller_waffen);
                 }
-
-                return View("Details_Hersteller_Komponenten", hersteller_komponenten);
+                //returning the employee list to view  
+                return View(FirmenInfo.data);
             }
-
-            return View("Details_Hersteller_Raumschiffe", hersteller_raumschiffe);
-        }
-        private bool DienstleisterExists(string id)
-        {
-            return _context.Firmen_Dienstleister.Any(e => e.Id == id);
-        }
-        private bool GeschäfteExists(string id)
-        {
-            return _context.Firmen_Geschäfte.Any(e => e.Id == id);
-        }
-        private bool OrganisationenExists(string id)
-        {
-            return _context.Firmen_Organisationen.Any(e => e.Id == id);
-        }
-        private bool VerschiedenesExists(string id)
-        {
-            return _context.Firmen_Verschiedenes.Any(e => e.Id == id);
-        }
-
-
-        private bool HerstellerRaumschiffeExists(string id)
-        {
-            return _context.Firmen_Hersteller_Raumschiffe.Any(e => e.Id == id);
-        }
-        private bool HerstellerKomponentenExists(string id)
-        {
-            return _context.Firmen_Hersteller_Komponenten.Any(e => e.Id == id);
-        }
-        private bool HerstellerWaffenExists(string id)
-        {
-            return _context.Firmen_Hersteller_Waffen.Any(e => e.Id == id);
-        }
-        private bool HerstellerPersonenausrüstungExists(string id)
-        {
-            return _context.Firmen_Hersteller_Personenausrüstung.Any(e => e.Id == id);
         }
     }
 }

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
-
     public class HomeRootobject
     {
         public HomeAPI data { get; set; }
@@ -21,8 +20,8 @@ namespace ArisCorpWeb.Models
         public Ariscorp_History ariscorp_history { get; set; }
         public Ariscorp_Manifest ariscorp_manifest { get; set; }
         public Ariscorp_Charta ariscorp_charta { get; set; }
-        public Ariscorp_Member[] ariscorp_member { get; set; }
         public Ariscorp_Partner[] ariscorp_partner { get; set; }
+        public Ariscorp_Member[] ariscorp_member { get; set; }
         public Ariscorp_Gameplays[] ariscorp_gameplays { get; set; }
     }
 
@@ -68,6 +67,17 @@ namespace ArisCorpWeb.Models
         public string charta { get; set; }
     }
 
+    public class Ariscorp_Partner
+    {
+        public int id { get; set; }
+        public string status { get; set; }
+        public int sort { get; set; }
+        public string date_created { get; set; }
+        public string partner_logo { get; set; }
+        public string partner_name { get; set; }
+        public string partner_website { get; set; }
+    }
+
     public class Ariscorp_Member
     {
         public string name { get; set; }
@@ -84,31 +94,20 @@ namespace ArisCorpWeb.Models
         public string[] rollen { get; set; }
     }
 
-    public class Ariscorp_Partner
+    public class Ariscorp_Gameplays
     {
         public int id { get; set; }
         public string status { get; set; }
         public int sort { get; set; }
-        public string date_created { get; set; }
-        public string partner_logo { get; set; }
-        public string partner_name { get; set; }
-        public string partner_website { get; set; }
-    }
-
-    public class Ariscorp_Gameplays
-    {
-        public string gameplay { get; set; }
-        public string status { get; set; }
-        public int sort { get; set; }
         public string user_created { get; set; }
-        public DateTime date_created { get; set; }
         public string user_updated { get; set; }
-        public DateTime date_updated { get; set; }
-        public string gameplay_beschreibung { get; set; }
-        public string bild1 { get; set; }
-        public string bild2 { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
         public string gameplay_logo { get; set; }
-        public object test { get; set; }
+        public string gameplay_bild_links { get; set; }
+        public string gameplay_bild_rechts { get; set; }
+        public string gameplay_text { get; set; }
+        public string gameplay_name { get; set; }
     }
 
 }

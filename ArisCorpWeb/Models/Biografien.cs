@@ -30,4 +30,9 @@ namespace ArisCorpWeb.Models
         public string[] member_rollen { get; set; }
     }
 
+
+    public class Biografien
+    {
+
+    }
 }

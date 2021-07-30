@@ -1,29 +1,29 @@
-﻿@model  IEnumerable<ArisCorpWeb.Models.Biografien>
-<div id="member" class="tabcontent">
-    <div id="team" class="medium-margin">
-        <div class="row medium-margin">
-            <div id="full-row" class="row text-center">
-                @foreach (var db in Model)
-                {
-                    <div class="col-md-3 team-card">
-                        <figure>
-                            <img src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.Titel)">
-                            <figcaption class="team-caption">
-                                <hr class="hr-short">
-                                <p>“@Html.DisplayFor(modelItem => db.HomepageRolle)“</p>
-                                <hr class="hr-short">
-                                <ul>
-                                    <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => db.Id)">
-                                        <span class="bio-link colored">BIOGRAFIE</span>
-                                    </a>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <p class="team-name">@Html.DisplayFor(modelItem => db.Titel)</p>
-                        <p class="subtle">Mitglied</p>
-                    </div>
-                }
+﻿@model IEnumerable<ArisCorpWeb.Models.Biografien>
+@*<div id="member" class="tabcontent">
+        <div id="team" class="medium-margin">
+            <div class="row medium-margin">
+                <div id="full-row" class="row text-center">
+                    @foreach (var db in Model)
+                    {
+                        <div class="col-md-3 team-card">
+                            <figure>
+                                <img src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(modelItem => db.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.Titel)">
+                                <figcaption class="team-caption">
+                                    <hr class="hr-short">
+                                    <p>“@Html.DisplayFor(modelItem => db.HomepageRolle)“</p>
+                                    <hr class="hr-short">
+                                    <ul>
+                                        <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => db.Id)">
+                                            <span class="bio-link colored">BIOGRAFIE</span>
+                                        </a>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <p class="team-name">@Html.DisplayFor(modelItem => db.Titel)</p>
+                            <p class="subtle">Mitglied</p>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>*@

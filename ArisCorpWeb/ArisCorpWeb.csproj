@@ -21,23 +21,7 @@
 
   <ItemGroup>
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
-    <None Include="Views\CoreAdminData\Create.cshtml" />
-    <None Include="Views\CoreAdminData\DeleteEntity.cshtml" />
-    <None Include="Views\CoreAdminData\Edit.cshtml" />
-    <None Include="Views\CoreAdminData\Index.cshtml" />
-    <None Include="Views\CoreAdminHome\Index.cshtml" />
-    <None Include="Views\Shared\Components\CoreAdminMenu\Default.cshtml" />
     <None Include="Views\Shared\Components\NavigationMenu\Default.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Date.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\DefaultEntity.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Enum.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Guid.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Int32.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <None Include="Views\Shared\MvcGrid\_Grid.cshtml" />
-    <None Include="Views\Shared\MvcGrid\_Pager.cshtml" />
     <None Include="wwwroot\assets\js\bootstrap - backup.min.js" />
     <None Include="wwwroot\assets\js\jquery-ui.js" />
     <None Include="wwwroot\assets\js\technologien.js" />
@@ -65,7 +49,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AdminLTE" Version="2.4.0" />
     <PackageReference Include="bootstrap" Version="4.6.0" />
     <PackageReference Include="DevExpress.Data" Version="20.2.6" />
     <PackageReference Include="DevExpress.MVC" Version="12.2.0" />

@@ -37,27 +37,9 @@ namespace ArisCorpWeb
             
             services.AddControllersWithViews();
 
-            services.AddDefaultIdentity<IdentityUser>(options =>
-            {
-                options.SignIn.RequireConfirmedAccount = true;
-                options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 6;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
-            })
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<IdentityDBContext>();
-
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddMemoryCache();
-
-            services.AddScoped<IDataAccessService, DataAccessService>();
-            services.AddScoped<IAuthorizationHandler, PermissionHandler>();
-            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
-
-            services.AddCoreAdmin("Admin");
 
             services.AddShieldUI();
         }
@@ -80,12 +62,7 @@ namespace ArisCorpWeb
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
-
             app.UseCookiePolicy();
-
-            app.UseShieldUI();
 
             app.UseEndpoints(endpoints =>
             {

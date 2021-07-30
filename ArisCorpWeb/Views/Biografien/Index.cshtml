@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BiografienIndexAPI>
+﻿@model IEnumerable<MemberAPI>
 
 @{
     ViewData["Title"] = "Biografien: Übersicht";
@@ -22,14 +22,14 @@
         <div id="team" class="small-margin">
             <div class="row">
                 <div id="full-row" class="row text-center">
-                    @foreach (var db in Model)
+                    @foreach (var api in Model)
                     {
                         <div class="col-md-3 team-card">
-                            <a id="figurelink" asp-action="Member" asp-route-id="@Html.DisplayFor(modelItem => db.name)">
+                            <a id="figurelink" asp-action="Member" asp-route-id="@Html.DisplayFor(modelItem => api.member_name)">
                                 <figure>
-                                    <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => db.potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => db.titel)">
+                                    <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => api.member_potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)">
                                 </figure>
-                                <p class="team-name">@Html.DisplayFor(modelItem => db.titel)</p>
+                                <p class="team-name">@Html.DisplayFor(modelItem => api.member_titel)</p>
                                 <p class="subtle">Mitglied</p>
                             </a>
                         </div>

@@ -55,11 +55,5 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         {
             return View();
         }
-
-        private readonly ApplicationDBContext _context;
-        public HomeController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
     }
 }

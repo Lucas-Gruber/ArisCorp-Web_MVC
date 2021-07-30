@@ -16,17 +16,10 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
     [Area("VerseExkurs")]
     public class TechnologienController : Controller
     {
-        private readonly ApplicationDBContext _context;
-
-        public TechnologienController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-
         // GET: VerseExkurs/Technologien
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Technologien.ToListAsync());
+            return View();
         }
 
         string APIBaseurl = "https://cms.ariscorp.de/";
@@ -60,11 +53,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 //returning the employee list to view  
                 return View(TechnologieInfo.data);
             }
-        }
-
-        private bool TechnologienExists(string id)
-        {
-            return _context.Technologien.Any(e => e.Id == id);
         }
     }
 }

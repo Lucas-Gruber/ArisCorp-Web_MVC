@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CommLinksAPI>
+
+@{
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+<img src="//cms.ariscorp.de/assets/6e633dd2-1512-405d-92e0-fb3907de86a1" alt="Spectrum Banner" style="max-width: 100%" />
+<h1>COMM-LINKS DER ARISCORP</h1>
+<hr />
+@foreach (var api in Model)
+{
+    if (api == Model.First())
+    {
+        <div class="card text-center">
+            <div class="card-header">
+                @api.comm_link_titel
+            </div>
+            <div class="card-body">
+                <img src="@api." alt="Alternate Text" />
+                @*<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>*@
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    }
+
+    <div class="card mb-3" style="background-color: transparent">
+        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Spectrum/@api.kategorie';">
+            <div class="col-md-4" style="margin: auto;">
+                <img src="//cms.ariscorp.de/assets/@api.cover" class="img-fluid rounded-start" alt="@api.id Cover">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.id</h1>
+                    <p class="card-text" style="color: #FFF">@api.text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<style>
+    .card-tran-body {
+        transition: 0.2s;
+    }
+
+        .card-tran-body:hover {
+            cursor: pointer;
+        }
+
+    .shadow {
+        box-shadow: 0 0.5rem 1rem #E48632 !important;
+    }
+</style>
+<script>
+    $(".card-tran-body").hover(
+        function () {
+            $(this).addClass('shadow');
+            $(this).addClass('mb-5');
+            $(this).addClass('bg-body');
+            $(this).addClass('rounded');
+        },
+        function () {
+            $(this).removeClass('shadow');
+            $(this).removeClass('mb-5');
+            $(this).removeClass('bg-body');
+            $(this).removeClass('rounded');
+        }
+    );
+</script>

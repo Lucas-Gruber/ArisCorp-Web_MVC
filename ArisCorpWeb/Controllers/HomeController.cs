@@ -19,19 +19,7 @@ namespace ArisCorpWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDBContext _context;
         string APIBaseurl = "https://cms.ariscorp.de/";
-
-        public HomeController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-
-        public IActionResult List()
-        {
-            return View(_context.Biografien.ToList());
-        }
-
 
         public async Task<IActionResult> Index()
         {

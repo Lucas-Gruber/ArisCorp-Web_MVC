@@ -16,13 +16,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
     [Area("VerseExkurs")]
     public class StarmapController : Controller
     {
-        private readonly ApplicationDBContext _context;
-
-        public StarmapController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-
         // GET: VerseExkurs/Starmap
         [Route("VerseExkurs/Starmap")]
         public async Task<IActionResult> Index()
@@ -61,11 +54,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 //returning the employee list to view  
                 return View(SystemInfo.data);
             }
-        }
-
-        private bool SystemeExists(string id)
-        {
-            return _context.Systeme.Any(e => e.Id == id);
         }
     }
 }

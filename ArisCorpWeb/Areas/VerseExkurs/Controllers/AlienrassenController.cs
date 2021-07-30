@@ -16,13 +16,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
     [Area("VerseExkurs")]
     public class AlienrassenController : Controller
     {
-        private readonly ApplicationDBContext _context;
-
-        public AlienrassenController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-
         // GET: VerseExkurs/Alienrassen
         [Route("VerseExkurs/Alienrassen")]
         public async Task<IActionResult> Index()
@@ -61,11 +54,6 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 //returning the employee list to view  
                 return View(AlienrasseInfo.data);
             }
-        }
-
-        private bool AlienrassenExists(string id)
-        {
-            return _context.Alienrassen.Any(e => e.Id == id);
         }
     }
 }

@@ -37,11 +37,6 @@ namespace ArisCorpWeb
             
             services.AddControllersWithViews();
 
-            services.AddDbContext<ApplicationDBContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
-            services.AddDbContext<IdentityDBContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
-
             services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = true;

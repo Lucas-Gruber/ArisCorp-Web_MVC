@@ -19,7 +19,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         string APIBaseurl = "https://cms.ariscorp.de/";
 
 
-        [Route("VerseExkurs/comm-link")]
+        [Route("comm-link")]
         public async Task<IActionResult> Index()
         {
             CommLinksRootobject CommLinksInfo = new CommLinksRootobject();
@@ -34,7 +34,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/comm_links" + "?sort=sort,date_created&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/comm_links" + "?sort=sort,-date_created&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -52,7 +52,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         }
 
         //KATEGORIE-ÜBERSICHT
-        [Route("VerseExkurs/CommLinks/{commlink}")]
+        [Route("comm-link/{commlink}")]
         public async Task<IActionResult> Kategorie(string kategorie)
         {
             SpectrumRootobject SpectrumInfo = new SpectrumRootobject();

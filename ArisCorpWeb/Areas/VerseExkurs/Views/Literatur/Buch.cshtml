@@ -9,8 +9,8 @@
 
 @foreach (var api in Model)
 {
-    int kint = api.lit_kapitel;
-    int vkint = api.lit_kapitel;
+    int kint = api.literatur_kapitel;
+    int vkint = api.literatur_kapitel;
 
     kint = kint + 1;
     vkint = vkint - 1;
@@ -18,7 +18,7 @@
         <a href="EXCURS"></a><!-- Nav Anchor -->
         <div class="row heading tiny-margin">
             <div class="col-md-auto">
-                <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.lit_titel - Kapitel: @api.lit_kapitel</span></h1>
+                <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.literatur_titel - Kapitel: @api.literatur_kapitel</span></h1>
             </div>
             <div class="col">
                 <hr class="animation-element extend">
@@ -26,20 +26,20 @@
         </div>
         <div class="row medium-margin tab-manifesto">
             <div class="col-md-11">
-                <img src="https://cms.ariscorp.de/assets/@api.lit_cover" alt="@api.lit_titel Cover" width="100%" />
-                <h2 class="short-hr-left">Exkurs - Spectrum: @api.lit_titel - Kapitel: @api.lit_kapitel</h2>
+                <img src="https://cms.ariscorp.de/assets/@api.literatur_cover" alt="@api.literatur_titel Cover" width="100%" />
+                <h2 class="short-hr-left">Exkurs - Spectrum: @api.literatur_titel - Kapitel: @api.literatur_kapitel</h2>
 
-                <markdown markdown="@api.lit_geschichte" />
+                <markdown markdown="@api.literatur_text" />
             </div>
         </div>
-        @if (api.lit_kapitel > 1)
+        @if (api.literatur_kapitel > 1)
         {
-            <a href="/VerseExkurs/Literatur/Buch/@api.lit_titel/@(vkint)" style="color: #E48632; float: left;">Vorheriges Kapitel: @api.lit_titel-@(vkint)</a>
-            <a href="/VerseExkurs/Literatur/Buch/@api.lit_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.lit_titel-@(kint)</a>
+            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(vkint)" style="color: #E48632; float: left;">Vorheriges Kapitel: @api.literatur_titel-@(vkint)</a>
+            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_titel-@(kint)</a>
         }
         else
         {
-            <a href="/VerseExkurs/Literatur/Buch/@api.lit_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.lit_titel-@(kint)</a>
+            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_titel-@(kint)</a>
         }
     </div>
 }

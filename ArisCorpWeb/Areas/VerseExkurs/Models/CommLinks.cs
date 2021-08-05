@@ -27,6 +27,7 @@ namespace ArisCorpWeb.Models
         public string comm_link_titel { get; set; }
         public string comm_link { get; set; }
         public string[] comm_link_channel { get; set; }
+        public string comm_link_banner { get; set; }
     }
 
 }

@@ -25,9 +25,16 @@
                     @foreach (var api in Model)
                     {
                         <div class="col-md-3 team-card">
-                            <a id="figurelink" asp-action="Member" asp-route-id="@Html.DisplayFor(modelItem => api.member_name)">
+                            <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => api.member_name)">
                                 <figure>
-                                    <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => api.member_potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)">
+                                    @if (api.member_potrait == null)
+                                    {
+                                        <img src="//cms.ariscorp.de/assets/0b7eafde-0933-4d1a-a32f-b4f8dd5bb492" class="img-fluid b-lazy" alt="Potrait (Unbekannt) von @Html.DisplayFor(modelItem => api.member_titel)">
+                                    }
+                                    else
+                                    {
+                                        <img src="//cms.ariscorp.de/assets/@api.member_potrait" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)">
+                                    }
                                 </figure>
                                 <p class="team-name">@Html.DisplayFor(modelItem => api.member_titel)</p>
                                 <p class="subtle">Mitglied</p>

@@ -5,7 +5,7 @@
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
-@*
+
     <img src="//cms.ariscorp.de/assets/6e633dd2-1512-405d-92e0-fb3907de86a1" alt="Spectrum Banner" style="max-width: 100%" />
     <h1>COMM-LINKS DER ARISCORP</h1>
     <hr />
@@ -13,33 +13,94 @@
     {
         if (api == Model.First())
         {
-            <div class="card text-center">
-                <div class="card-header">
-                    @api.comm_link_titel
+            <div id="cl-card">
+                <!--<div class="cl-background" style="background-image: url('//cms.ariscorp.de/assets/@Html.Raw(@api.comm_link_banner)');"></div>-->
+                <div class="cl-ov">
+                    <div class="cl-background cl-ov-ov" style="background-image: url('https://robertsspaceindustries.com/rsi/static/images/bg-med-lines.png');"></div>
+                    <div class="cl-background cl-bg-ov" style="background-image: url('//cms.ariscorp.de/assets/@Html.Raw(@api.comm_link_banner)');"></div>
                 </div>
-                <div class="card-body">
-                    <img src="@api." alt="Alternate Text" />
-                    @*<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>*@
-            </div>@*
-    <div class="card-footer text-muted">
-        2 days ago
-    </div>
+
+                <div class="title-holder">
+                    <div class="cl-title">@api.comm_link_titel</div>
+                </div>
+                <div class="cl-text">
+                    <div class="time-ago">Posted: <span class="value">@api.date_created</span></div>
+                    <div class="section"></div>
+                </div>
+                <div class="cl-over">
+                </div>
+            </div>
+
+
+            <style>
+                .cl-ov {
+                    background: url(https://robertsspaceindustries.com/rsi/static/images/bg-med-lines.png);
+                    width: 1119px;
+                    height: 315px;
+                    position: absolute;
+                }
+                    .cl-ov:hover{
+                        opacity: 1;
+                    }
+                    .cl-ov:hover > cl-background{
+                        opacity: 0.2;
+                    }
+                .cl-ov cl-background {
+                    opacity: 0.6;
+                }
+                .cl-bg-ov {
+                    opacity: 0.4;
+                }
+                .cl-ov-ov {
+                    opacity: 0.8;
+                }
+            </style>
+
+            <script>
+                $('.title-holder').mouseover(function () {
+                    $('.cl-bg-ov').css({ opacity: '0.4' });
+                    $('.cl-ov-ov').css({ opacity: '0.8' });
+                });
+                $('.title-holder').mouseout(function () {
+                    $('.cl-bg-ov').css({ opacity: '' });
+                    $('.cl-ov-ov').css({ opacity: '' });
+                });
+            </script>
+
+
+            @*<div class="card text-center">
+
+                    <img src="//cms.ariscorp.de/assets/@Html.Raw(@api.comm_link_banner)" alt="@api.comm_link_titel Cover" />
+                <div class="comm-link-overlay">
+                    <div class="card-header">
+                        @api.comm_link_titel
+                    </div>
+                    <div class="card-body">
+                        @*<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                        <div class="card-footer text-muted">
+                            2 days ago
+                        </div>
+                    </div>
+                </div>*@
+        }
+        else
+        {
+
+            <div class="card mb-3" style="background-color: transparent">
+                <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Spectrum/@api.comm_link_channel';">
+                    <div class="col-md-4" style="margin: auto;">
+                        <img src="//cms.ariscorp.de/assets/@api.comm_link_banner" class="img-fluid rounded-start" alt="@api.comm_link_titel Cover">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.comm_link_titel</h1>
+                            <p class="card-text" style="color: #FFF">@api.comm_link</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         }
-
-    <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Spectrum/@api.kategorie';">
-            <div class="col-md-4" style="margin: auto;">
-                <img src="//cms.ariscorp.de/assets/@api.cover" class="img-fluid rounded-start" alt="@api.id Cover">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.id</h1>
-                    <p class="card-text" style="color: #FFF">@api.text</p>
-                </div>
-            </div>
-        </div>
-    </div>
     }
     <hr />
     <style>
@@ -51,8 +112,135 @@
                 cursor: pointer;
             }
 
+        .card-body {
+            transition: 0.2s;
+        }
+
+            .card-body:hover {
+                cursor: pointer;
+            }
         .shadow {
             box-shadow: 0 0.5rem 1rem #E48632 !important;
+        }
+        .comm-link-overlay {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .cl-background {
+            position: absolute;
+            opacity: 0.6;
+            width: 1119px;
+            height: 315px;
+            background-size: cover;
+            background-position: center center;
+            transition: 0.2s;
+        }
+        .title-holder {
+            display: table-cell;
+            vertical-align: middle;
+            height: 315px;
+            width: 1119px;
+            position: relative;
+        }
+        .cl-title {
+            width: 1119px;
+            color: #fff;
+            text-shadow: 3px 3px #000;
+            font-size: 60px;
+            text-transform: uppercase;
+            text-align: center;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+            line-height: normal;
+        }
+        .cl-text {
+            background: url(//cms.ariscorp.de/assets/5904655a-0fa8-4ff4-9ba9-57f31bd40d2d) repeat;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            /*height: 10px;*/
+            width: 1119px;
+            font-size: 12px;
+            position: absolute;
+            margin-top: -50px;
+        }
+        .time-ago {
+            color: #5e7a8d;
+            font-weight: bold;
+            border-right: 1px solid #4a4241;
+            float: left;
+            line-height: 14px;
+            padding-right: 13px;
+        }
+        .value {
+            color: #00ffe8;
+            font-weight: normal;
+        }
+        .section {
+            color: #678088;
+            font-style: italic;
+            border-left: 1px solid #9f9d9b;
+            float: left;
+            line-height: 14px;
+            padding-left: 13px;
+        }
+        .cl-overlay {
+            position: absolute;
+            opacity: 0.6;
+            width: 1119px;
+            height: 315px;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0%;
+        }
+            .cl-overlay:hover {
+                opacity: 80%;
+            }
+        .cl-scroller {
+            width: 1059px;
+            padding: 0px 30px;
+            opacity: 0;
+            text-align: center;
+            display: table;
+            height: 100%;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+
+        }
+        .cl-body {
+            position: relative;
+            color: #7e98a2;
+            font-size: 12px;
+            line-height: 20px;
+            display: table-cell;
+            vertical-align: middle;
+            padding-top: 30px;
+            opacity: 0;
+            transition-duration: 0.1s;
+            -moz-transition-duration: 0.1s;
+            -webkit-transition-duration: 0.1s;
+            -o-transition-duration: 0.1s;
+            -webkit-perspective: 1000;
+            transition-timing-function: linear;
+            -webkit-transition-delay: 0.2s;
+            -moz-transition-delay: 0.2s;
+            -ms-transition-delay: 0.2s;
+            -o-transition-delay: 0.2s;
+            transition-delay: 0.2s;
         }
     </style>
     <script>
@@ -71,4 +259,3 @@
             }
         );
     </script>
-            *@

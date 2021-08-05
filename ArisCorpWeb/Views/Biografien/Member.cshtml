@@ -24,17 +24,31 @@
         <div class="row medium-margin">
             <div class="col-md-11">
                 <h2 class="short-hr-left">Bio von  @Html.DisplayFor(model => api.member_titel)</h2>
-                <img src="//cms.ariscorp.de/assets/@Html.DisplayFor(model => api.member_potrait)" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(model => api.member_titel)" style="float: right;">
-                
+                @if (api.member_potrait == null)
+                {
+                    <img src="//cms.ariscorp.de/assets/0b7eafde-0933-4d1a-a32f-b4f8dd5bb492" class="img-fluid b-lazy" alt="Potrait (Unbekannt) von @Html.DisplayFor(modelItem => api.member_titel)" style="float: right;">
+                }
+                else
+                {
+                    <img src="//cms.ariscorp.de/assets/@api.member_potrait" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)" style="float: right;">
+                }
+
                 <div id="steckbrief">
-                    @api.member_steckbrief
+                    @Html.Raw(api.member_steckbrief)
                 </div>
 
                 <br />
                 <br />
-                
+
                 <div id="biografie">
-                    @api.member_biografie
+                    @if (api.member_biografie != null)
+                    {
+                        @Html.Raw(api.member_biografie);
+                    }
+                    else
+                    {
+                        <p>Bio unbekannt.</p>
+                    }
                 </div>
             </div>
         </div>

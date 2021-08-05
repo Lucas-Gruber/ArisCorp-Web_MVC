@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
-    //List
     public class SpectrumRootobject
     {
         public SpectrumAPI[] data { get; set; }
@@ -15,17 +14,17 @@ namespace ArisCorpWeb.Models
 
     public class SpectrumAPI
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string status { get; set; }
         public object sort { get; set; }
-        public string text { get; set; }
-        public string kategorie { get; set; }
-        public string publish_date { get; set; }
-        public object user_created { get; set; }
-        public object date_created { get; set; }
+        public string user_created { get; set; }
         public string user_updated { get; set; }
+        public string date_created { get; set; }
         public object date_updated { get; set; }
-        public object cover { get; set; }
-        public bool kategorie_beschreibung { get; set; }
+        public string spectrum_titel { get; set; }
+        public string spectrum_text { get; set; }
+        public string spectrum_beitrag_kateogrie { get; set; }
+        public bool spectrum_kategorie_beschreibung { get; set; }
     }
+
 }

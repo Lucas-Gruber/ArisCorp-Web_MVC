@@ -1,4 +1,4 @@
-﻿@model GeschichteAPI
+﻿@model IEnumerable<GeschichteAPI>
 @addTagHelper *, Westwind.AspNetCore.Markdown
 @{
     ViewData["Title"] = "Geschichte";
@@ -12,7 +12,10 @@
     <hr class="animation-element extend">
 </div>
 
-<markdown markdown="text" />
+@foreach (var api in Model)
+{
+    <markdown markdown="@api.geschichte_beitrag" />
+}
 
 <div class="img-gameplays-line">
     <hr class="animation-element extend">

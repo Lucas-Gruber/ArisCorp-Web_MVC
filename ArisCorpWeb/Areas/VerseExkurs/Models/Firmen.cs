@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
+
     public class FirmenRootobject
     {
         public FirmenAPI[] data { get; set; }

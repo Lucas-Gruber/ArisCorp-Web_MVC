@@ -7,9 +7,9 @@
 
 @foreach (var api in Model)
 {
-    @if (api.kategorie_beschreibung)
+    @if (api.spectrum_kategorie_beschreibung)
     {
-        <img src="//cms.ariscorp.de/assets/@api.cover" alt="Kateogrie Banner" style="width: 100%" />
+        <img src="//cms.ariscorp.de/assets/" alt="Kateogrie Banner" style="width: 100%" />
     }
     {
 
@@ -18,7 +18,7 @@
 <hr />
 @foreach (var api in Model)
 {
-    @if (api.kategorie_beschreibung == true)
+    @if (api.spectrum_kategorie_beschreibung == true)
     {
         
     } else
@@ -26,7 +26,7 @@
         <div class="card mb-3" style="background-color: transparent">
             <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Spectrum/Artikel/@api.id';">
                 <div class="col-md-4" style="margin: auto;">
-                    <img src="//cms.ariscorp.de/assets/@api.cover" class="img-fluid rounded-start" alt="@api.id Cover">
+                    <img src="//cms.ariscorp.de/assets/" class="img-fluid rounded-start" alt="@api.id Cover">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

@@ -95,22 +95,24 @@ namespace ArisCorpWeb.Models
 
 
 
+
     public class AlienrassenRootobject
     {
-        public AlienrassenAPI data { get; set; }
+        public AlienrassenAPI[] data { get; set; }
     }
 
     public class AlienrassenAPI
     {
-        public string alienrasse { get; set; }
+        public int id { get; set; }
         public string status { get; set; }
         public object sort { get; set; }
         public string user_created { get; set; }
-        public DateTime date_created { get; set; }
         public string user_updated { get; set; }
-        public DateTime date_updated { get; set; }
-        public string text { get; set; }
-        public string banner { get; set; }
+        public string alienrassen_text { get; set; }
+        public string alienrassen_name { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
+        public string alienrassen_banner { get; set; }
     }
 
 }

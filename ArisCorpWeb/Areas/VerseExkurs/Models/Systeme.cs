@@ -319,22 +319,25 @@ namespace ArisCorpWeb.Models
 
 
 
+
     public class SystemeRootobject
     {
-        public SystemeAPI data { get; set; }
+        public SystemeAPI[] data { get; set; }
     }
 
     public class SystemeAPI
     {
-        public string system_name { get; set; }
+        public int id { get; set; }
         public string status { get; set; }
         public object sort { get; set; }
         public string user_created { get; set; }
-        public DateTime date_created { get; set; }
         public string user_updated { get; set; }
-        public DateTime date_updated { get; set; }
-        public string text { get; set; }
-        public bool system { get; set; }
-        public string banner { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
+        public string system_banner { get; set; }
+        public string system_name { get; set; }
+        public string system_text { get; set; }
+        public bool system_boolean { get; set; }
     }
+
 }

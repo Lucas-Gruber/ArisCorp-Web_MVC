@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
+
     public class LiteraturRootobject
     {
         public LiteraturAPI[] data { get; set; }
@@ -14,15 +15,19 @@ namespace ArisCorpWeb.Models
 
     public class LiteraturAPI
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string status { get; set; }
-        public DateTime date_created { get; set; }
-        public string lit_fiktiver_autor { get; set; }
-        public string lit_cover { get; set; }
-        public string lit_geschichte { get; set; }
-        public int lit_kapitel { get; set; }
-        public string lit_titel { get; set; }
-        public string lit_protagonist { get; set; }
+        public object sort { get; set; }
+        public string user_created { get; set; }
+        public string user_updated { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
+        public string literatur_author { get; set; }
+        public string literatur_protagonist { get; set; }
+        public string literatur_cover { get; set; }
+        public string literatur_titel { get; set; }
+        public int literatur_kapitel { get; set; }
+        public string literatur_text { get; set; }
     }
 
 }

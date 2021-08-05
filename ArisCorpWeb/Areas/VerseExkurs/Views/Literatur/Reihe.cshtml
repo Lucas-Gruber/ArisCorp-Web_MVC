@@ -8,9 +8,9 @@
 
 @foreach (var api in Model)
 {
-    @if (api.lit_kapitel == 1)
+    @if (api.literatur_kapitel == 1)
     {
-        <img src="//cms.ariscorp.de/assets/@api.lit_cover" alt="@api.lit_titel Cover" width="100%" />
+        <img src="//cms.ariscorp.de/assets/@api.literatur_cover" alt="@api.literatur_titel Cover" width="100%" />
     }
     else
     {
@@ -21,19 +21,19 @@
 @foreach (var api in Model)
 {
     <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Literatur/Buch/@api.lit_titel/@api.lit_kapitel';">
+        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Literatur/Buch/@api.literatur_titel/@api.literatur_kapitel';">
             <div class="col-md-4" style="margin: auto;">
-                <img src="//cms.ariscorp.de/assets/@api.lit_cover" class="img-fluid rounded-start" alt="@api.lit_titel Cover">
+                <img src="//cms.ariscorp.de/assets/@api.literatur_cover" class="img-fluid rounded-start" alt="@api.literatur_titel Cover">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.lit_titel - Kapitel: @api.lit_kapitel</h1>
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_titel - Kapitel: @api.literatur_kapitel</h1>
                 </div>
             </div>
         </div>
     </div>
+    <hr />
 }
-<hr />
 <style>
     .card-tran-body {
         transition: 0.2s;

@@ -1,18 +1,20 @@
-﻿@model SystemeAPI
+﻿@model IEnumerable<SystemeAPI>
 
 @{
-    ViewData["Title"] = "System: " + Model.system_name;
+    ViewData["Title"] = "System: ";
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Starmap";
     ViewData["BackA"] = "Index";
 }
 @addTagHelper *, Westwind.AspNetCore.Markdown
 
+@foreach (var api in Model)
+{
 <div id="EXCURS" class='large-margin'>
     <a href="EXCURS"></a><!-- Nav Anchor -->
     <div class="row heading tiny-margin">
         <div class="col-md-auto">
-            <h1 class="animation-element slide-down">SYSTEM: <span class="coloredaris">@Html.DisplayFor(model => model.system_name)</span></h1>
+            <h1 class="animation-element slide-down">SYSTEM: <span class="coloredaris">@api.system_name</span></h1>
         </div>
         <div class="col">
             <hr class="animation-element extend">
@@ -20,16 +22,17 @@
     </div>
     <div class="row medium-margin tab-manifesto">
         <div class="col-md-11">
-            <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => model.banner)" alt="@Html.DisplayFor(model => model.system_name) Banner" />
-            <h2 class="short-hr-left">Exkurs - System: @Html.DisplayFor(model => model.system_name)</h2>
+            <img src="https://cms.ariscorp.de/assets/@api.system_banner" alt="@api.system_name Banner" />
+            <h2 class="short-hr-left">Exkurs - System: @api.system_name</h2>
 
-            <markdown markdown="text" />
+            <markdown markdown="@api.system_text" />
         </div>
     </div>
+</div>
+}
 
-
-    <style>
-        img {
-            max-width: 100%
-        }
-    </style>
+        <style>
+            img {
+                max-width: 100%
+            }
+        </style>

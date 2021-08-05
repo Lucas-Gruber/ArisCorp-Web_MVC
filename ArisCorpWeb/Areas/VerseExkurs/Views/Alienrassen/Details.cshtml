@@ -1,32 +1,35 @@
-﻿@model AlienrassenAPI
+﻿@model IEnumerable<AlienrassenAPI>
 
 @{
-    ViewData["Title"] = "Alienrassen: " + Model.alienrasse;
+    ViewData["Title"] = "Alienrassen: ";
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
 @addTagHelper *, Westwind.AspNetCore.Markdown
 
-<div id="EXCURS" class='large-margin'>
-    <a href="EXCURS"></a><!-- Nav Anchor -->
-    <div class="row heading tiny-margin">
-        <div class="col-md-auto">
-            <h1 class="animation-element slide-down">ALIENRASSE: <span class="coloredaris">@Html.DisplayFor(model => model.alienrasse)</span></h1>
+@foreach (var api in Model)
+{
+    <div id="EXCURS" class='large-margin'>
+        <a href="EXCURS"></a><!-- Nav Anchor -->
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">ALIENRASSE: <span class="coloredaris">@Html.DisplayFor(model => api.alienrassen_name)</span></h1>
+            </div>
+            <div class="col">
+                <hr class="animation-element extend">
+            </div>
         </div>
-        <div class="col">
-            <hr class="animation-element extend">
-        </div>
-    </div>
-    <div class="row medium-margin tab-manifesto">
-        <div class="col-md-11">
-            <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => model.banner)" alt="@Html.DisplayFor(model => model.alienrasse) Banner" width="100%" />
-            <h2 class="short-hr-left">Exkurs - Alienrasse: @Html.DisplayFor(model => model.alienrasse)</h2>
+        <div class="row medium-margin tab-manifesto">
+            <div class="col-md-11">
+                <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => api.alienrassen_banner)" alt="@Html.DisplayFor(model => api.alienrassen_name) Banner" width="100%" />
+                <h2 class="short-hr-left">Exkurs - Alienrasse: @Html.DisplayFor(model => api.alienrassen_name)</h2>
 
-            <markdown markdown="text" />
+                <markdown markdown="@api.alienrassen_text" />
+            </div>
         </div>
     </div>
-</div>
+
 <style>
     .diplomatie-rasse {
         font-style: oblique;
@@ -59,7 +62,8 @@
 <script>
     $(document).ready(function () {
         $("button").click(function () {
-            $("body").toggleClass("@Html.DisplayFor(model => model.alienrasse)");
+            $("body").toggleClass("@Html.DisplayFor(model => api.alienrassen_name)");
         });
     });
 </script>
+}

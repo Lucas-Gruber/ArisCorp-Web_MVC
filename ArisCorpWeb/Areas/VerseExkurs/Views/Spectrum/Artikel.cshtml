@@ -1,0 +1,124 @@
+﻿@model IEnumerable<SpectrumAPI>
+
+@{
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+@addTagHelper *, Westwind.AspNetCore.Markdown
+@foreach(var api in Model)
+{
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.spectrum_titel</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @if (api.spectrum_beitrag_kateogrie == "starwatch")
+            {
+                <img src="//cms.ariscorp.de/assets/f6b90202-daec-443a-81fc-e26beafa6471" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "advocacy_archive")
+            {
+                <img src="//cms.ariscorp.de/assets/5743c3ff-adde-4b94-8f3a-375b27b94c7b" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "b0otycall")
+            {
+                <img src="//cms.ariscorp.de/assets/9ac8f6ed-3794-4d4f-90b1-ac8bbba6855c" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "clean_shot")
+            {
+                <img src="//cms.ariscorp.de/assets/762522d9-6e5f-4a57-becb-3f49360bfcb3" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "congress_now")
+            {
+                <img src="//cms.ariscorp.de/assets/a626a0f8-69bf-49e0-839d-631fc0b4927b" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "datacache")
+            {
+                <img src="//cms.ariscorp.de/assets/2f89cd15-647e-48d0-b72d-e1443d090eed" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "der_observist")
+            {
+                <img src="//cms.ariscorp.de/assets/85b0f6a5-0a5b-4e2c-afcd-fd715095ed22" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "discovered")
+            {
+                <img src="//cms.ariscorp.de/assets/06f7493b-ed9c-4c59-b88a-6a80f65d0771" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "empire_report")
+            {
+                <img src="//cms.ariscorp.de/assets/af1afa67-dff7-40fe-baca-d5db649dc42a" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "kaizen")
+            {
+                <img src="//cms.ariscorp.de/assets/68d6473d-c23a-46af-af79-a800a8a39596" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "mining_rocks")
+            {
+                <img src="//cms.ariscorp.de/assets/5cfaa396-32cb-43c7-84a0-87a1719d738a" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "new_united")
+            {
+                <img src="//cms.ariscorp.de/assets/9f3a3f2a-b21b-4e80-97b0-4d04a3518459" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "op.net")
+            {
+                <img src="//cms.ariscorp.de/assets/6a6de2ed-2dd5-419f-a7cd-b3785f002f2f" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "plain_truth")
+            {
+                <img src="//cms.ariscorp.de/assets/ffc17796-b07e-49a8-9e8b-f6d35f5dcb2f" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "zero-g._gearheads")
+            {
+                <img src="//cms.ariscorp.de/assets/ea64a869-2fb1-4da2-8dfd-a930f59d1b8d" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "showdown")
+            {
+                <img src="//cms.ariscorp.de/assets/ef20cc0b-2273-4f85-b4fd-e3af009a716e" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "something_every_tuesday")
+            {
+                <img src="//cms.ariscorp.de/assets/e748cd63-608b-4c32-83ea-f87fa6061957" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "spectrum_spectator")
+            {
+                <img src="//cms.ariscorp.de/assets/07f8654c-665e-4abf-9438-c4b316fd03bb" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "terra_gazette")
+            {
+                <img src="//cms.ariscorp.de/assets/2ff5a381-f68d-4d70-be42-5316d506d285" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "tracker")
+            {
+                <img src="//cms.ariscorp.de/assets/0ab1de22-94aa-48f1-9939-3114f5c28219" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            @if (api.spectrum_beitrag_kateogrie == "untold_tales")
+            {
+                <img src="//cms.ariscorp.de/assets/ac217fb8-5c4c-4b68-8fba-96382fa47be9" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
+            <h2 class="short-hr-left">Exkurs - Spectrum: @api.spectrum_titel</h2>
+
+            <markdown markdown="@api.spectrum_text" />
+        </div>
+    </div>
+</div>
+}
+
+<style>
+    video {
+        max-width: 100%
+    }
+</style>
+
+<script>
+    var vid = document.getElementById("video");
+    vid.volume = 0.3;
+</script>

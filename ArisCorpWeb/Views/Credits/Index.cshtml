@@ -1,0 +1,19 @@
+﻿@model CreditsAPI
+@addTagHelper *, Westwind.AspNetCore.Markdown
+
+@{
+    ViewData["Title"] = "Credits";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+    ViewData["BackF"] = "disclaimer";
+}
+
+<a href="EXCURS"></a><!-- Nav Anchor -->
+<div class="large-margin"></div>
+
+<markdown markdown="credits" />
+
+<style>
+    img {
+        max-width: 100%;
+    }

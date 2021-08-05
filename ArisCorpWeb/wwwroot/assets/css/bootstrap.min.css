@@ -98,7 +98,7 @@ address {
     line-height: inherit
 }
 
-dl, ol, ul {
+dl, ol {
     margin-top: 0;
     margin-bottom: 1rem
 }
@@ -2435,7 +2435,19 @@ textarea.form-control {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.btn img {
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -10157,4 +10169,3 @@ a.text-dark:focus, a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-/*# sourceMappingURL=bootstrap.min.css.map */

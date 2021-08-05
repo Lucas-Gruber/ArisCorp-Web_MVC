@@ -14,7 +14,6 @@
     }
     a {
         color: #fff;
-        font-family: Raleway, sans-serif;
         text-decoration: none;
     }
 
@@ -57,23 +56,12 @@
         --transition-speed: 600ms;
     }
 
-    body::-webkit-scrollbar {
-        width: 0.25rem;
-    }
-
-    body::-webkit-scrollbar-track {
-        background: #1e1e24;
-    }
-
-    body::-webkit-scrollbar-thumb {
-        background: #00ffe8;
-    }
-
     .navbar {
         position: fixed;
         background-color: var(--bg-primary);
         transition: width 600ms ease;
         overflow: scroll;
+        z-index: 2147483647;
     }
 
     .navbar-nav {
@@ -373,6 +361,14 @@
                 $('.fa-alien').toggleClass('fa-spin-0-nota');
             });
         });
+        $(document).ready(function () {
+            $('.sub-firmen-btn > .nav-link').click(function (e) {
+                e.preventDefault();
+                $(this).next('.sub-firmen-menu').slideToggle('slow');
+                $('.fa-firmen').toggleClass('fa-spin-90-nota');
+                $('.fa-firmen').toggleClass('fa-spin-0-nota');
+            });
+        });
 </script>
 
 <style>
@@ -387,6 +383,10 @@
     }
 
     .sub-alien-menu {
+        display: none;
+    }
+
+    .sub-firmen-menu {
         display: none;
     }
 </style>

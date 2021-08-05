@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SpectrumAPI>
+
+@{
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+@addTagHelper *, Westwind.AspNetCore.Markdown
+@foreach(var api in Model)
+{
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.id</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            <img src="https://cms.ariscorp.de/assets/" alt="@api.id Banner" width="100%" />
+            <h2 class="short-hr-left">Exkurs - Spectrum: @api.id</h2>
+
+            <markdown markdown="@api.spectrum_text" />
+        </div>
+    </div>
+</div>
+}

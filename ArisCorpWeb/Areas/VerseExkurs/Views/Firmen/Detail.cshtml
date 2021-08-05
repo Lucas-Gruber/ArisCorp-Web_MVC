@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FirmenAPI>
+
+@{
+    ViewData["Title"] = "Firma: ";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Firmen";
+    ViewData["BackA"] = "Geschäfte";
+}
+@addTagHelper *, Westwind.AspNetCore.Markdown
+
+@foreach (var api in Model)
+{
+    <div id="EXCURS" class='large-margin'>
+        <a href="EXCURS"></a><!-- Nav Anchor -->
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">FIRMA: <span class="coloredaris">@api.firmen_name</span></h1>
+            </div>
+            <div class="col">
+                <hr class="animation-element extend">
+            </div>
+        </div>
+        <div class="row medium-margin tab-manifesto">
+            <div class="col-md-11">
+                <img src="//cms.ariscorp.de/assets/@api.firmen_banner" alt="Banner von @api.firmen_name" />
+                <h2 class="short-hr-left">Exkurs - Firma: @api.firmen_name</h2>
+                <markdown markdown="@api.firmen_text" />
+            </div>
+        </div>
+    </div>
+}

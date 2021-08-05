@@ -1,0 +1,38 @@
+﻿@model HomeAPI
+<div id="team" class="medium-margin">
+    <div class="row medium-margin">
+        <div id="full-row" class="row text-center">
+            @foreach (var api in Model.ariscorp_mitglieder)
+            {
+                string[] rollen = api.member_rollen;
+                string rollenlist = String.Join(", ", rollen);
+                
+                string rollenfinal = rollenlist.Replace("member", "Member").Replace("marketing", "Marketing & Presse").Replace("recruitment", "Rekrutierung");
+                <div class="col-md-3 team-card">
+                    <figure>
+                        @if (api.member_potrait == null)
+                        {
+                            <img src="//cms.ariscorp.de/assets/0b7eafde-0933-4d1a-a32f-b4f8dd5bb492" class="img-fluid b-lazy" alt="Potrait (Unbekannt) von @Html.DisplayFor(modelItem => api.member_titel)">
+                        }
+                        else
+                        {
+                            <img src="//cms.ariscorp.de/assets/@api.member_potrait" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)">
+                        }
+                        <figcaption class="team-caption">
+                            <hr class="hr-short">
+                            <p>“@rollenfinal“</p>
+                            <hr class="hr-short">
+                            <ul>
+                                <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => api.member_name)">
+                                    <span class="font-italic colored">BIOGRAFIE</span>
+                                </a>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                    <p class="team-name">@Html.DisplayFor(modelItem => api.member_titel)</p>
+                    <p class="subtle">Mitglied</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

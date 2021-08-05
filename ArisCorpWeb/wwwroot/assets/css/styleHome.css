@@ -46,12 +46,12 @@ Primary Color: #E48632;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
 @font-face {
     font-family: 'Anurati';
-    src: url('https://www.ariscorp.de/assets/fonts/Anurati-Regular.otf');
+    src: url('/assets/fonts/Anurati-Regular.otf');
 }
 
 @font-face {
     font-family: 'Nasa';
-    src: url('https://www.ariscorp.de/assets/fonts/nasalization-rg.ttf');
+    src: url('/assets/fonts/nasalization-rg.ttf');
 }
 
 
@@ -73,7 +73,6 @@ Primary Color: #E48632;
 /* -Link Styling- */
 a {
     color: #F39C12;
-    font-family: Raleway, sans-serif;
     text-decoration: none;
 }
 
@@ -105,6 +104,20 @@ html, body {
     font-size: 16px;
     line-height: 1.5rem; /* 24px */
     max-width: 100%;
+    font-family: Nasa;
+}
+    body::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #1e1e24;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: #00ffe8;
+    }
+body {
     overflow-x: hidden;
 }
 /* -Full width fluid container- */
@@ -113,9 +126,6 @@ html, body {
     padding-right: 0;
 }
 /* -Text Styling */
-h1, h2, h3, h4, h5, h6 {
-    font-family: Raleway, sans-serif;
-}
 
 h1 {
     font-size: 2.25rem; /* 36px */
@@ -139,7 +149,6 @@ h4 {
 }
 
 p {
-    font-family: Open Sans, sans-serif;
     font-size: 0.9375rem; /* 15px */
     padding: 5px 5px 5px 0;
     margin: 0;
@@ -171,10 +180,10 @@ p {
 
 ul {
     list-style-type: none;
-    padding: 0;
+    /* padding: 0; */
 }
 /* -Margins and Floats- */
-.floated-left {
+    .floated-left {
     float: left;
 }
 
@@ -500,7 +509,6 @@ button {
     .hero-caption h1 {
         font-weight: bold;
         font-size: 3rem;
-        font-family: Raleway, sans-serif;
     }
 /* --------------------------- /////////// V. ABOUT SECTION /////////// --------------------------- */
 #support-image {
@@ -514,7 +522,6 @@ button {
     .game-tags li {
         display: inline;
         margin: 0 0 0 15px;
-        font-family: Raleway, sans-serif;
         font-size: 1.10rem; /* 20px */
         ;
         font-weight: 500;
@@ -857,10 +864,6 @@ button {
     border: none;
 }
 
-.bio-link {
-    font-family: 'Nasa';
-    font-style: oblique;
-}
 /* --------------------------- /////////// VIII. CAREERS SECTION /////////// --------------------------- */
 .job-card {
     text-align: center;
@@ -1001,7 +1004,6 @@ button {
     }
 /* - Warning and succes msg text- */
 .text-danger, .text-success {
-    font-family: Open Sans, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.25rem;
@@ -1339,10 +1341,6 @@ div.captionitem {
     border-top: none;
 }
 
-.tab-manifesto {
-    font-family: 'Nasa';
-}
-
 .link-baker {
     transition: transform .2s ease;
     transform: translate(0px, 1px);
@@ -1499,9 +1497,6 @@ div.captionitem {
     border-radius: 6px;
   }
 */
-.nasa {
-    font-family: 'Nasa';
-}
 
 .banu {
     font-family: 'Banu-reg';
@@ -1545,92 +1540,6 @@ div.captionitem {
 
 .img-gameplays:hover + .img-gameplays-line2 {
     display: block;
-}
-
-.img-gameplays-text {
-    display: none;
-    position: absolute;
-    background-color: rgba(10, 10, 10, 1);
-    color: white;
-    width: calc(650px - 30px);
-    height: calc(230px - 30px);
-}
-
-.img-gameplays-text-mining {
-    display: none;
-    color: #fff;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-transport {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-data {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-medical {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-salvaging {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-refuel {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-repair {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-exploration {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-touring {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-science {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
-}
-
-.img-gameplays-text-security {
-    display: none;
-    color: white;
-    font-size: 150%;
-    font-family: 'Nasa';
 }
 
 .answerButton {

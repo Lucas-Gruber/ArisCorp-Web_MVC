@@ -1,0 +1,111 @@
+﻿@model IEnumerable<FirmenAPI>
+
+@{
+    ViewData["Title"] = "Hersteller";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+
+<div id="tabsContainer">
+    
+    <div id="tabsDiv">
+        <ul>
+            <li id="tabschiffe"><h1>RAUMSCHIFFE & FAHRZEUGE</h1></li>
+            <br />
+            <li id="tabkomponenten"><h1>KOMPONENTEN</h1></li>
+            <li id="tabwaffen"><h1>WAFFEN</h1></li>
+            <li id="tabpersonenausruestung"><h1>PERSONENAUSRÜSTUNG</h1></li>
+            <div class="img-gameplays-line">
+                <hr class="animation-element extend">
+            </div>
+        </ul>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var api in Model)
+                {
+                    @if (api.firmenkategorie == "schiffshersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var api in Model)
+                {
+                    @if (api.firmenkategorie == "komponentenhersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var api in Model)
+                {
+                    @if (api.firmenkategorie == "waffenhersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="tabcontent">
+            <div class="row">
+                @foreach (var api in Model)
+                {
+                    @if (api.firmenkategorie == "Personenausruestungshersteller")
+                    {
+                        <div class="column">
+                            <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div></div>
+<div class="img-gameplays-line show">
+    <hr class="animation-element extend">
+</div>
+<style>
+    #tabsContainer {
+        margin: auto;
+    }
+
+    /* The grid: Four equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+            .column img:hover {
+                opacity: 1;
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .sui-tabs-top .sui-tabs-tablist > li h1, .sui-tabs-bottom .sui-tabs-tablist li h1 {
+        font-size: 214%;
+        float: left;
+    }
+</style>

@@ -9,29 +9,47 @@ using ArisCorpWeb.Models;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
+using ArisCorpWeb.ViewModels;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace ArisCorpWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDBContext _context;
-
-        public HomeController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-        public IActionResult List()
-        {
-            //var data = _bdb.Biografien.ToList();
-            return View(_context.Biografien.ToList());
-        }
-
-
+        string APIBaseurl = "https://cms.ariscorp.de/";
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Biografien.ToListAsync());
+            HomeRootobject HomeInfo = new HomeRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/homepage/1" + "?fields=*.*&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var HomeResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    HomeInfo = JsonConvert.DeserializeObject<HomeRootobject>(HomeResponse);
+
+                }
+                //returning the employee list to view  
+                return View(HomeInfo.data);
+            }
         }
     }
 }

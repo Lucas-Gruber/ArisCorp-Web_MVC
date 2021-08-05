@@ -7,154 +7,81 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArisCorpWeb.Data;
 using ArisCorpWeb.Models;
+using ArisCorpWeb.ViewModels;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Net.Http;
 
 namespace ArisCorpWeb.Controllers
 {
     public class BiografienController : Controller
     {
+        string APIBaseurl = "https://cms.ariscorp.de/items/";
+
+
+
         [Route("Biografien")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            MemberRootobject BioInfo = new MemberRootobject();
 
-        private readonly ApplicationDBContext _context;
-
-        public BiografienController(ApplicationDBContext context)
-        {
-            _context = context;
-        }
-
-        // GET: Biografien
-        public async Task<IActionResult> List()
-        {
-            return View(await _context.Biografien.ToListAsync());
-        }
-
-        // GET: Biografien/Details/5
-        [Route("Biografien/{id}")]
-        public async Task<IActionResult> Member(string id)
-        {
-            if (id == null)
+            using (var client = new HttpClient())
             {
-                return NotFound("~/Views/Biografien/BioNotFound.cshtml");
-            }
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
 
-            var biografien = await _context.Biografien
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (biografien == null)
-            {
-                return View("BioNotFound");
-            }
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            return View(biografien);
-        }
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("member" + "?sort=sort,member_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
-        // GET: Biografien/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Biografien/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Mitglied,Titel,Picture,Content1,Content2,Content3,Content4")] Biografien biografien)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(biografien);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(List));
-            }
-            return View(biografien);
-        }
-
-        // GET: Biografien/Edit/5
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var biografien = await _context.Biografien.FindAsync(id);
-            if (biografien == null)
-            {
-                return NotFound();
-            }
-            return View(biografien);
-        }
-
-        // POST: Biografien/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Mitglied,Titel,Picture,Content1,Content2,Content3,Content4")] Biografien biografien)
-        {
-            if (id != biografien.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
                 {
-                    _context.Update(biografien);
-                    await _context.SaveChangesAsync();
+                    //Storing the response details recieved from web api   
+                    var BioResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    BioInfo = JsonConvert.DeserializeObject<MemberRootobject>(BioResponse);
+
                 }
-                catch (DbUpdateConcurrencyException)
+                //returning the employee list to view  
+                return View(BioInfo.data);
+            }
+        }
+
+        [Route("Biografien/{member}")]
+        public async Task<ActionResult> Member(string member)
+        {
+            MemberRootobject BioInfo = new MemberRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("member" + "?filter[member_name]=" + member + "&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
                 {
-                    if (!BiografienExists(biografien.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    //Storing the response details recieved from web api   
+                    var BioResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    BioInfo = JsonConvert.DeserializeObject<MemberRootobject>(BioResponse);
+
                 }
-                return RedirectToAction(nameof(List));
+                //returning the employee list to view  
+                return View(BioInfo.data);
             }
-            return View(biografien);
-        }
-
-        // GET: Biografien/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var biografien = await _context.Biografien
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (biografien == null)
-            {
-                return NotFound();
-            }
-
-            return View(biografien);
-        }
-
-        // POST: Biografien/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            var biografien = await _context.Biografien.FindAsync(id);
-            _context.Biografien.Remove(biografien);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(List));
-        }
-
-        private bool BiografienExists(string id)
-        {
-            return _context.Biografien.Any(e => e.Id == id);
         }
     }
 }

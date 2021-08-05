@@ -1,35 +1,56 @@
-﻿@model ArisCorpWeb.Models.Biografien
+﻿@model IEnumerable<MemberAPI>
 
 @{
-    ViewData["Title"] = "Biografie: " + Model.Mitglied;
-    Layout = "_HomeLayout";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
     ViewData["BackF"] = "tabs";
 }
-<div class="large-margin"></div>
-<div id="bio" class='large-margin'>
-    <div class="row heading tiny-margin">
-        <div class="col-md-auto">
-            <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris">@Html.DisplayFor(model => model.Mitglied)</span></h1>
-        </div>
-        <div class="col">
-            <hr class="animation-element extend">
-        </div>
-    </div>
-    <div class="row medium-margin tab-manifesto">
-        <div class="col-md-11">
-            <h2 class="short-hr-left">Bio von @Html.DisplayFor(model => model.Titel)</h2>
-            <img src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" data-src="/assets/img/member/@Html.DisplayFor(model => model.Id)@Html.Raw(".webp")" onerror="this.onerror = null; this.src='/assets/img/member/Placeholder.webp'" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(model => model.Titel)" style="float: right;">
 
-            <div style="font-size: 75%;">
-                <span>@Html.DisplayFor(model => model.Steckbrief)</span>
+@foreach (var api in Model)
+{
+    string title = api.member_titel;
+    ViewData["Title"] = "Biografie: " + api.member_titel;
+
+    <div class="large-margin"></div>
+    <div id="bio" class='large-margin'>
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris"> @Html.DisplayFor(model => api.member_titel)</span></h1>
             </div>
-            <div>
-                <span>@Html.DisplayFor(model => model.Bio)</span>
-
-                <span>@Html.DisplayFor(model => model.Zusatz)</span>
+            <div class="col">
+                <hr class="animation-element extend">
             </div>
         </div>
+        <div class="row medium-margin">
+            <div class="col-md-11">
+                <h2 class="short-hr-left">Bio von  @Html.DisplayFor(model => api.member_titel)</h2>
+                @if (api.member_potrait == null)
+                {
+                    <img src="//cms.ariscorp.de/assets/0b7eafde-0933-4d1a-a32f-b4f8dd5bb492" class="img-fluid b-lazy" alt="Potrait (Unbekannt) von @Html.DisplayFor(modelItem => api.member_titel)" style="float: right;">
+                }
+                else
+                {
+                    <img src="//cms.ariscorp.de/assets/@api.member_potrait" class="img-fluid b-lazy" alt="Potrait von @Html.DisplayFor(modelItem => api.member_titel)" style="float: right;">
+                }
+
+                <div id="steckbrief">
+                    @Html.Raw(api.member_steckbrief)
+                </div>
+
+                <br />
+                <br />
+
+                <div id="biografie">
+                    @if (api.member_biografie != null)
+                    {
+                        @Html.Raw(api.member_biografie);
+                    }
+                    else
+                    {
+                        <p>Bio unbekannt.</p>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+}

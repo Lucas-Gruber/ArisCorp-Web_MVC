@@ -10,6 +10,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArisCorpWeb.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using ArisCorpWeb.Handlers;
+using ArisCorpWeb.Services;
+using ShieldUI.AspNetCore.Mvc;
+
+
 
 namespace ArisCorpWeb
 {
@@ -28,10 +37,11 @@ namespace ArisCorpWeb
             
             services.AddControllersWithViews();
 
-            services.AddDbContext<ApplicationDBContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ArisCorpWebDB")));
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddRazorPages();
+            services.AddMemoryCache();
 
-            services.AddCoreAdmin();
+            services.AddShieldUI();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,42 +53,33 @@ namespace ArisCorpWeb
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseExceptionHandler("/Error");
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
-            
+            app.UseCookiePolicy();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "areaRoute",
+                    pattern: "{area:exists}/{controller}/{action}",
+                    defaults: new { action = "Index" });
+
+                /** endpoints.MapControllerRoute(
                     name: "MyArea",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"); */
 
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
-
-            /**app.UseMvc(routes =>
-            {
-
-            routes.MapRoute(
-                name: "Systeme",
-                template: "VerseExkurs/Systeme/{System}",
-                defaults:new {controller="VerseExkurs",action= "Systeme" }
-                );
-
-
-            routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            }); **/
         }
     }
 }

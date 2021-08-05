@@ -8,27 +8,39 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
+
+    public class MemberRootobject
+    {
+        public MemberAPI[] data { get; set; }
+    }
+
+    public class MemberAPI
+    {
+        public int id { get; set; }
+        public string status { get; set; }
+        public int? sort { get; set; }
+        public string user_created { get; set; }
+        public string user_updated { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
+
+        [DataType(DataType.Html)]
+        public string member_name { get; set; }
+        public string member_titel { get; set; }
+        public string member_potrait { get; set; }
+
+        [DataType(DataType.Html)]
+        public string member_steckbrief { get; set; }
+
+        [DataType(DataType.Html)]
+        public string member_biografie { get; set; }
+        public string[] member_rollen { get; set; }
+        public string profile { get; set; }
+        public object[] comm_links { get; set; }
+    }
+
     public class Biografien
     {
-        //Biografie Seite
-        [ForeignKey("BiografienId")]
-        public string Id { get; set; }
-        public string Mitglied { get; set; }
-        public string Titel { get; set; }
 
-        [DataType(DataType.Html)]
-        public string Steckbrief { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Bio { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Zusatz { get; set; }
-        
-        //Biografie Homepage
-        public string HomepageRolle { get; set; }
-
-        [DataType(DataType.Html)]
-        public string Link { get; set; }
     }
 }

@@ -94,6 +94,126 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 832 978&quot;&gt;
+        ///                &lt;image id=&quot;Back&quot; data-name=&quot;Ebene 1&quot; width=&quot;832&quot; height=&quot;978&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0AAAAPSCAYAAABSzboKAAAgAElEQVR4nOy9+bMc15Xn971bLlXvPRAbVxDc1dPgBkoiJUrdrXZ7elotqdXjsafbHo/9izvCjvCv/l/8gyP8g393hCOmNSO1RFECiZ3YFwIgsRHEQhDb22rJzHuv49ybWVUPeNgfgLecj3T5tqrMm5mFyvutc873CO8LMAzDMMwCI+rNefq2RIEe+hD1/xSkkUgqAeMBL3 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_back {
+            get {
+                return ResourceManager.GetString("gameplay-back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Data Running&quot; data-name=&quot;Ebene 1&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM8 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_datarunning {
+            get {
+                return ResourceManager.GetString("gameplay-datarunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Exploration&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5n [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_exploration {
+            get {
+                return ResourceManager.GetString("gameplay-exploration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Medical&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevj [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_medical {
+            get {
+                return ResourceManager.GetString("gameplay-medical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Mining&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevjH [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_mining {
+            get {
+                return ResourceManager.GetString("gameplay-mining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Refuel&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevjH [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_refuel {
+            get {
+                return ResourceManager.GetString("gameplay-refuel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Salvaging&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nke [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_salvaging {
+            get {
+                return ResourceManager.GetString("gameplay-salvaging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Science&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevj [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_science {
+            get {
+                return ResourceManager.GetString("gameplay-science", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Security&quot; data-name=&quot;Defence__Combat (1)&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9B7ht11kdOuacq+16+jm36d6reyXL6s2SZQsbIyzZlgMJJhUMGJOQYJ4pgYT2QSABTMmXBBJKwnu893ghxNRn8GeDH9ggYhvhJlu9XOn208vuq875vn/OudYu5xxJtiRbZY2rrX323muvMtfae4//n+MfP1NKoUSJEiVKvLjwf7/v [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_security {
+            get {
+                return ResourceManager.GetString("gameplay-security", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Touring&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevj [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_touring {
+            get {
+                return ResourceManager.GetString("gameplay-touring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Trading&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevj [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gameplay_trading {
+            get {
+                return ResourceManager.GetString("gameplay-trading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg class=&quot;img-gameplays&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;140&quot; height=&quot;140&quot; viewBox=&quot;0 0 754 754&quot;&gt;
+        ///                &lt;image id=&quot;Repair&quot; width=&quot;754&quot; height=&quot;754&quot; xlink:href=&quot;data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvIAAALyCAYAAAC4mzBMAAAgAElEQVR4nOy9Cbhl11kduPbeZ7rDm6tejaoqlSTLkiXL8ijb8WzLU+OAOyEkmAAOIYG0CTQ0Y5MAAcyQhA8Iwf2RprtJoGPGBtwmqI0N8ic7QpY1T6XSUKWa33zfHc64d3//Hs495773SrI1S2dJt867555xn3PvWfvf618/U0qhQYMGDRq8sPB/ffLjzPM81uWb+znn/0wI4fu+D3p5nkevjH [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string gamplay_repair {
+            get {
+                return ResourceManager.GetString("gamplay-repair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die &lt;svg aria-hidden=&quot;true&quot;
         ///                     focusable=&quot;false&quot;
         ///                     data-prefix=&quot;fad&quot;
@@ -216,6 +336,24 @@ namespace Resources {
         public static string nav_uee_svg {
             get {
                 return ResourceManager.GetString("nav_uee_svg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die $(&apos;#image-map-pro-container&apos;).imageMapPro({&quot;id&quot;:2216,&quot;editor&quot;:{&quot;selected_shape&quot;:&quot;poly-6786&quot;,&quot;tool&quot;:&quot;select&quot;,&quot;shapeCounter&quot;:{&quot;polys&quot;:12}},&quot;general&quot;:{&quot;name&quot;:&quot;Untitled&quot;,&quot;shortcode&quot;:&quot;Technologie2&quot;,&quot;width&quot;:1825,&quot;height&quot;:635,&quot;naturalWidth&quot;:1825,&quot;naturalHeight&quot;:635},&quot;image&quot;:{&quot;url&quot;:&quot;/assets/img/exkurs/util/Schwerreck2.png&quot;},&quot;spots&quot;:[{&quot;id&quot;:&quot;poly-2867&quot;,&quot;title&quot;:&quot;Triebwerke Mount&quot;,&quot;type&quot;:&quot;poly&quot;,&quot;x&quot;:6.119,&quot;y&quot;:38.374,&quot;width&quot;:2.053,&quot;height&quot;:11.447,&quot;x_image_background&quot;:6.146637265711136,&quot;y_image_background&quot;:38.413699984373 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string schwerregJS {
+            get {
+                return ResourceManager.GetString("schwerregJS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die $(&apos;#image-map-pro-container&apos;).imageMapPro({&quot;id&quot;:1261,&quot;editor&quot;:{&quot;selected_shape&quot;:&quot;poly-4099&quot;,&quot;tool&quot;:&quot;select&quot;,&quot;zoom&quot;:8,&quot;shapeCounter&quot;:{&quot;rects&quot;:1,&quot;ovals&quot;:1,&quot;polys&quot;:2}},&quot;general&quot;:{&quot;name&quot;:&quot;Untitled&quot;,&quot;width&quot;:1200,&quot;height&quot;:841,&quot;naturalWidth&quot;:1200,&quot;naturalHeight&quot;:841},&quot;image&quot;:{&quot;url&quot;:&quot;/assets/img/exkurs/util/Starmap.webp&quot;},&quot;fullscreen&quot;:{&quot;start_in_fullscreen_mode&quot;:1},&quot;shapes&quot;:{&quot;glowing_shapes&quot;:1,&quot;glowing_shapes_color&quot;:&quot;#428bca&quot;,&quot;glow_opacity&quot;:0.25555555555555554,&quot;stop_glowing_on_mouseover&quot;:0},&quot;tooltips&quot;:{&quot;tooltip_ani [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string starmapJS {
+            get {
+                return ResourceManager.GetString("starmapJS", resourceCulture);
             }
         }
         

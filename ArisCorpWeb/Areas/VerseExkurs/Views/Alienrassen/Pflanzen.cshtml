@@ -1,0 +1,130 @@
+﻿@model IEnumerable<ArisCorpWeb.Models.Pflanzen>
+
+@{
+    ViewData["Title"] = "- Pflanzen";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+@foreach(var model in Model)
+{ 
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">ALIENArt: <span class="coloredaris">@Html.DisplayFor(modelitem => model.Art)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @Html.DisplayFor(modelitem => model.PictureEinleitung)
+            <h2 class="short-hr-left">Exkurs - @Html.DisplayFor(modelitem => model.Art)</h2>
+
+            <span>@Html.DisplayFor(modelitem => model.Einleitung)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt1)
+
+            <span>@Html.DisplayFor(modelitem => model.Art1)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt2)
+
+            <span>@Html.DisplayFor(modelitem => model.Art2)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt3)
+
+            <span>@Html.DisplayFor(modelitem => model.Art3)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt4)
+
+            <span>@Html.DisplayFor(modelitem => model.Art4)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt5)
+
+            <span>@Html.DisplayFor(modelitem => model.Art5)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt6)
+
+            <span>@Html.DisplayFor(modelitem => model.Art6)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt7)
+
+            <span>@Html.DisplayFor(modelitem => model.Art7)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt8)
+
+            <span>@Html.DisplayFor(modelitem => model.Art8)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt9)
+
+            <span>@Html.DisplayFor(modelitem => model.Art9)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt10)
+
+            <span>@Html.DisplayFor(modelitem => model.Art10)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt11)
+
+            <span>@Html.DisplayFor(modelitem => model.Art11)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt12)
+
+            <span>@Html.DisplayFor(modelitem => model.Art12)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt13)
+
+            <span>@Html.DisplayFor(modelitem => model.Art13)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt14)
+
+            <span>@Html.DisplayFor(modelitem => model.Art14)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt15)
+
+            <span>@Html.DisplayFor(modelitem => model.Art15)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt16)
+
+            <span>@Html.DisplayFor(modelitem => model.Art16)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt17)
+
+            <span>@Html.DisplayFor(modelitem => model.Art17)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt18)
+
+            <span>@Html.DisplayFor(modelitem => model.Art18)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt19)
+
+            <span>@Html.DisplayFor(modelitem => model.Art19)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureArt20)
+
+            <span>@Html.DisplayFor(modelitem => model.Art20)</span>
+        </div>
+        </div>
+    </div>
+}

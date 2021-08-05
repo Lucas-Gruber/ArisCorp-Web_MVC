@@ -11,18 +11,22 @@
     <hr class="animation-element extend">
 </div>
 
-
+<link rel="stylesheet" href="/assets/css/image-map-pro.min.css">
 
 <div style="margin-top: 1.2rem"></div>
 
-<link rel="stylesheet" href="/assets/css/image-map-pro.min.css">
 <div id="image-map-pro-container"></div>
 
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/image-map-pro.min.js"></script>
-<script src="/assets/js/technologien.js"></script>
-
-<div class="img-gameplays-line">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/image-map-pro.min.js"></script>
+    <script type="text/javascript">
+        ;(function ($, window, document, undefined) {
+            $(document).ready(function () {
+                @Html.Raw(Resources.Resources.schwerregJS)
+                });
+        })(jQuery, window, document);
+    </script>
+                <div class="img-gameplays-line">
     <hr class="animation-element extend">
 </div>
 

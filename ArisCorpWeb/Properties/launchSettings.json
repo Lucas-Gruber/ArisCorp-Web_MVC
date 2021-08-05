@@ -4,7 +4,7 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:62303",
-      "sslPort": 44349
+      "sslPort": 44348
     }
   },
   "profiles": {
@@ -22,16 +22,6 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
-    },
-    "WSL 2": {
-      "commandName": "WSL2",
-      "launchBrowser": true,
-      "launchUrl": "https://localhost:5001",
-      "environmentVariables": {
-        "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000",
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "distributionName": ""
     }
   }
 }

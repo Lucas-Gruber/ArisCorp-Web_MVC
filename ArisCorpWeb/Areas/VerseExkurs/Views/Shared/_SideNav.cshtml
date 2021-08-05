@@ -1,4 +1,5 @@
-﻿<nav class="navbar" style="overflow: hidden">
+﻿<link rel="stylesheet" href="https://i.icomoon.io/public/temp/fd7b51256e/UntitledProject1/style.css">
+<nav class="navbar" style="overflow: hidden">
     <ul class="navbar-nav">
         <li class="logo">
             <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">
@@ -61,44 +62,93 @@
                 <i class="fas fa-chevron-right fa-lg fa-spin-0-nota fa-rotate fa-alien" style="margin-left: 1.5rem;"></i>
             </a>
             <ul class="sub-alien-menu">
-                <a asp-action="Alienrassen" asp-route-id="Banu" class="nav-underlink">
+                <a asp-controller="Alienrassen" asp-action="Banu" class="nav-underlink">
                     @Html.Raw(Resources.Resources.banu_head_svg)
-                    <span class="link-text" style="font-family: BanuFont; font-size: 155%;">Banu</span>
+                    <span class="link-text" style="font-family: Alien-Banu; font-size: 155%;">Banu</span>
                 </a>
-                <a asp-action="Alienrassen" asp-route-id="Tevarin" class="nav-underlink">
+                <a asp-controller="Alienrassen" asp-action="Tevarin" class="nav-underlink">
                     @Html.Raw(Resources.Resources.tevarin_head_svg)
-                    <span class="link-text" style="font-family: TevarinFont;">Tevarin</span>
+                    <span class="link-text" style="font-family: Alien-Tevarin;">Tevarin</span>
                 </a>
-                <a asp-action="Alienrassen" asp-route-id="Vanduul" class="nav-underlink">
+                <a asp-controller="Alienrassen" asp-action="Vanduul" class="nav-underlink">
                     @Html.Raw(Resources.Resources.vanduul_head_svg)
-                    <span class="link-text" style="font-family: VanduulFont;">Vanduul</span>
+                    <span class="link-text" style="font-family: Alien-Vanduul;">Vanduul</span>
                 </a>
 
-                <a asp-action="Alienrassen" asp-route-id="XiAn" class="nav-underlink">
+                <a asp-controller="Alienrassen" asp-action="Xi'An" class="nav-underlink">
                     @Html.Raw(Resources.Resources.xian_head_svg)
-                    <span class="link-text" style="font-family: XiAnFont;">Xi'An</span>
+                    <span class="link-text" style="font-family: Alien-XiAn;">Xi'An</span>
                 </a>
-                <a href="#" class="nav-underlink-placeholder">
+                <a class="nav-underlink-placeholder">
                     <span class="link-text"></span>
                 </a>
-                <a asp-action="Alienrassen" asp-route-id="Biestarium" class="nav-underlink">
+                <a asp-controller="Alienrassen" asp-action="Biestarium" class="nav-underlink">
                     @Html.Raw(Resources.Resources.biestarium_head_svg)
                     <span class="link-text" style="font-family: 'Nasa';">Biestarium</span>
+                </a>
+                <a asp-controller="Alienrassen" asp-action="Pflanzen" class="nav-underlink">
+                    @Html.Raw(Resources.Resources.biestarium_head_svg)
+                    <span class="link-text" style="font-family: 'Nasa';">Pflanzen</span>
                 </a>
             </ul>
         </li>
 
-        <li class="nav-item">
-            <a asp-action="Firmen" asp-action="Index" class="nav-link">
+        <li class="nav-item sub-firmen-btn">
+            <a asp-action="" class="nav-link">
                 @Html.Raw(Resources.Resources.nav_firma_svg)
                 <span class="link-text">Firmen</span>
+                <i class="fas fa-chevron-right fa-lg fa-spin-0-nota fa-rotate fa-firmen" style="margin-left: 1.5rem;"></i>
             </a>
+            <ul class="sub-firmen-menu">
+                <a asp-controller="Firmen" asp-action="Hersteller" class="nav-underlink">
+                    <span class="arisicon-wrench" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Hersteller</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Dienstleister" class="nav-underlink">
+                    <span class="arisicon-user-tie" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Dienstleister</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Geschäfte" class="nav-underlink">
+                    <span class="arisicon-cart" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Geschäfte</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Organisationen" class="nav-underlink">
+                    <span class="arisicon-tree" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Organisationen</span>
+                </a>
+                <a asp-controller="Firmen" asp-action="Verschiedenes" class="nav-underlink">
+                    <span class="arisicon-svg" style="margin-left: 10px; color: #00ffe8;"></span>
+                    <span class="link-text">Verschiedenes</span>
+                </a>
+            </ul>
         </li>
 
         <li class="nav-item">
             <a asp-controller="Technologien" asp-action="Index" class="nav-link">
                 @Html.Raw(Resources.Resources.nav_tech_svg)
                 <span class="link-text">Technologie</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a asp-controller="Spectrum" asp-action="Index" class="nav-link">
+                <svg id="Speckdrum" data-name="Speckdrum" xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-cat fa-w-16 fa-9x" viewBox="0 0 512 512">
+                    <g class="fa-group">
+                        <path fill="currentColor" class="fa-secondary" d="M258,1q6.56,14.09,13.13,28.17T284.46,57.5q8.91,18.87,17.86,37.72c5.12,10.81,10.28,21.61,15.4,32.42q12.38,26.07,24.72,52.13c5,10.57,10.1,21.11,15.55,32.48L330.1,236.54v6.35l30.27-25.32C404.5,310.25,449,402.29,492.69,494.68l-2.42,1.78L432.44,447c-.16,1.29-.35,2.82-.61,5H346l-60,61h-1c.11-5.33.3-10.65.32-16,0-14.47,0-28.94,0-44.3H86.25c-2.27-2.72-3.54-4.26-4.37-5.26l-58,49.29L21.48,495l133-279,29.89,25.29c.34-2,.67-3.92,1-5.61l-28.44-25.27c4.48-9,8.59-17.18,12.57-25.38,2-4,3.69-8.21,5.57-12.3,5.07-11,10.06-22.1,15.27-33.06,4.61-9.74,9.48-19.37,14.22-29.05C211.22,97,218,83.39,224.48,69.71c4.11-8.61,7.74-17.44,11.83-26C243.1,29.39,250.09,15.22,257,1ZM411.26,437c-3.21-7.28-6-14-9.13-20.57-6.61-13.88-13.38-27.69-20.11-41.51-15.23-31.3-30.61-62.52-45.66-93.9-5.83-12.14-10.8-24.7-16.46-36.93-2.7-5.85-6.27-11.28-9.12-17.06-9-18.33-17.84-36.77-26.84-55.11-6.11-12.48-12.28-24.93-18.64-37.28-2.34-4.54-5.32-8.75-8-13.11l-2.05-.11C203.11,225.57,154.58,331.48,102.61,437.25H297.08V479.2Q318.82,456.9,338.25,437Z" />
+                    </g>
+                </svg>
+                <span class="link-text">Spectrum</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a asp-controller="Literatur" asp-action="Index" class="nav-link">
+                <svg id="Literatur" data-name="Literatur" xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-cat fa-w-16 fa-9x" viewBox="0 0 512 512">
+                    <g class="fa-group">
+                        <path  fill="currentColor" class="fa-secondary" d="M41.67,334.81c.46,17.26,4.95,32.76,19.17,43.77a42.36,42.36,0,0,0,13.29,6.58q59.2,18.19,118.55,35.93c30.59,9.19,61.27,18.1,91.82,27.4,4.44,1.35,6.87.79,9.93-2.92q79.67-96.65,159.81-192.86c8.9-10.64,14.29-21,12.23-35.38a63.42,63.42,0,0,1,6.58-37.86c4.25-8.42,13.69-12.83,22-10.36,9.82,2.9,15.44,11.08,14.21,21.23-.9,7.4-3,14.73-3.16,22.12-.18,6.88,1.07,13.87,2.36,20.69,1.51,7.92,1,14.87-4.51,21.46Q408.45,369.26,313.2,484.13c-5.79,7-12.59,9.45-21.22,7-34.82-10-69.7-19.82-104.44-30.09-41.67-12.33-83.31-24.74-124.79-37.68-36.62-11.42-54.95-38.45-59.6-75-4-31.62,3.57-61.41,20.89-88,7.66-11.75,18.16-21.68,27.61-32.22Q138.26,131.47,225,35c1.9-2.11,3.9-4.12,5.86-6.16,5.95-6.21,13.18-8,21.45-6.17Q335.57,41,418.86,59.42q38.25,8.51,76.44,17.36c10.27,2.37,17.55,11.34,16.45,21.33A23.68,23.68,0,0,1,506.27,110q-35.73,42.46-72,84.48c-44.74,51.65-89.75,103.06-134.51,154.68-7.33,8.45-15.59,10.55-26.34,7.49q-96-27.37-192.23-54.19c-2.72-.77-5.51-1.3-8.27-1.88-15.95-3.34-27,4-29.77,19.89C42.36,325.16,42.16,330,41.67,334.81ZM238.32,100c-6,.43-11,2.21-14.88,6.7-4.7,5.4-9.57,10.68-14.05,16.26-5.46,6.8-4.13,11.5,4.19,13.53q74.73,18.25,149.56,36.1c8,1.91,15.23-.51,20.8-6.77q6.46-7.29,12.56-14.91c6-7.51,4.67-11.77-4.74-14.12q-56.46-14.09-113-27.9C265.35,105.64,251.81,103,238.32,100Z" />
+                    </g>
+                </svg>
+                <span class="link-text">Literatur</span>
             </a>
         </li>
         <li class="nav-item">

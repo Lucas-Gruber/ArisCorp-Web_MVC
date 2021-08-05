@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LiteraturAPI>
+
+@{
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Spectrum";
+    ViewData["BackA"] = "Index";
+}
+
+@foreach (var api in Model)
+{
+    @if (api.literatur_kapitel == 1)
+    {
+        <img src="//cms.ariscorp.de/assets/@api.literatur_cover" alt="@api.literatur_titel Cover" width="100%" />
+    }
+    else
+    {
+
+    }
+}
+<hr />
+@foreach (var api in Model)
+{
+    <div class="card mb-3" style="background-color: transparent">
+        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Literatur/Buch/@api.literatur_titel/@api.literatur_kapitel';">
+            <div class="col-md-4" style="margin: auto;">
+                <img src="//cms.ariscorp.de/assets/@api.literatur_cover" class="img-fluid rounded-start" alt="@api.literatur_titel Cover">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_titel - Kapitel: @api.literatur_kapitel</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+}
+<style>
+    .card-tran-body {
+        transition: 0.2s;
+    }
+
+        .card-tran-body:hover {
+            cursor: pointer;
+        }
+
+    .shadow {
+        box-shadow: 0 0.5rem 1rem #E48632 !important;
+    }
+</style>
+<script>
+    $(".card-tran-body").hover(
+        function () {
+            $(this).addClass('shadow');
+            $(this).addClass('mb-5');
+            $(this).addClass('bg-body');
+            $(this).addClass('rounded');
+        },
+        function () {
+            $(this).removeClass('shadow');
+            $(this).removeClass('mb-5');
+            $(this).removeClass('bg-body');
+            $(this).removeClass('rounded');
+        }
+    );
+</script>

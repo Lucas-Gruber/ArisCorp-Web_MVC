@@ -1,0 +1,130 @@
+﻿@model IEnumerable<ArisCorpWeb.Models.Biestarium>
+
+@{
+    ViewData["Title"] = "- Biestarium";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+@foreach(var model in Model)
+{ 
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">ALIENRASSE: <span class="coloredaris">@Html.DisplayFor(modelitem => model.Rasse)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @Html.DisplayFor(modelitem => model.PictureEinleitung)
+            <h2 class="short-hr-left">Exkurs - @Html.DisplayFor(modelitem => model.Rasse)</h2>
+
+            <span>@Html.DisplayFor(modelitem => model.Einleitung)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse1)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse1)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse2)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse2)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse3)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse3)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse4)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse4)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse5)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse5)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse6)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse6)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse7)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse7)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse8)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse8)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse9)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse9)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse10)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse10)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse11)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse11)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse12)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse12)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse13)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse13)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse14)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse14)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse15)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse15)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse16)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse16)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse17)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse17)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse18)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse18)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse19)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse19)</span>
+
+
+            @Html.DisplayFor(modelitem => model.PictureRasse20)
+
+            <span>@Html.DisplayFor(modelitem => model.Rasse20)</span>
+        </div>
+        </div>
+    </div>
+}

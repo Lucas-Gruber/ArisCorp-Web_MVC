@@ -1,0 +1,34 @@
+﻿@model ArisCorpWeb.Models.Firmen_Geschäfte
+
+@{
+    ViewData["Title"] = "Firma: " + Model.Firma;
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Firmen";
+    ViewData["BackA"] = "Geschäfte";
+}
+
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">FIRMA: <span class="coloredaris">@Html.DisplayFor(model => model.Firma)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            @Html.DisplayFor(model => model.PictureEinleitung)
+            <h2 class="short-hr-left">Exkurs - Firma: @Html.DisplayFor(model => model.Firma)</h2>
+
+                <span>@Html.DisplayFor(model => model.Einleitung)</span>
+
+
+                @Html.DisplayFor(model => model.PictureContent)
+
+                <span>@Html.DisplayFor(model => model.Content)</span>
+
+            </div>
+        </div>
+    </div>

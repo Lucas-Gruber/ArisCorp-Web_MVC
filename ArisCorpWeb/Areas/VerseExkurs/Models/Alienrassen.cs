@@ -34,6 +34,9 @@ namespace ArisCorpWeb.Models
         public string PictureReligion { get; set; }
 
         [DataType(DataType.Html)]
+        public string PictureSozialverhalten { get; set; }
+
+        [DataType(DataType.Html)]
         public string PictureMilitar { get; set; }
 
         [DataType(DataType.Html)]
@@ -70,6 +73,9 @@ namespace ArisCorpWeb.Models
         public string Religion { get; set; }
 
         [DataType(DataType.Html)]
+        public string Sozialverhalten { get; set; }
+
+        [DataType(DataType.Html)]
         public string Militar { get; set; }
 
         [DataType(DataType.Html)]
@@ -84,4 +90,29 @@ namespace ArisCorpWeb.Models
         [DataType(DataType.Html)]
         public string Sicherheit { get; set; }
     }
+
+
+
+
+
+
+    public class AlienrassenRootobject
+    {
+        public AlienrassenAPI[] data { get; set; }
+    }
+
+    public class AlienrassenAPI
+    {
+        public int id { get; set; }
+        public string status { get; set; }
+        public object sort { get; set; }
+        public string user_created { get; set; }
+        public string user_updated { get; set; }
+        public string alienrassen_text { get; set; }
+        public string alienrassen_name { get; set; }
+        public string date_created { get; set; }
+        public string date_updated { get; set; }
+        public string alienrassen_banner { get; set; }
+    }
+
 }

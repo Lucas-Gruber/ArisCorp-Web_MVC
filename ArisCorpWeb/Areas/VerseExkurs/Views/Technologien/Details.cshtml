@@ -1,297 +1,35 @@
-﻿@model ArisCorpWeb.Models.Technologien
+﻿@model TechnologieAPI
 
 @{
-    ViewData["Title"] = "Technologien: " + Model.Content1;
+    ViewData["Title"] = "Technologie: ";
     ViewData["BackAR"] = "VerseExkurs";
-    ViewData["BackC"] = "Technologien";
+    ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
+@addTagHelper *, Westwind.AspNetCore.Markdown
 
-<h1>Details</h1>
+<div id="EXCURS" class='large-margin'>
+    <a href="EXCURS"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+        <div class="col-md-auto">
+            <h1 class="animation-element slide-down">TECHNOLOGIE: <span class="coloredaris">@Html.DisplayFor(model => model.name)</span></h1>
+        </div>
+        <div class="col">
+            <hr class="animation-element extend">
+        </div>
+    </div>
+    <div class="row medium-margin tab-manifesto">
+        <div class="col-md-11">
+            <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => model.technologie_banner)" alt="Banner" />
+            <h2 class="short-hr-left">Exkurs - Technologie: @Html.DisplayFor(model => model.name)</h2>
 
-<div>
-    <h4>Technologien</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Rasse)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Rasse)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Extra1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Extra1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Extra2)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Extra2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Extra3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Extra3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Extra4)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Extra4)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Extra5)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Extra5)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture2)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture4)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture4)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture5)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture5)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture6)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture6)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture7)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture7)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture8)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture8)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture9)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture9)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture10)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture10)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content2)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content4)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content4)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content5)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content5)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content6)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content6)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content7)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content7)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content8)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content8)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content9)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content9)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content10)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content10)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content11)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content11)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content12)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content12)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content13)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content13)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content14)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content14)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content15)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content15)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content16)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content16)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content17)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content17)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content18)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content18)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content19)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content19)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content20)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content20)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content21)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content21)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content22)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content22)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content23)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content23)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content24)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content24)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content25)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content25)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content26)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content26)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content27)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content27)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content28)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content28)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content29)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content29)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content30)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content30)
-        </dd>
-    </dl>
+            <markdown markdown="text" />
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<style>
+    img {
+        max-width: 100%
+    }
+</style>

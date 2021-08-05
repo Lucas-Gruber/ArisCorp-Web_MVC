@@ -1,12 +1,33 @@
-﻿<div class="col small-margin">
+﻿@model HomeAPI 
+<div class="col small-margin" style="text-align: center">
     <hr class="animation-element extend">
     <h2 class="tab-manifesto">Die ARISCORP unterhält auch Partnerschaften mit anderen Star Citizen Organisationen. Für nähere Informationen gern auf die jeweiligen Logos klicken.</h2>
     <br>
     <br>
-    <a target="_blank" href="https://robertsspaceindustries.com/orgs/501TH" class="captionlink">
-        <figure class="captionitem">
-            <img src="/assets/img/misc/501st.webp" width="15%" height="auto" />
-            <figcaption class="captiontext">501th UEE Marine Corp</figcaption>
-        </figure>
-    </a>
+    <div class="row">
+        @foreach (var api in Model.ariscorp_partner)
+        {
+            <div class="col-lg-auto col-centered">
+                <a target="_blank" href="@api.partner_website" class="captionlink">
+                    <figure class="captionitem">
+                        <img id="partner-img" src="//cms.ariscorp.de/assets/@api.partner_logo" />
+                        <figcaption class="captiontext">@api.partner_name</figcaption>
+                    </figure>
+                </a>
+            </div>
+        }
+    </div>
 </div>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+    #partner-img{
+        max-width: unset;
+    }
+    .col-centered {
+        float: none;
+        margin: 0 auto;
+    }
+</style>

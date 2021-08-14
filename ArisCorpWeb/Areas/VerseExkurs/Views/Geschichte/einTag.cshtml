@@ -1,37 +1,43 @@
-﻿@model IEnumerable<LiteraturAPI>
+﻿@model IEnumerable<GeschichteAPI>
 @{
+    ViewData["Title"] = "Geschichte";
     ViewData["BackAR"] = "VerseExkurs";
-    ViewData["BackC"] = "Spectrum";
+    ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
 
-@foreach (var api in Model)
-{
-    @if (api.literatur_kapitel == 1)
-    {
-        <img src="//cms.ariscorp.de/assets/@api.literatur_reihe.reihen_cover" alt="Kateogrie Banner" style="width: 100%" />
-    }
-    {
+@addTagHelper *, Westwind.AspNetCore.Markdown
 
-    }
-}
-<hr />
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+
 @foreach (var api in Model)
 {
     <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Literatur/Buch/@api.literatur_titel';">
+        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Geschichte/@api.geschichte_titel';">
             <div class="col-md-4" style="margin: auto;">
-                <img src="//cms.ariscorp.de/assets/@api.literatur_reihe.reihen_cover" class="img-fluid rounded-start" alt="@api.literatur_titel Cover">
+                <img src="//cms.ariscorp.de/assets/@api.geschichte_auswahlbild" class="img-fluid rounded-start" alt="@api.geschichte_titel Cover">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_titel</h1>
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0; font-size: 210%;">@api.geschichte_titel</h1>
                 </div>
             </div>
         </div>
     </div>
+    <hr />
 }
-<hr />
+
+<div class="img-gameplays-line">
+    <hr class="animation-element extend">
+</div>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>
 <style>
     .card-tran-body {
         transition: 0.2s;

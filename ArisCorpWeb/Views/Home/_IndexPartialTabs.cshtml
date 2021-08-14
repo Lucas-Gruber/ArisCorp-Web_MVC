@@ -417,11 +417,13 @@ ul > li h1 {
     <hr />
     <div class="content_wrapper">
         <div class="tab_content active">
-            @Html.Partial("~/Views/Home/Shared/_Members.cshtml")
+            <div title="">
+                @Html.Partial("~/Views/Home/Shared/_Members.cshtml")
+            </div>
         </div>
 
         <div class="tab_content">
-            <p>
+            <p title="">
                 <div id="fleetyards-view"></div>
                 <script>
                     var fleetyards_config = function () {
@@ -498,11 +500,17 @@ ul > li h1 {
                             font-size: 15px;
                             font-family: Nasa;
                         }
+                #fleetchart {
+                    overflow-x: hidden;
+                    overflow-y: hidden;
+                }
             </style>
         </div>
 
         <div class="tab_content">
-            @Html.Partial("~/Views/Home/Shared/_Gameplays.cshtml")
+            <div title="">
+                @Html.Partial("~/Views/Home/Shared/_Gameplays.cshtml")
+            </div>
         </div>
     </div>
 </div>

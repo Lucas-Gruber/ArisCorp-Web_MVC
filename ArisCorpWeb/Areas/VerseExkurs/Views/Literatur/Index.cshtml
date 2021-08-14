@@ -10,13 +10,13 @@
 @foreach (var api in Model)
 {
     <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Literatur/@api.literatur_titel';">
+        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Literatur/@api.literatur_reihe.reihen_titel';">
             <div class="col-md-4" style="margin: auto;">
-                <img src="//cms.ariscorp.de/assets/@api.literatur_cover" class="img-fluid rounded-start" alt="@api.literatur_titel Cover">
+                <img src="//cms.ariscorp.de/assets/@api.literatur_reihe.reihen_cover" class="img-fluid rounded-start" alt="@api.literatur_reihe.reihen_titel Cover">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_titel</h1>
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_reihe.reihen_titel</h1>
                     <!-- <p class="card-text" style="color: #FFF"></p> -->
                 </div>
             </div>

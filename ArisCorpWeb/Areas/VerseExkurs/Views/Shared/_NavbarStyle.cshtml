@@ -354,6 +354,14 @@
             });
         });
         $(document).ready(function () {
+            $('.sub-geschichte-btn > .nav-link').click(function (e) {
+                e.preventDefault();
+                $(this).next('.sub-geschichte-menu').slideToggle('slow');
+                $('.fa-geschichte').toggleClass('fa-spin-90-nota');
+                $('.fa-geschichte').toggleClass('fa-spin-0-nota');
+            });
+        });
+        $(document).ready(function () {
             $('.sub-alien-btn > .nav-link').click(function (e) {
                 e.preventDefault();
                 $(this).next('.sub-alien-menu').slideToggle('slow');
@@ -379,6 +387,10 @@
     }
 
     .sub-uee-menu {
+        display: none;
+    }
+
+    .sub-geschichte-menu {
         display: none;
     }
 

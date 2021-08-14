@@ -1,0 +1,42 @@
+﻿@model HomeAPI
+
+<!-- /// COMM-LINK SECTION /// -->
+<div id="aboutsection" style="margin-top: 6em;" class="row heading">
+    
+</div>
+@if(Model.ariscorp_comm_links != null)
+{
+    <div class="large-margin">
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">NEUSTE <span class="coloredaris">COMM-LINKS</span> <span class="comm-link-link" ><a href="/comm-link">Hier findest du alle Comm-Links!</a></span></h1>
+            </div>
+            <div class="col">
+                <hr class="animation-element extend">
+            </div>
+        </div> 
+        @Html.Partial("~/Views/Home/Shared/_CommLinks.cshtml")
+    </div>
+    <style>
+        #tabsContainer {
+            margin: auto;
+        }
+        img {
+            max-width: 100%
+        }
+        .comm-link-link {
+            font-size: 40%;
+            letter-spacing: 3px;
+            padding-left: 22.5em;
+        }
+        .comm-link-link a {
+            text-decoration: none;
+            color: #FFF;
+            transition: 0.5s;
+        }
+            .comm-link-link a:hover {
+                text-decoration: none;
+                color: #E48632;
+            }
+    </style>
+}

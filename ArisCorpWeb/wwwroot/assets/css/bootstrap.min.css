@@ -37,7 +37,7 @@
 }
 
 *, ::after, ::before {
-    box-sizing: border-box
+    /*box-sizing: border-box*/
 }
 
 html {
@@ -73,8 +73,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: .5rem
+    margin-bottom: 0;
 }
 
 p {
@@ -328,7 +327,7 @@ template {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-bottom: .5rem;
+    margin-bottom: 0;
     font-weight: 500;
     line-height: 1.2
 }
@@ -538,7 +537,7 @@ pre {
 
 @media (min-width:1200px) {
     .container {
-        max-width: 1140px
+        max-width: 1141px
     }
 }
 
@@ -578,7 +577,7 @@ pre {
 
 .col {
     -ms-flex-preferred-size: 0;
-    flex-basis: 0;
+    /*flex-basis: 0;*/
     -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%

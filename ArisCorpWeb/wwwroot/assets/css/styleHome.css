@@ -120,6 +120,10 @@ html, body {
 body {
     overflow-x: hidden;
 }
+
+img {
+    max-width: 100%
+}
 /* -Full width fluid container- */
 .full-width {
     padding-left: 0;

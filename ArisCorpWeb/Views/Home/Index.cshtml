@@ -154,6 +154,8 @@
             $video.css({
                 "cursor": ""
             })
+
+            $video.trigger('play');
         });
     });
 
@@ -191,6 +193,10 @@
     <!-- /// TABS SECTION /// -->
     <div id="tabs" style="padding-top: 60px; margin-top: -60px;"></div>
     @Html.Partial("_IndexPartialTabs")
+
+    <!-- /// COMM-LINKS SECTION /// -->
+    <div id="comm-links" style="padding-top: 60px; margin-top: -60px;"></div>
+    @Html.Partial("_IndexPartialCommLinks")
 
     <!-- /// RECRUITMENT SECTION /// -->
     <div id="recruitment" style="padding-top: 60px; margin-top: -60px;"></div>

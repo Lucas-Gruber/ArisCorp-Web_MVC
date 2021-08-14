@@ -24,7 +24,7 @@
             <div class="row">
                 @foreach (var api in Model)
                 {
-                    @if (api.firmenkategorie == "schiffshersteller")
+                    @if (api.firmenherstellerkategorie == "schiffshersteller")
                     {
                         <div class="column">
                             <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
@@ -37,7 +37,7 @@
             <div class="row">
                 @foreach (var api in Model)
                 {
-                    @if (api.firmenkategorie == "komponentenhersteller")
+                    @if (api.firmenherstellerkategorie == "komponentenhersteller")
                     {
                         <div class="column">
                             <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
@@ -50,7 +50,7 @@
             <div class="row">
                 @foreach (var api in Model)
                 {
-                    @if (api.firmenkategorie == "waffenhersteller")
+                    @if (api.firmenherstellerkategorie == "waffenhersteller")
                     {
                         <div class="column">
                             <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>
@@ -63,7 +63,7 @@
             <div class="row">
                 @foreach (var api in Model)
                 {
-                    @if (api.firmenkategorie == "Personenausruestungshersteller")
+                    @if (api.firmenherstellerkategorie == "Personenausruestungshersteller")
                     {
                         <div class="column">
                             <a asp-area="VerseExkurs" asp-controller="Firmen" asp-action="@api.firmen_name" class="button-ships"><img src="//cms.ariscorp.de/assets/@api.firmen_trans_logo" alt="@api.firmen_name Trans-Logo" style="width:100%" onclick="myFunction(this);"></a>

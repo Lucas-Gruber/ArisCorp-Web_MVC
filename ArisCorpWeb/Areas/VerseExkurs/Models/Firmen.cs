@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
-
     public class FirmenRootobject
     {
         public FirmenAPI[] data { get; set; }
@@ -17,7 +16,7 @@ namespace ArisCorpWeb.Models
     {
         public int id { get; set; }
         public string status { get; set; }
-        public object sort { get; set; }
+        public int? sort { get; set; }
         public string user_created { get; set; }
         public string user_updated { get; set; }
         public string date_created { get; set; }
@@ -27,6 +26,7 @@ namespace ArisCorpWeb.Models
         public string firmen_text { get; set; }
         public string firmenkategorie { get; set; }
         public string firmen_name { get; set; }
+        public string firmenherstellerkategorie { get; set; }
     }
 
 }

@@ -10,10 +10,9 @@ using ArisCorpWeb.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-/**
-namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
+
+namespace ArisCorpWeb.Controllers
 {
-    [Area("VerseExkurs")]
     public class CommLinksController : Controller
     {
         string APIBaseurl = "https://cms.ariscorp.de/";
@@ -85,4 +84,3 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         }
     }
 }
-**/

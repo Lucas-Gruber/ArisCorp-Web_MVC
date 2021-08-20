@@ -112,7 +112,7 @@
                 $("#bgvid").prop('muted', false);
                 $video.trigger('play');
                 $video.animate({ volume: 1 }, 15000);
-                $(".hero-overlay").animate({ backgroundColor: "rgba(0,0,0,0)" }, 1000);
+                $(".hero-overlay").css("backgroundColor", "transparent");
                 /*$(".hero-overlay").css({
                     "background-color": "rgba(0,0,0,0)"
                 })*/
@@ -154,6 +154,8 @@
             $video.css({
                 "cursor": ""
             })
+
+            $video.trigger('play');
         });
     });
 
@@ -185,19 +187,23 @@
 </script>
 
     <!-- /// ABOUT SECTION /// -->
-    <div id="about" style="padding-top: 60px; margin-top: -60px;"></div>
+    <div id="about" style="padding-top: 60px; margin-top: -60px;" class="large-margin"></div>
     @Html.Partial("_IndexPartialAbout")
 
     <!-- /// TABS SECTION /// -->
-    <div id="tabs" style="padding-top: 60px; margin-top: -60px;"></div>
+    <div id="tabs" style="padding-top: 60px; margin-top: -60px;" class="large-margin"></div>
     @Html.Partial("_IndexPartialTabs")
 
+    <!-- /// COMM-LINKS SECTION /// -->
+    <div id="comm-links" style="padding-top: 60px; margin-top: -60px;" class="large-margin"></div>
+    @Html.Partial("_IndexPartialCommLinks")
+
     <!-- /// RECRUITMENT SECTION /// -->
-    <div id="recruitment" style="padding-top: 60px; margin-top: -60px;"></div>
+    <div id="recruitment" style="padding-top: 60px; margin-top: -60px;" class="large-margin"></div>
     @Html.Partial("_IndexPartialRecruitment")
 
     <!-- /// PARTNER SECTION /// -->
-    <div id="partner" style="padding-top: 60px; margin-top: -60px;"></div>
+    <div id="partner" style="padding-top: 60px; margin-top: -60px;" class="large-margin"></div>
     @Html.Partial("_IndexPartialPartner")
 
     <!-- /// SCRIPTS /// -->

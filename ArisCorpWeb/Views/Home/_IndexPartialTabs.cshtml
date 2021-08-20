@@ -1,5 +1,5 @@
 ﻿@model HomeAPI 
-<div class="row heading tiny-margin">
+<div class="row heading">
     <div class="col-md-auto">
         <h1 class="animation-element slide-down">UNSERE</h1>
     </div>
@@ -407,102 +407,113 @@ ul > li h1 {
 /*# sourceMappingURL=style.css.map */
 </style>
 <script src="//cms.ariscorp.de/assets/09fd1595-1a14-43c3-b496-ac507127c8cb"></script>
-<div class="tab_wrapper tabsection large-margin">
+<div class="tab_wrapper tabsection">
 
     <ul class="tab_list">
-        <li class="active"><h1>MITGLIEDER</h1></li>
-        <li><h1>FLOTTE</h1></li>
-        <li><h1>AUFGABENFELDER</h1></li>
+        <li id="tabmitglieder" class="active"><h1>MITGLIEDER</h1></li>
+        <li id="tabfleet"><h1>FLOTTE</h1></li>
+        <li id="tabgamep"><h1>AUFGABENFELDER</h1></li>
     </ul>
     <hr />
     <div class="content_wrapper">
         <div class="tab_content active">
-            @Html.Partial("~/Views/Home/Shared/_Members.cshtml")
+            <div title="">
+                @Html.Partial("~/Views/Home/Shared/_Members.cshtml")
+            </div>
         </div>
 
         <div class="tab_content">
-            <p>
-                <div id="fleetyards-view"></div>
-                <script>
-                    var fleetyards_config = function () {
-                        return {
-                            details: true, // Set to false if you want to display a minimal version of the Ship Panel
-                            grouped: true, // Set to false if you want to display the same Ships multiple times in your Fleetview.
-                            fleetchart: false, // Set to true if you want to display a Fleetchart instead of the normal Ship Panels.
-                            fleetchartGrouped: false, // Set to true if you want to group the Ships on the Fleetchart View or not.
-                            fleetchartScale: 30, // Initial Scale of the Fleetchart
-                            groupedButton: true, // Allow the User to toggle Groupped Views
-                            fleetchartSlider: true, // Set to true to display a slider which allows users to scale the Fleetchart
-                            ships: ['315p', '890-jump', 'aurora-mr', 'avenger-titan', 'c2-hercules', 'c2-hercules', 'c8-pisces', 'c8x-pisces-expedition', 'c8x-pisces-expedition', 'carrack', 'caterpillar', 'corsair', 'crucible', 'crucible', 'cutlass-black', 'cyclone-rn', 'dragonfly-black', 'f7c-hornet', 'f8c', 'khartu-al', 'kraken', 'mercury-star-runner', 'mercury-star-runner', 'mole', 'nomad', 'nova', 'nova', 'nova', 'p72-archimedes', 'perseus', 'prospector', 'prospector', 'prospector', 'prospector', 'ptv', 'ptv', 'ptv', 'ranger-cv', 'reclaimer', 'roc', 'roc', 'terrapin', 'ursa-rover', 'vanguard-harbinger', 'vulture'], // Replace the Array with a List of Shipnames (slugs) you want to display,
-                            users: [''], // Replace the Array with a list of Fleetyards.net usernames, alternative to the ships option.
-                        }
-                    };
-                    (function () {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://fleetyards.net/embed.js#' + new Date().getTime();
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Bitte aktiviere JavaScript damit du die Flottenansicht by "FleetYards.net" sehen kannst.</noscript>
-            </p>
+            <div title="">
+                <p title="">
+                    <div id="fleetyards-view" title=""></div>
+                    <script>
+                        var fleetyards_config = function () {
+                            return {
+                                details: true, // Set to false if you want to display a minimal version of the Ship Panel
+                                grouped: true, // Set to false if you want to display the same Ships multiple times in your Fleetview.
+                                fleetchart: false, // Set to true if you want to display a Fleetchart instead of the normal Ship Panels.
+                                fleetchartGrouped: false, // Set to true if you want to group the Ships on the Fleetchart View or not.
+                                fleetchartScale: 30, // Initial Scale of the Fleetchart
+                                groupedButton: true, // Allow the User to toggle Groupped Views
+                                fleetchartSlider: true, // Set to true to display a slider which allows users to scale the Fleetchart
+                                ships: ['315p', '890-jump', 'apollo-medivac', 'aurora-mr', 'avenger-titan', 'blade', 'c2-hercules', 'c2-hercules', 'c2-hercules', 'c8-pisces', 'c8x-pisces-expedition', 'c8x-pisces-expedition', 'c8x-pisces-expedition', 'carrack', 'constellation-taurus', 'corsair', 'crucible', 'crucible', 'cyclone-rn', 'dragonfly-black', 'f7c-hornet', 'f8c-lightning', 'glaive', 'hull-c', 'idris-p', 'khartu-al', 'kraken', 'merchantman', 'mercury-star-runner', 'mercury-star-runner', 'mercury-star-runner', 'mustang-alpha', 'mustang-omega', 'nomad', 'orion', 'perseus', 'polaris', 'prospector', 'prospector', 'prospector', 'prowler', 'ptv', 'ptv', 'railen', 'railen', 'ranger-cv', 'reclaimer', 'roc', 'sabre-comet', 'sabre-raven', 'scorpius', 'scorpius', 'starfarer-gemini', 'talon', 'talon', 'ursa-rover', 'vanguard-harbinger', 'vanguard-hoplite', 'vulture', 'redeemer', 'redeemer'], // Replace the Array with a List of Shipnames (slugs) you want to display,
+                                users: [''], // Replace the Array with a list of Fleetyards.net usernames, alternative to the ships option.
+                            }
+                        };
+                        (function () {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://fleetyards.net/embed.js#' + new Date().getTime();
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Bitte aktiviere JavaScript damit du die Flottenansicht by "FleetYards.net" sehen kannst.</noscript>
+                </p>
 
-            <style>
-                #fleetyards-view .panel {
-                    position: relative;
-                    min-height: 40px;
-                    background-color: #151515;
-                    border: 3px solid #00ffe8;
-                    border-radius: 20px;
-                    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
-                }
+                <style>
+                    #fleetyards-view .panel {
+                        position: relative;
+                        min-height: 40px;
+                        background-color: #151515;
+                        border: 3px solid #00ffe8;
+                        border-radius: 20px;
+                        box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+                    }
 
-                #fleetyards-view .panel-btn {
-                    position: relative;
-                    display: inline-block;
-                    min-width: 50px;
-                    margin-right: 10px;
-                    margin-bottom: 20px;
-                    padding: 2px;
-                    background: #151515;
-                    border: 2px solid #00ffe8;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    opacity: 1;
-                    transition: all .5s ease;
-                }
+                    #fleetyards-view .panel-btn {
+                        position: relative;
+                        display: inline-block;
+                        min-width: 50px;
+                        margin-right: 10px;
+                        margin-bottom: 20px;
+                        padding: 2px;
+                        background: #151515;
+                        border: 2px solid #00ffe8;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        opacity: 1;
+                        transition: all .5s ease;
+                    }
 
-                #fleetyards-view {
-                    margin-right: auto;
-                    margin-left: auto;
-                    padding-right: 15px;
-                    padding-left: 15px;
-                    color: #c8c8c8;
-                    font-family: Nasa;
-                }
-
-                    #fleetyards-view .panel .panel-heading .panel-title {
-                        margin-top: 0;
-                        margin-bottom: 0;
-                        padding-top: 5px;
-                        padding-right: 30px;
-                        overflow: hidden;
-                        font-weight: 400;
-                        font-size: 22px;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
+                    #fleetyards-view {
+                        margin-right: auto;
+                        margin-left: auto;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        color: #c8c8c8;
                         font-family: Nasa;
                     }
 
-                        #fleetyards-view .panel .panel-heading .panel-title small {
-                            color: #959595;
-                            font-size: 15px;
+                        #fleetyards-view .panel .panel-heading .panel-title {
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            padding-top: 5px;
+                            padding-right: 30px;
+                            overflow: hidden;
+                            font-weight: 400;
+                            font-size: 22px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
                             font-family: Nasa;
                         }
-            </style>
+
+                            #fleetyards-view .panel .panel-heading .panel-title small {
+                                color: #959595;
+                                font-size: 15px;
+                                font-family: Nasa;
+                            }
+
+                    #fleetchart {
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                    }
+                </style>
+            </div>
         </div>
 
         <div class="tab_content">
-            @Html.Partial("~/Views/Home/Shared/_Gameplays.cshtml")
+            <div title="">
+                @Html.Partial("~/Views/Home/Shared/_Gameplays.cshtml")
+            </div>
         </div>
     </div>
 </div>

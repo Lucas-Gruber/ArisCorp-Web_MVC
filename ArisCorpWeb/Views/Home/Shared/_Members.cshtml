@@ -1,6 +1,6 @@
 ﻿@model HomeAPI
-<div id="team" class="medium-margin">
-    <div class="row medium-margin">
+<div id="team" class="">
+    <div class="row ">
         <div id="full-row" class="row text-center">
             @foreach (var api in Model.ariscorp_mitglieder)
             {
@@ -23,7 +23,7 @@
                             <p>“@rollenfinal“</p>
                             <hr class="hr-short">
                             <ul>
-                                <a asp-controller="Biografien" asp-action="@Html.DisplayFor(modelItem => api.member_name)">
+                                <a asp-controller="Biografien" asp-action="@api.member_name">
                                     <span class="font-italic colored">BIOGRAFIE</span>
                                 </a>
                             </ul>

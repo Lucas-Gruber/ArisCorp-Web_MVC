@@ -35,7 +35,7 @@ namespace ArisCorpWeb.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/homepage/1" + "?fields=*.*&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/homepage/1" + "?fields=*.*,ariscorp_comm_links.comm_link_channel.channel&filter[status]=published&deep[ariscorp_comm_links][_limit]=4&deep[ariscorp_comm_links][_filter][status]=published&deep[ariscorp_partner][_filter][status]=published&deep[ariscorp_comm_links][_sort]=-date_created&deep[ariscorp_mitglieder][_filter][status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)

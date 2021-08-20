@@ -36,7 +36,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=hersteller&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -70,7 +70,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=dienstleister&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=dienstleister&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -104,7 +104,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=geschäfte&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=geschäfte&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -138,7 +138,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=organisation&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=organisation&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -172,7 +172,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=verschiedenes&sort=sort,firmen_name&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmenkategorie]=verschiedenes&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -206,7 +206,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmen_name]=" + firma + "&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/firmen" + "?filter[firmen_name]=" + firma + "&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)

@@ -10,7 +10,7 @@ using ArisCorpWeb.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-
+/**
 namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
 {
     [Area("VerseExkurs")]
@@ -34,7 +34,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/comm_links" + "?sort=sort,-date_created&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/comm_links" + "?sort=-date_created&filter[status]=published&fields=*,comm_link_channel.channel&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -52,10 +52,10 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         }
 
         //KATEGORIE-ÜBERSICHT
-        [Route("comm-link/{commlink}")]
-        public async Task<IActionResult> Kategorie(string kategorie)
+        [Route("comm-link/transmission/{commlink}")]
+        public async Task<IActionResult> Artikel(string commlink)
         {
-            SpectrumRootobject SpectrumInfo = new SpectrumRootobject();
+            CommLinksRootobject CommLinksInfo = new CommLinksRootobject();
 
             using (var client = new HttpClient())
             {
@@ -67,21 +67,22 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/spectrum" + "?filter[kategorie]=" + kategorie + "&sort=sort,id&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/comm_links" + "?filter[comm_link_titel]=" + commlink + "&filter[status]=published&fields=*,comm_link_channel.channel&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
                 {
                     //Storing the response details recieved from web api   
-                    var SpectrumResponse = Res.Content.ReadAsStringAsync().Result;
+                    var CommLinksResponse = Res.Content.ReadAsStringAsync().Result;
 
                     //Deserializing the response recieved from web api and storing into the Employee list  
-                    SpectrumInfo = JsonConvert.DeserializeObject<SpectrumRootobject>(SpectrumResponse);
+                    CommLinksInfo = JsonConvert.DeserializeObject<CommLinksRootobject>(CommLinksResponse);
 
                 }
                 //returning the employee list to view  
-                return View(SpectrumInfo.data);
+                return View(CommLinksInfo.data);
             }
         }
     }
 }
+**/

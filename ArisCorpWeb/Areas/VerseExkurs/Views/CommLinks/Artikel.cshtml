@@ -1,18 +1,18 @@
-﻿@model IEnumerable<SpectrumAPI>
+﻿@model IEnumerable<CommLinksAPI>
 
 @{
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
-@addTagHelper *, Westwind.AspNetCore.Markdown
-@foreach(var api in Model)
+@foreach (var api in Model)
 {
-<div id="EXCURS" class='large-margin'>
+<div id="EXCURS" class='large-margin' style="padding-top: 12rem;">
     <a href="EXCURS"></a><!-- Nav Anchor -->
     <div class="row heading tiny-margin">
         <div class="col-md-auto">
-            <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.id</span></h1>
+            <h1 class="animation-element slide-down">Comm-Link: <span class="coloredaris">@api.comm_link_titel</span></h1>
         </div>
         <div class="col">
             <hr class="animation-element extend">
@@ -20,11 +20,17 @@
     </div>
     <div class="row medium-margin tab-manifesto">
         <div class="col-md-11">
-            <img src="https://cms.ariscorp.de/assets/" alt="@api.id Banner" width="100%" />
-            <h2 class="short-hr-left">Exkurs - Spectrum: @api.id</h2>
+            <img src="//cms.ariscorp.de/assets/@api.comm_link_banner" alt="@api.comm_link_titel Banner" width="100%" />
+            <h2 class="short-hr-left">Exkurs - Spectrum: @api.comm_link_titel</h2>
 
-            <markdown markdown="@api.spectrum_text" />
+            @Html.Raw(api.comm_link)
         </div>
     </div>
 </div>
 }
+<style>
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+</style>

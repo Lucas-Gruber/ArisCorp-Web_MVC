@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GeschichteAPI>
+@{
+    ViewData["Title"] = "Geschichte";
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+}
+
+@addTagHelper *, Westwind.AspNetCore.Markdown
+
+<img src="//cms.ariscorp.de/assets/c0a200fa-83d3-48f1-b6e4-905960cab504" alt="Spectrum Banner" style="max-width: 100%" />
+
+@foreach (var api in Model)
+{
+    <hr />
+    <div class="card mb-3" style="background-color: transparent">
+        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Geschichte/@api.geschichte_titel';">
+            <div class="col-md-4" style="margin: auto;">
+                <img src="//cms.ariscorp.de/assets/@api.geschichte_auswahlbild" class="img-fluid rounded-start" alt="@api.geschichte_titel Cover">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0; font-size: 210%;">@api.geschichte_titel</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>
+<style>
+    .card-tran-body {
+        transition: 0.2s;
+    }
+
+        .card-tran-body:hover {
+            cursor: pointer;
+        }
+
+    .shadow {
+        box-shadow: 0 0.5rem 1rem #E48632 !important;
+    }
+</style>
+<script>
+    $(".card-tran-body").hover(
+        function () {
+            $(this).addClass('shadow');
+            $(this).addClass('mb-5');
+            $(this).addClass('bg-body');
+            $(this).addClass('rounded');
+        },
+        function () {
+            $(this).removeClass('shadow');
+            $(this).removeClass('mb-5');
+            $(this).removeClass('bg-body');
+            $(this).removeClass('rounded');
+        }
+    );
+</script>

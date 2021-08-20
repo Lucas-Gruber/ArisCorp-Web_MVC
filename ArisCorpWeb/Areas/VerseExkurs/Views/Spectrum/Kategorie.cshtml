@@ -93,6 +93,10 @@
         {
             <img src="//cms.ariscorp.de/assets/ac217fb8-5c4c-4b68-8fba-96382fa47be9" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
         }
+        @if (api.spectrum_beitrag_kateogrie == "empire_report_live")
+        {
+            <img src="//cms.ariscorp.de/assets/94d0e4f6-b16a-4b3d-bd95-832842d43dcf" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+        }
     }
     {
 
@@ -108,7 +112,7 @@
     else
     {
         <div class="card mb-3" style="background-color: transparent">
-            <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Spectrum/Artikel/@api.spectrum_titel';">
+            <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Spectrum/Artikel/@api.id';">
                 <div class="col-md-4" style="margin: auto;">
                     @if (api.spectrum_beitrag_kateogrie == "starwatch")
                     {
@@ -193,6 +197,10 @@
                     @if (api.spectrum_beitrag_kateogrie == "untold_tales")
                     {
                         <img src="//cms.ariscorp.de/assets/ac217fb8-5c4c-4b68-8fba-96382fa47be9" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+                    }
+                    @if (api.spectrum_beitrag_kateogrie == "empire_report_live")
+                    {
+                        <img src="//cms.ariscorp.de/assets/94d0e4f6-b16a-4b3d-bd95-832842d43dcf" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
                     }
                 </div>
                 <div class="col-md-8">

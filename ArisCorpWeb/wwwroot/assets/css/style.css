@@ -76,6 +76,9 @@ Primary Color: #E48632;
 
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
 /* -Color- */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 .colored {
     color: #E48632;
 }
@@ -140,6 +143,10 @@ html, body {
     }
 body {
     overflow-x: hidden;
+}
+
+img {
+    max-width: 100%
 }
 /* -Full width fluid container- */
 .full-width {

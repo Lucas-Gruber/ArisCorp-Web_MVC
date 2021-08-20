@@ -37,7 +37,39 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/geschichte" + "?filter[geschichte_titel]=" + artikel + "&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/geschichte" + "?filter[geschichte_titel]=" + artikel + "&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var GeschichteResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Employee list  
+                    GeschichteInfo = JsonConvert.DeserializeObject<GeschichteRootobject>(GeschichteResponse);
+
+                }
+                //returning the employee list to view  
+                return View(GeschichteInfo.data);
+            }
+        }
+
+        [Route("VerseExkurs/Geschichte/Ein-Tag-in-der-Geschichte")]
+        public async Task<ActionResult> einTag()
+        {
+            GeschichteRootobject GeschichteInfo = new GeschichteRootobject();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(APIBaseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("items/geschichte" + "?filter[status]=published&filter[geschichte_kategorie]=true&sort=geschichte_datum&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)

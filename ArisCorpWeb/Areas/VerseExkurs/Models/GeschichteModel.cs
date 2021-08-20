@@ -26,6 +26,7 @@ namespace ArisCorpWeb.Models
         public string geschichte_auswahlbild { get; set; }
         public string geschichte_beitrag { get; set; }
         public string geschichte_beschreibung { get; set; }
+        public string geschichte_datum { get; set; }
     }
 
 }

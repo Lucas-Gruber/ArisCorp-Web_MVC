@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ArisCorpWeb.Models
 {
-    //List
 
     public class CommLinksRootobject
     {
@@ -18,16 +17,21 @@ namespace ArisCorpWeb.Models
     {
         public int id { get; set; }
         public string status { get; set; }
-        public object sort { get; set; }
+        public int? sort { get; set; }
         public string user_created { get; set; }
         public string user_updated { get; set; }
         public string date_created { get; set; }
         public string date_updated { get; set; }
-        public string comm_link_author { get; set; }
         public string comm_link_titel { get; set; }
-        public string comm_link { get; set; }
-        public string[] comm_link_channel { get; set; }
         public string comm_link_banner { get; set; }
+        public int comm_link_author { get; set; }
+        public string comm_link { get; set; }
+        public Comm_Link_Channel comm_link_channel { get; set; }
+        public object comm_link_beschreibung { get; set; }
     }
 
+    public class Comm_Link_Channel
+    {
+        public string channel { get; set; }
+    }
 }

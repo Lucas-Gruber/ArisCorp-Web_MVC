@@ -1,4 +1,4 @@
-﻿@model TechnologieAPI
+﻿@model IEnumerable<TechnologieAPI>
 
 @{
     ViewData["Title"] = "Technologie: ";
@@ -6,27 +6,31 @@
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
+
 @addTagHelper *, Westwind.AspNetCore.Markdown
-
-<div id="EXCURS" class='large-margin'>
-    <a href="EXCURS"></a><!-- Nav Anchor -->
-    <div class="row heading tiny-margin">
-        <div class="col-md-auto">
-            <h1 class="animation-element slide-down">TECHNOLOGIE: <span class="coloredaris">@Html.DisplayFor(model => model.name)</span></h1>
+@foreach (var api in Model)
+{
+    <div id="EXCURS" class='large-margin'>
+        <a href="EXCURS"></a><!-- Nav Anchor -->
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">TECHNOLOGIE: <span class="coloredaris">@api.technologie_name</span></h1>
+            </div>
+            <div class="col">
+                <hr class="animation-element extend">
+            </div>
         </div>
-        <div class="col">
-            <hr class="animation-element extend">
+        <div class="row medium-margin tab-manifesto">
+            <div class="col-md-11">
+                <img src="https://cms.ariscorp.de/assets/@Html.Raw(api.technologie_banner)" alt="Banner" />
+                <h2 class="short-hr-left">Exkurs - Technologie: @api.technologie_name</h2>
+
+                <markdown markdown="@api.technologie_text" />
+            </div>
         </div>
     </div>
-    <div class="row medium-margin tab-manifesto">
-        <div class="col-md-11">
-            <img src="https://cms.ariscorp.de/assets/@Html.DisplayFor(model => model.technologie_banner)" alt="Banner" />
-            <h2 class="short-hr-left">Exkurs - Technologie: @Html.DisplayFor(model => model.name)</h2>
+}
 
-            <markdown markdown="text" />
-        </div>
-    </div>
-</div>
 
 <style>
     img {

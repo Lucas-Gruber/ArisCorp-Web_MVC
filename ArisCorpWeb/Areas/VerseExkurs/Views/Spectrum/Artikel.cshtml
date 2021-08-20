@@ -104,6 +104,10 @@
             {
                 <img src="//cms.ariscorp.de/assets/ac217fb8-5c4c-4b68-8fba-96382fa47be9" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
             }
+            @if (api.spectrum_beitrag_kateogrie == "empire_report_live")
+            {
+                <img src="//cms.ariscorp.de/assets/94d0e4f6-b16a-4b3d-bd95-832842d43dcf" class="img-fluid rounded-start" alt="@api.spectrum_titel Cover">
+            }
             <h2 class="short-hr-left">Exkurs - Spectrum: @api.spectrum_titel</h2>
 
             <markdown markdown="@api.spectrum_text" />

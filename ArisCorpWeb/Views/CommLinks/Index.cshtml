@@ -1,0 +1,456 @@
+﻿@model IEnumerable<CommLinksAPI>
+
+@{
+    ViewData["BackAR"] = "VerseExkurs";
+    ViewData["BackC"] = "Home";
+    ViewData["BackA"] = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<img src="//cms.ariscorp.de/assets/2f7590ef-c84a-495c-8acc-93653f0cddd3" alt="Spectrum Banner" style="max-width: 100%; padding-top: 12rem;
+}" />
+
+<div id="bodyWrapper">
+    <div class="page-wrapper">
+        <div id="contentbody">
+            <div id="channel">
+                <div class="hub-blocks">
+                    @foreach (var api in Model)
+                    {
+                        if (api == Model.First())
+                        {
+                            <a class="content-block2 hub-block full
+                    " href="/comm-link/transmission/@api.comm_link_titel" data-original_class="full">
+                                <div class="type post"><div class="icon"></div><span>post</span></div>
+                                <div class="background" style="background-image:url('//cms.ariscorp.de/assets/@Html.Raw(api.comm_link_banner)');"></div>
+                                <div class="title-holder">
+                                    <div class="title trans-opacity trans-03s">@api.comm_link_titel</div>
+                                </div>
+                                <div class="text">
+                                    <div class="comments"><span style="color: #5e7a8d">Channel:</span> @api.comm_link_channel.channel</div>
+                                    <div class="time_ago">Posted: <span class="value">@api.date_created</span></div>
+                                    <div class="section"></div>
+                                </div>
+                                <div class="over trans-opacity trans-02s">
+                                    <div class="scroller trans-03s">
+                                        <div class="body">
+                                            <p>@api.comm_link_beschreibung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            @*<div class="card text-center">
+
+                                    <img src="//cms.ariscorp.de/assets/@Html.Raw(@api.comm_link_banner)" alt="@api.comm_link_titel Cover" />
+                                <div class="comm-link-overlay">
+                                    <div class="card-header">
+                                        @api.comm_link_titel
+                                    </div>
+                                    <div class="card-body">
+                                        @*<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    </div>
+                                        <div class="card-footer text-muted">
+                                            2 days ago
+                                        </div>
+                                    </div>
+                                </div>*@
+                        }
+                        else
+                        {
+
+                            <a class="content-block2 hub-block one_third
+                " href="/comm-link/transmission/@api.comm_link_titel" data-original_class="one_third" style="margin-bottom: 40px;">
+                                <div class="type post"><div class="icon"></div><span>post</span></div>
+                                <div class="background" style="background-image:url('//cms.ariscorp.de/assets/@Html.Raw(api.comm_link_banner)');"></div>
+                                <div class="title-holder">
+                                    <div class="title trans-opacity trans-03s">@api.comm_link_titel</div>
+                                </div>
+                                <div class="text">
+                                    <div class="comments"><span style="color: #5e7a8d">Channel:</span> @api.comm_link_channel.channel</div>
+                                    <div class="time_ago">Posted: <span class="value">@api.date_created</span></div>
+                                    <div class="section"></div>
+                                </div>
+                                <div class="over trans-opacity trans-02s">
+                                    <div class="scroller trans-03s">
+                                        <div class="body">
+                                            <p>@api.comm_link_beschreibung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    }
+                    <hr />
+                    <style>
+                        #channel .hub-block .type.post .icon {
+                            background-image: url(//robertsspaceindustries.com/rsi/static/images/atom/type-post.png);
+                        }
+
+                        #channel .hub-blocks {
+                            margin-right: -40px;
+                            /*margin-bottom: 40px;*/
+                        }
+
+                        #channel .hub-block.one_third {
+                            width: 338px;
+                            height: 315px;
+                        }
+
+                        #channel .hub-block {
+                            padding: 10px;
+                            margin-top: 40px;
+                            display: block;
+                            float: left;
+                            margin-right: 30px;
+                        }
+
+                        .content-block2 {
+                            border: 1px solid rgba(0,162,253,0.15);
+                            padding: 10px;
+                            position: relative;
+                        }
+
+                        #channel .hub-block.one_third > .background {
+                            position: relative;
+                            width: 338px;
+                            height: 210px;
+                            background-size: cover;
+                            background-position: center center;
+                        }
+
+                        #channel .hub-block .type .icon {
+                            float: left;
+                            width: 14px;
+                            height: 14px;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            display: block;
+                            margin: 7px 8px 0 40px;
+                        }
+
+                        #channel .hub-block.one_third > .title-holder {
+                            display: block;
+                            vertical-align: middle;
+                            position: absolute;
+                            margin-top: 26px;
+                            width: 100%;
+                        }
+
+                        #channel .hub-block.one_third .title-holder .title {
+                            color: #fff;
+                            text-shadow: 3px 3px #000;
+                            font-size: 17.7px;
+                        }
+
+                        #channel .hub-block > .title-holder > .title {
+                            font-family: 'Nasa';
+                        }
+
+                        .trans-03s {
+                            -webkit-transition-duration: 0.3s;
+                            -moz-transition-duration: 0.3s;
+                            -o-transition-duration: 0.3s;
+                            transition-duration: 0.3s;
+                            -webkit-perspective: 1000;
+                            perspective: 1000;
+                        }
+
+                        .trans-opacity {
+                            -webkit-transition-property: opacity;
+                            -moz-transition-property: opacity;
+                            -o-transition-property: opacity;
+                            transition-property: opacity;
+                        }
+
+                        #channel .hub-block.one_third > .text {
+                            position: absolute;
+                            width: 338px;
+                            height: 90px;
+                            margin-top: 10px;
+                        }
+
+                            #channel .hub-block.one_third > .text .comments {
+                                position: absolute;
+                                right: 0px;
+                                padding-left: 18px;
+                                padding-bottom: 3px;
+                                line-height: 11px;
+                                float: right;
+                                font-size: 11px;
+                                color: #0cf;
+                            }
+
+                            #channel .hub-block.one_third > .text .time_ago {
+                                position: absolute;
+                                margin-top: 80px;
+                                color: #5e7a8d;
+                                font-weight: bold;
+                                float: left;
+                                line-height: 14px;
+                                font-size: 11px;
+                            }
+
+                                #channel .hub-block.one_third > .text .time_ago .value {
+                                    color: #0cf;
+                                    font-weight: normal;
+                                }
+
+                            #channel .hub-block.one_third > .text .section {
+                                position: absolute;
+                                margin-top: 0px;
+                                font-size: 11px;
+                                margin-left: 0px;
+                                color: #678088;
+                                font-style: italic;
+                                float: left;
+                                line-height: 14px;
+                            }
+
+                        #channel .hub-block.one_third .over {
+                            width: 338px;
+                            height: 315px;
+                        }
+
+                        .trans-02s {
+                            -webkit-transition-duration: 0.2s;
+                            -moz-transition-duration: 0.2s;
+                            -o-transition-duration: 0.2s;
+                            transition-duration: 0.2s;
+                            -webkit-perspective: 1000;
+                            perspective: 1000;
+                        }
+
+                        #channel .hub-block.full {
+                            width: 1119px;
+                            height: 315px;
+                            text-decoration: none;
+                        }
+
+
+
+
+                        a:active, a:hover {
+                            outline: 0;
+                        }
+
+                        #channel .hub-block:hover .over {
+                            opacity: 1;
+                        }
+
+                            #channel .hub-block:hover .over .scroller {
+                                opacity: 1;
+                            }
+
+                                #channel .hub-block:hover .over .scroller .body {
+                                    padding-top: 0px;
+                                    opacity: 1;
+                                }
+
+
+
+
+
+                        .content-block2 {
+                            border: 1px solid rgba(0,162,253,0.15);
+                            padding: 10px;
+                            position: relative;
+                        }
+
+                        #channel .hub-block .type {
+                            background: url(//robertsspaceindustries.com/rsi/static/images/channel/hub-type-bg.png) no-repeat;
+                            float: right;
+                            height: 33px;
+                            width: 120px;
+                            position: absolute;
+                            right: 10px;
+                            z-index: 5;
+                        }
+
+                            #channel .hub-block .type.video .icon {
+                                background-image: url(//robertsspaceindustries.com/rsi/static/images/atom/type-video.png);
+                            }
+
+                            #channel .hub-block .type span {
+                                margin-top: 7px;
+                                color: #51dbff;
+                                font-size: 11px;
+                                font-style: italic;
+                                text-transform: capitalize;
+                            }
+
+                        #channel .hub-block.full > .background {
+                            position: absolute;
+                            opacity: 0.6;
+                            width: 1119px;
+                            height: 315px;
+                            background-size: cover;
+                            background-position: center center;
+                        }
+
+                        #channel .hub-block.full > .title-holder {
+                            display: table-cell;
+                            vertical-align: middle;
+                            height: 315px;
+                            width: 1119px;
+                            position: relative;
+                        }
+
+                            #channel .hub-block.full > .title-holder .title {
+                                width: 1119px;
+                                color: #fff;
+                                text-shadow: 3px 3px #000;
+                                font-size: 60px;
+                                text-transform: uppercase;
+                                text-align: center;
+                                line-height: 1;
+                            }
+
+                        #channel .hub-block.full > .text {
+                            background: url(//robertsspaceindustries.com/rsi/static/images/common/black-trans80.png) repeat;
+                            background: rgba(0,0,0,0.8);
+                            padding: 20px;
+                            height: 10px;
+                            width: 1079px;
+                            font-size: 12px;
+                            position: absolute;
+                            margin-top: -50px;
+                        }
+
+                            #channel .hub-block.full > .text .comments {
+                                padding-left: 18px;
+                                padding-bottom: 3px;
+                                line-height: 11px;
+                                float: right;
+                                font-size: 11px;
+                                color: #0cf;
+                            }
+
+                            #channel .hub-block.full > .text .time_ago {
+                                color: #5e7a8d;
+                                font-weight: bold;
+                                border-right: 1px solid #4a4241;
+                                float: left;
+                                line-height: 14px;
+                                padding-right: 13px;
+                            }
+
+                                #channel .hub-block.full > .text .time_ago .value {
+                                    color: #0cf;
+                                    font-weight: normal;
+                                }
+
+                            #channel .hub-block.full > .text .section {
+                                color: #678088;
+                                font-style: italic;
+                                border-left: 1px solid #9f9d9b;
+                                float: left;
+                                line-height: 14px;
+                                padding-left: 13px;
+                            }
+
+                        #channel .hub-block.full .over {
+                            width: 1119px;
+                            height: 315px;
+                        }
+
+                        #channel .hub-block .over {
+                            opacity: 0;
+                            background: url(//robertsspaceindustries.com/rsi/static/images/bg-med-lines.png);
+                            position: absolute;
+                            overflow: hidden;
+                            position: absolute;
+                            z-index: 10;
+                            top: 10px;
+                        }
+
+                        .trans-02s {
+                            -webkit-transition-duration: 0.2s;
+                            -moz-transition-duration: 0.2s;
+                            -o-transition-duration: 0.2s;
+                            transition-duration: 0.2s;
+                            -webkit-perspective: 1000;
+                            perspective: 1000;
+                        }
+
+                        #channel .hub-block.full .over .scroller {
+                            width: 1059px;
+                        }
+
+                        #channel .hub-block .over .scroller {
+                            padding: 0px 30px;
+                            opacity: 0;
+                            text-align: center;
+                            display: table;
+                            height: 100%;
+                        }
+
+                            #channel .hub-block .over .scroller .body {
+                                position: relative;
+                                color: #7e98a2;
+                                font-size: 12px;
+                                line-height: 20px;
+                                display: table-cell;
+                                vertical-align: middle;
+                                padding-top: 30px;
+                                opacity: 0;
+                                transition-duration: 0.1s;
+                                -moz-transition-duration: 0.1s;
+                                -webkit-transition-duration: 0.1s;
+                                -o-transition-duration: 0.1s;
+                                -webkit-perspective: 1000;
+                                transition-timing-function: linear;
+                                -webkit-transition-delay: 0.2s;
+                                -moz-transition-delay: 0.2s;
+                                -ms-transition-delay: 0.2s;
+                                -o-transition-delay: 0.2s;
+                                transition-delay: 0.2s;
+                            }
+
+                                #channel .hub-block .over .scroller .body p {
+                                    color: #7e98a2;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    margin-top: 20px;
+                                }
+
+                        p {
+                            color: white;
+                        }
+
+                        p, pre {
+                            margin: 1em 0;
+                        }
+
+                        #bodyWrapper {
+                            position: relative;
+                            overflow-x: hidden;
+                        }
+
+                        .page-wrapper {
+                            position: relative;
+                            z-index: 10;
+                        }
+
+                        #contentbody {
+                        }
+
+                            #contentbody .wrapper {
+                                z-index: 20;
+                                position: relative;
+                            }
+
+                        .wrapper {
+                            width: auto;
+                            min-width: 120px;
+                            max-width: 1140px;
+                            margin: 0 auto;
+                            padding: 0 30px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,22 +1,22 @@
-﻿@model IEnumerable<LiteraturAPI>
+﻿@model IEnumerable<LiteraturReihenAPI>
 
 @{
     ViewData["BackAR"] = "VerseExkurs";
     ViewData["BackC"] = "Home";
     ViewData["BackA"] = "Index";
 }
-<img src="//cms.ariscorp.de/assets/6e633dd2-1512-405d-92e0-fb3907de86a1" alt="Spectrum Banner" style="max-width: 100%"/>
+<img src="//cms.ariscorp.de/assets/93f3722e-943d-491e-85d5-2b15ef82107d" alt="Spectrum Banner" style="max-width: 100%"/>
 <hr />
 @foreach (var api in Model)
 {
     <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Literatur/@api.literatur_titel';">
+        <div class="card-tran-body row g-0" onclick="location.href='/VerseExkurs/Literatur/@api.reihen_titel';">
             <div class="col-md-4" style="margin: auto;">
-                <img src="//cms.ariscorp.de/assets/@api.literatur_cover" class="img-fluid rounded-start" alt="@api.literatur_titel Cover">
+                <img src="//cms.ariscorp.de/assets/@api.reihen_cover" class="img-fluid rounded-start" alt="@api.reihen_titel Cover">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.literatur_titel</h1>
+                    <h1 class="card-title" style="color: #00FFE8; margin-bottom: 0;">@api.reihen_titel</h1>
                     <!-- <p class="card-text" style="color: #FFF"></p> -->
                 </div>
             </div>

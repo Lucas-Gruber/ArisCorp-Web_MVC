@@ -9,37 +9,44 @@
 
 @foreach (var api in Model)
 {
-    int kint = api.literatur_kapitel;
-    int vkint = api.literatur_kapitel;
+    if (api.literatur_reihe != null)
+    {
+        int kint = api.literatur_kapitel;
+        int vkint = api.literatur_kapitel;
 
-    kint = kint + 1;
-    vkint = vkint - 1;
-    <div id="EXCURS" class='large-margin'>
-        <a href="EXCURS"></a><!-- Nav Anchor -->
-        <div class="row heading tiny-margin">
-            <div class="col-md-auto">
-                <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.literatur_titel - Kapitel: @api.literatur_kapitel</span></h1>
+        kint = kint + 1;
+        vkint = vkint - 1;
+        <div id="EXCURS" class='large-margin'>
+            <a href="EXCURS"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">SPECTRUM: <span class="coloredaris">@api.literatur_reihe.reihen_titel - Kapitel: @api.literatur_kapitel</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
             </div>
-            <div class="col">
-                <hr class="animation-element extend">
-            </div>
-        </div>
-        <div class="row medium-margin tab-manifesto">
-            <div class="col-md-11">
-                <img src="https://cms.ariscorp.de/assets/@api.literatur_cover" alt="@api.literatur_titel Cover" width="100%" />
-                <h2 class="short-hr-left">Exkurs - Spectrum: @api.literatur_titel - Kapitel: @api.literatur_kapitel</h2>
+            <div class="row medium-margin tab-manifesto">
+                <div class="col-md-11">
+                    <img src="https://cms.ariscorp.de/assets/@api.literatur_reihe.reihen_cover" alt="@api.literatur_reihe.reihen_titel Cover" width="100%" />
+                    <h2 class="short-hr-left">Exkurs - Spectrum: @api.literatur_titel - Kapitel: @api.literatur_kapitel</h2>
 
-                <markdown markdown="@api.literatur_text" />
+                    <markdown markdown="@api.literatur_text" />
+                </div>
             </div>
+            @if (api.literatur_kapitel != 1)
+            {
+                <a href="/VerseExkurs/Literatur/Buch/@api.literatur_reihe.reihen_titel/@(vkint)" style="color: #E48632; float: left;">Vorheriges Kapitel: @api.literatur_reihe.reihen_titel-@(vkint)</a>
+                if (api.literatur_reihe.reihen_kapitel_anzahl > api.literatur_kapitel)
+                {
+                    <a href="/VerseExkurs/Literatur/Buch/@api.literatur_reihe.reihen_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_reihe.reihen_titel-@(kint)</a>
+                }
+            }
+            else
+            {
+                <a href="/VerseExkurs/Literatur/Buch/@api.literatur_reihe.reihen_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_reihe.reihen_titel-@(kint)</a>
+            }
+        <br />
         </div>
-        @if (api.literatur_kapitel > 1)
-        {
-            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(vkint)" style="color: #E48632; float: left;">Vorheriges Kapitel: @api.literatur_titel-@(vkint)</a>
-            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_titel-@(kint)</a>
-        }
-        else
-        {
-            <a href="/VerseExkurs/Literatur/Buch/@api.literatur_titel/@(kint)" style="color: #00FFE8; float: right;">Nächstes Kapitel: @api.literatur_titel-@(kint)</a>
-        }
-    </div>
+    }
 }

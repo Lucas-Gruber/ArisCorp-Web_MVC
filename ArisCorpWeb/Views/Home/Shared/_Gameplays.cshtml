@@ -16,11 +16,14 @@
         <div type="button" data-bs-toggle="collapse" data-bs-target="@Html.Raw("#collapse" + api.gameplay_name)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + api.gameplay_name)">
             <div id="@Html.Raw("collapse" + api.gameplay_name)" class="collapse collapse-transition" aria-labelledby="@Html.Raw("collapse")" data-bs-parent="#accordionGameplays">
                 <div>
+                    <h1 class="coloredaris">@api.gameplay_name.ToString().ToUpper()</h1>
+                    <br />
                     <img src="//cms.ariscorp.de/assets/@Html.Raw(api.gameplay_bild_links)" alt="Gameplay: @api.gameplay_name Screenshot-1" class="gameplay-pic" style="float: left;" />
                     <img src="//cms.ariscorp.de/assets/@Html.Raw(api.gameplay_bild_rechts)" alt="Gameplay: @api.gameplay_name Screenshot-2" class="gameplay-pic" style="float: right;" />
                     <div class="card-body">
                         <markdown markdown="@api.gameplay_text" />
                         <br /><span class="font-60">*clicken zum schließen</span>
+                        <hr />
                     </div>
                 </div>
             </div>

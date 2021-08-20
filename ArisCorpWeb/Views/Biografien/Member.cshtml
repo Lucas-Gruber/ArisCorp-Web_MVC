@@ -15,7 +15,7 @@
     <div id="bio" class='large-margin'>
         <div class="row heading tiny-margin">
             <div class="col-md-auto">
-                <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris"> @Html.DisplayFor(model => api.member_titel)</span></h1>
+                <h1 class="animation-element slide-down">BIOGRAFIE: <span class="coloredaris"> @api.member_name.ToString().ToUpper()</span></h1>
             </div>
             <div class="col">
                 <hr class="animation-element extend">
@@ -54,3 +54,16 @@
         </div>
     </div>
 }
+
+<style>
+    #steckbrief {
+        font-size: 95%;
+    }
+    #steckbrief h4 {
+        margin-top: -3px;
+        margin-bottom: -10px;
+    }
+    p{
+        font-size: unset;
+    }
+</style>

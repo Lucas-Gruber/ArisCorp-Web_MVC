@@ -22,7 +22,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         [Route("VerseExkurs/Literatur")]
         public async Task<IActionResult> Index()
         {
-            LiteraturRootobject LiteraturInfo = new LiteraturRootobject();
+            LiteraturReihenRootobject LiteraturReiheInfo = new LiteraturReihenRootobject();
 
             using (var client = new HttpClient())
             {
@@ -34,20 +34,20 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/literatur" + "?filter[literatur_kapitel]=1&fields=*,literatur_reihe.*&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/literatur_reihen" + "?fields=status,reihen_titel,reihen_cover&filter[status]=published&sort=reihen_titel&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
                 {
                     //Storing LiteraturResponse response details recieved from web api   
-                    var LiteraturResponse = Res.Content.ReadAsStringAsync().Result;
+                    var LiteraturReiheResponse = Res.Content.ReadAsStringAsync().Result;
 
                     //Deserializing the response recieved from web api and storing into the Employee list  
-                    LiteraturInfo = JsonConvert.DeserializeObject<LiteraturRootobject>(LiteraturResponse);
+                    LiteraturReiheInfo = JsonConvert.DeserializeObject<LiteraturReihenRootobject>(LiteraturReiheResponse);
 
                 }
                 //returning the employee list to view  
-                return View(LiteraturInfo.data);
+                return View(LiteraturReiheInfo.data);
             }
         }
 

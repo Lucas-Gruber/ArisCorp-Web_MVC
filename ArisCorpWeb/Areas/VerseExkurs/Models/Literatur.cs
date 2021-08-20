@@ -43,4 +43,21 @@ namespace ArisCorpWeb.Models
         public int[] literatur { get; set; }
     }
 
+
+
+
+
+    public class LiteraturReihenRootobject
+    {
+        public LiteraturReihenAPI[] data { get; set; }
+    }
+
+    public class LiteraturReihenAPI
+    {
+        public string status { get; set; }
+        public string reihen_titel { get; set; }
+        public string reihen_cover { get; set; }
+    }
+
+
 }

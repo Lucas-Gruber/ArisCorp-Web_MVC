@@ -10,7 +10,7 @@
 @foreach (var api in Model)
 {
     <div class="card mb-3" style="background-color: transparent">
-        <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Spectrum/@api.spectrum_beitrag_kateogrie';">
+        <div class="card-tran-body row g-0" onclick="location.href = '@if (api.spectrum_beitrag_kateogrie != "empire_report_live"){<text>/VerseExkurs/Spectrum/@api.spectrum_beitrag_kateogrie</text>}else{<text>/VerseExkurs/Spectrum/Artikel/125</text>}';">
             <div class="col-md-4" style="margin: auto;">
                 @if (api.spectrum_beitrag_kateogrie == "starwatch")
                 {

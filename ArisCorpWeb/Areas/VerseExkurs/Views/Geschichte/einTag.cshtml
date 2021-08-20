@@ -8,12 +8,11 @@
 
 @addTagHelper *, Westwind.AspNetCore.Markdown
 
-<div class="img-gameplays-line">
-    <hr class="animation-element extend">
-</div>
+<img src="//cms.ariscorp.de/assets/c0a200fa-83d3-48f1-b6e4-905960cab504" alt="Spectrum Banner" style="max-width: 100%" />
 
 @foreach (var api in Model)
 {
+    <hr />
     <div class="card mb-3" style="background-color: transparent">
         <div class="card-tran-body row g-0" onclick="location.href = '/VerseExkurs/Geschichte/@api.geschichte_titel';">
             <div class="col-md-4" style="margin: auto;">
@@ -26,12 +25,7 @@
             </div>
         </div>
     </div>
-    <hr />
 }
-
-<div class="img-gameplays-line">
-    <hr class="animation-element extend">
-</div>
 
 <style>
     img {

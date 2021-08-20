@@ -9,7 +9,7 @@
 <link href="/assets/css/tima.css" rel="stylesheet" />
 @foreach (var api in Model)
 {
-    <div id="EXCURS" class='large-margin'>
+    <div id="EXCURS" class=''>
         <a href="EXCURS"></a><!-- Nav Anchor -->
         <div class="row heading tiny-margin">
             <div class="col-md-auto">
@@ -19,9 +19,12 @@
                 <hr class="animation-element extend">
             </div>
         </div>
-        <div class="row medium-margin tab-manifesto">
+        <div class="row tab-manifesto">
             <div class="col-md-11">
-                <img src="//cms.ariscorp.de/assets/@Html.Raw(api.geschichte_auswahlbild)" alt="@api.geschichte_titel Banner" width="100%" />
+                @if (api.geschichte_auswahlbild != null)
+                {
+                    <img src="//cms.ariscorp.de/assets/@Html.Raw(api.geschichte_auswahlbild)" alt="@api.geschichte_titel Banner" width="100%" />
+                }
                 <h2 class="short-hr-left">Exkurs - Geschichte: @api.geschichte_titel</h2>
 
                 <markdown markdown="@api.geschichte_beitrag" />

@@ -57,6 +57,9 @@ Primary Color: #E48632;
 
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
 /* -Color- */
+*, ::after, ::before {
+    box-sizing: unset;
+}
 .colored {
     color: #E48632;
 }

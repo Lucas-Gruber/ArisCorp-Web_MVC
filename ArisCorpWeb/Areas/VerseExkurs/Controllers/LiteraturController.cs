@@ -22,7 +22,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
         [Route("VerseExkurs/Literatur")]
         public async Task<IActionResult> Index()
         {
-            LiteraturReihenRootobject LiteraturReiheInfo = new LiteraturReihenRootobject();
+            LiteraturRootobject LiteraturInfo = new LiteraturRootobject();
 
             using (var client = new HttpClient())
             {
@@ -34,20 +34,20 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/literatur_reihen" + "?fields=status,reihen_titel,reihen_cover&filter[status]=published&sort=reihen_titel&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/literatur_reihen" + "?fields=*,literatur.*&filter[status]=published&sort=reihen_titel&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
                 {
                     //Storing LiteraturResponse response details recieved from web api   
-                    var LiteraturReiheResponse = Res.Content.ReadAsStringAsync().Result;
+                    var LiteraturResponse = Res.Content.ReadAsStringAsync().Result;
 
                     //Deserializing the response recieved from web api and storing into the Employee list  
-                    LiteraturReiheInfo = JsonConvert.DeserializeObject<LiteraturReihenRootobject>(LiteraturReiheResponse);
+                    LiteraturInfo = JsonConvert.DeserializeObject<LiteraturRootobject>(LiteraturResponse);
 
                 }
                 //returning the employee list to view  
-                return View(LiteraturReiheInfo.data);
+                return View(LiteraturInfo.data);
             }
         }
 
@@ -67,7 +67,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/literatur" + "?fields=*,literatur_reihe.*&deep[literatur_reihe][_filter][reihen_titel]=" + buchreihe + "&sort=sort,literatur_kapitel&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/literatur_reihen" + "?fields=*,literatur.*&filter[reihen_titel]=" + buchreihe + "&deep[literatur][_sort]=literatur_kapitel&deep[literatur][_filter][status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
@@ -100,7 +100,7 @@ namespace ArisCorpWeb.Areas.VerseExkurs.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("items/literatur" + "?fields=*,literatur_reihe.reihen_titel,literatur_reihe.reihen_cover,literatur_reihe.reihen_kapitel_anzahl&filter[literatur_kapitel]=" + kapitel + "&deep[literatur_reihe][_filter][reihen_titel]=" + buch + "&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
+                HttpResponseMessage Res = await client.GetAsync("items/literatur" + "?fields=*,literatur.*&filter[literatur_kapitel]=" + kapitel + "&deep[literatur_reihe][_filter][reihen_titel]=" + buch + "&filter[status]=published&access_token=ihGAYzxCs1LWxIGBSTWbx8w3cd7oTNCobhZdmr");
 
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)

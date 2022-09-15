@@ -46,30 +46,30 @@ Primary Color: #E48632;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
 @font-face {
     font-family: 'Anurati';
-    src: url('../fonts/Anurati-Regular.otf');
+    src: url('/assets/fonts/Anurati-Regular.otf');
 }
 @font-face {
     font-family: 'Nasa';
-    src: url('../fonts/nasalization-rg.ttf');
+    src: url('/assets/fonts/nasalization-rg.ttf');
 }
 @font-face {
     font-family: 'Alien-Tevarin';
-    src: url('../fonts/neuropol-tevarin.ttf');
+    src: url('/assets/fonts/neuropol-tevarin.ttf');
 }
 
 @font-face {
     font-family: 'Alien-Xi-An';
-    src: url('../fonts/yonder_recoil-xi-an.ttf');
+    src: url('/assets/fonts/yonder_recoil-xi-an.ttf');
 }
 
 @font-face {
     font-family: 'Alien-Vanduul';
-    src: url('../fonts/kleenblades_ldr-vanduul.ttf');
+    src: url('/assets/fonts/kleenblades_ldr-vanduul.ttf');
 }
 
 @font-face {
     font-family: 'Alien-Banu';
-    src: url('../fonts/Alien_lines-banu.ttf');
+    src: url('/assets/fonts/Alien_lines-banu.ttf');
 }
 
 

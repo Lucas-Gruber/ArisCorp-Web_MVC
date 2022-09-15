@@ -18,10 +18,18 @@
     <!-- //// FOOTER //// -->
     @Html.Partial("_Footer")
 
-    <style>
+<style>
         .padding-top-5 {
             padding-top: 5rem;
         }
-    </style>
+        *, ::after, ::before {
+            box-sizing: unset;
+        }
+        @@media (min-width:1200px) {
+            .container {
+                max-width: 1141px
+            }
+        }
+</style>
 </body>
 </html> 
